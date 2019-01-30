@@ -23,7 +23,7 @@ namespace HomeworkHelper
         public MainWindow()
         {
             InitializeComponent();
-            //peytons change
+            //Jake's change
         }
     }
 }
