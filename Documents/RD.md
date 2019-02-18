@@ -1,3 +1,5 @@
-Homework Helper requirements 
-##Team Members
+# Homework Helper requirements
+
+**Team Members**
+
 Peyton White and Jacob Girsky
