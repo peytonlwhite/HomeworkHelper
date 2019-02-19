@@ -49,9 +49,9 @@ The purpose of the Homework Helper application is to give students a resource to
 **Type:** functional\
 **Summary:** User can delete existing tasks. They will be given a conformation before the task is removed. 
 
-3.	**Name:** Encrypt password\
+3.	**Name:** Alerts for upcoming tasks\
 **Type:** functional\
-**Summary:** The passwords will be stored in the database using a hash.
+**Summary:** The user will be shown alerts whenever a task is due. The time they are reminded is the time that the user set the task to be due.
 
 10.	**Name:** Schedule view\
 **Type:** Functional\
