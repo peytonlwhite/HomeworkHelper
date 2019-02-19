@@ -57,6 +57,10 @@ The purpose of the Homework Helper application is to give students a resource to
 **Type:** functional\
 **Summary:** User can delete existing tasks. They will be given a conformation before the task is removed. 
 
+7.	**Name:** Reoccuring task\
+**Type:** functional\
+**Summary:** If the user has a task that will repeat each week such as a quiz, they can select it to be displayed every week. 
+
 3.	**Name:** View all tasks\
 **Type:** functional\
 **Summary:** The user will be shown the schedule view of each class and task assigned to the class.
