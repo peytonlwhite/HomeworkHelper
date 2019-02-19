@@ -21,9 +21,9 @@ The purpose of the Homework Helper application is to give students a resource to
 **Type:** functional\
 **Summary:** On the login screen an option to restore a forgotten password will be included. The user will enter their user Id and answer the security questions. If answered correctly it will give the user an option to change the password, and the new password will be updated in the database.
 
-3.	**Name:** Forgot password\
+3.	**Name:** Encrypt password\
 **Type:** functional\
-**Summary:** On the login screen an option to restore a forgotten password will be included. The user will enter their user Id and answer the security questions. If answered correctly it will give the user an option to change the password, and the new password will be updated in the database.
+**Summary:** The passwords will be stored in the database using a hash.
 
 4.	**Name:** Add course\
 **Type:** functional\
@@ -48,6 +48,10 @@ The purpose of the Homework Helper application is to give students a resource to
 9.	**Name:** Remove task\
 **Type:** functional\
 **Summary:** User can delete existing tasks. They will be given a conformation before the task is removed. 
+
+3.	**Name:** Encrypt password\
+**Type:** functional\
+**Summary:** The passwords will be stored in the database using a hash.
 
 10.	**Name:** Schedule view\
 **Type:** Functional\
