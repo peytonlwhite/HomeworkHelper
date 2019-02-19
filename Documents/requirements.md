@@ -73,7 +73,9 @@ The purpose of the Homework Helper application is to give students a resource to
 **Type:** Risk\
 **Summary:** One member does not have much experience coding in C#. 
 
-
+1.	**Name:** Current Time\
+**Type:** functional\
+**Summary:** On schedule view this retrieves the actual time, and prints out in an organized form of what is due the current week. 
 
 
 
