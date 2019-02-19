@@ -67,7 +67,7 @@ The purpose of the Homework Helper application is to give students a resource to
 
 10.	**Name:** Schedule view\
 **Type:** Functional\
-**Summary:** This view will show the courses and task’s that the user has added in a calendar view with the day of the week and the time of each class. For the task it will include the due date, description, and the type of task. The courses will be organized on the dates and times of the class. 
+**Summary:** This view will show the courses in a calender view with the day of the week and the time of the class.
 
 12.	**Name:** Platform constraint\
 **Type:**  Constraint\
