@@ -69,6 +69,10 @@ The purpose of the Homework Helper application is to give students a resource to
 **Type:** Functional\
 **Summary:** This view will show the courses in a calender view with the day of the week and the time of the class.
 
+10.	**Name:** Upcoming view\
+**Type:** Functional\
+**Summary:** This view will show the upcoming tasks that are due. It will include the date, the title of the task, and which course it is for. The list will be ordered by due dates. 
+
 12.	**Name:** Platform constraint\
 **Type:**  Constraint\
 **Summary:** The homework helper app can only be accessed through a windows system that has Visual Studio.
