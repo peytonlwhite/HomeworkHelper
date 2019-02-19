@@ -17,6 +17,10 @@ The purpose of the Homework Helper application is to give students a resource to
 **Type:** functional\
 **Summary:** If the user has not made a profile then they can add a first name, last name, username, password and security questions. This information will be stored in a database. Conformation will be given to let the user know it was added successfully.
 
+1.	**Name:** Username restriction\
+**Type:** functional\
+**Summary:** If the user tries to create a username that is already in the database, it will show an error on screen and prompt the user to pick a new username.
+
 3.	**Name:** Forgot password\
 **Type:** functional\
 **Summary:** On the login screen an option to restore a forgotten password will be included. The user will enter their user Id and answer the security questions. If answered correctly it will give the user an option to change the password, and the new password will be updated in the database.
