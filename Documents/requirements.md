@@ -37,6 +37,10 @@ The purpose of the Homework Helper application is to give students a resource to
 **Type:** functional\
 **Summary:** User can remove the course information. They will be given a conformation before the course is removed. 
 
+3.	**Name:** View all courses\
+**Type:** functional\
+**Summary:** The user can view an ordered list of each course they have added.
+
 7.	**Name:** Add Task\
 **Type:** functional\
 **Summary:** User can add new items that they need to complete. A task will have a name, type (quiz, test, project, homework, discussion) and due date. They can save the new task or cancel. Conformation will be given to let the user know it was added successfully. 
@@ -49,6 +53,10 @@ The purpose of the Homework Helper application is to give students a resource to
 **Type:** functional\
 **Summary:** User can delete existing tasks. They will be given a conformation before the task is removed. 
 
+3.	**Name:** View all tasks\
+**Type:** functional\
+**Summary:** The user will be shown the schedule view of each class and task assigned to the class.
+
 3.	**Name:** Alerts for upcoming tasks\
 **Type:** functional\
 **Summary:** The user will be shown alerts whenever a task is due. The time they are reminded is the time that the user set the task to be due.
@@ -56,10 +64,6 @@ The purpose of the Homework Helper application is to give students a resource to
 10.	**Name:** Schedule view\
 **Type:** Functional\
 **Summary:** This view will show the courses and task’s that the user has added in a calendar view with the day of the week and the time of each class. For the task it will include the due date, description, and the type of task. The courses will be organized on the dates and times of the class. 
-
-11.	**Name:** Security for login\
-**Type:** Risk\
-**Summary:** With our files system it is possible that a user can easily get into the files and see all the user’s usernames and passwords. The file system has no security, just a simple login form.
 
 12.	**Name:** Platform constraint\
 **Type:**  Constraint\
