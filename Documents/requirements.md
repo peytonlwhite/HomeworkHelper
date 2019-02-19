@@ -11,15 +11,15 @@ The purpose of the Homework Helper application is to give students a resource to
 
 1.	**Name:** User login screen\
 **Type:** functional\
-**Summary:** The user will type in their username and password and be authenticated into the application. If they have not made a profile, then they can press an option that will take them to a new profile screen. An option for accessing a forgotten username or password will be included.
+**Summary:** The user will type in their username and password and be authenticated into the application. The username and password will be stored in a database.
 
 2.	**Name:** New user screen\
 **Type:** functional\
-**Summary:** If the user has not made a profile then they can add a first name, last name, username, password and security question. Conformation will be given to let the user know it was added successfully.
+**Summary:** If the user has not made a profile then they can add a first name, last name, username, password and security questions. This information will be stored in a database. Conformation will be given to let the user know it was added successfully.
 
 3.	**Name:** forgot password\
 **Type:** functional\
-**Summary:** On the login screen an option to restore a forgotten username or password will be included. The user can enter the answer to a security question to get the forgotten username and password.
+**Summary:** On the login screen an option to restore a forgotten password will be included. The user will enter their user Id and answer the security questions. If answered correctly it will give the user an option to change the password, and the new password will be updated in the database.
 
 4.	**Name:** Add course\
 **Type:** functional\
@@ -47,7 +47,7 @@ The purpose of the Homework Helper application is to give students a resource to
 
 10.	**Name:** Schedule view\
 **Type:** Functional\
-**Summary:** This view will show the courses and task’s that the user has added in an organized view. For the task it will include the due date, description, and the type of task. The courses will be organized on the dates and times of the class. 
+**Summary:** This view will show the courses and task’s that the user has added in a calendar view with the day of the week and the time of each class. For the task it will include the due date, description, and the type of task. The courses will be organized on the dates and times of the class. 
 
 11.	**Name:** Security for login\
 **Type:** Risk\
