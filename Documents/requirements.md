@@ -79,7 +79,7 @@ The purpose of the Homework Helper application is to give students a resource to
 
 1.	**Name:** Current Time\
 **Type:** functional\
-**Summary:** On schedule view this retrieves the actual time, and prints out in an organized form of what is due the current week. 
+**Summary:** On schedule view this retrieves the actual time and day of the week, and prints out in an organized form what is due for that current week. 
 
 12.	**Name:** Platform constraint\
 **Type:**  Constraint\
