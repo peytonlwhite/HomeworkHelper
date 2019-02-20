@@ -9,7 +9,7 @@ The purpose of the Homework Helper application is to give students a resource to
 
 **Requirements**
 
-2.	**Name:** New user screen\
+1.	**Name:** New user screen\
 	**Type:** functional\
 	**Summary:** If the user has not made a profile then they can add a first name, last name, username, password and security questions. This information will be stored in a database. Conformation will be given to let the user know it was added successfully.
 
