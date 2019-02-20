@@ -15,7 +15,7 @@ The purpose of the Homework Helper application is to give students a resource to
 
 1.	**Name:** User login screen\
 **Type:** functional\
-**Summary:** The user will type in their username and password and be authenticated into the application. The username and password will be stored in a database.
+**Summary:** The user will type in their username and password and be authenticated into the application. 
 
 1.	**Name:** Username restriction\
 **Type:** functional\
