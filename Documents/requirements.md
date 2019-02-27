@@ -77,6 +77,10 @@ The purpose of the Homework Helper application is to give students a resource to
 **Type:** Functional\
 **Summary:** This view will show the upcoming tasks that are due. It will include the date, the title of the task, and which course it is for. The list will be ordered by due dates. 
 
+10.	**Name:** Logout\
+**Type:** Functional\
+**Summary:** This will allow the user to log out of the application and go back to the sign in screen.
+
 1.	**Name:** Current Time\
 **Type:** functional\
 **Summary:** On schedule view this retrieves the actual time and day of the week, and prints out in an organized form what is due for that current week. 
