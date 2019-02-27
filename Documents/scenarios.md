@@ -1,5 +1,5 @@
 
-##Scenarios 
+## Scenarios
 Jack is a college student as Austin Peay State University and is looking for an application that can help him organize his 
 school work and see what he has to accomplish. Jack decided to use the homework helper. Jack make an account using the 
 application and started adding his courses. He added each one with the name, description, and day of the week that the 
