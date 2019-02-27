@@ -1,6 +1,6 @@
 
 ## Scenarios
-Jack is a college student as Austin Peay State University and is looking for an application that can help him organize his 
+  Jack is a college student as Austin Peay State University and is looking for an application that can help him organize his 
 school work and see what he has to accomplish. Jack decided to use the homework helper. Jack make an account using the 
 application and started adding his courses. He added each one with the name, description, and day of the week that the 
 class met on. After he added the courses, he added each assignment or task that he had to complete for each class. When 
@@ -10,7 +10,7 @@ to go back in and update the date to the correct one. Another one of Jack’s pr
 planned for the next week. Jack was able to go back in and delete that specific task. 
 
 
-Amber is college freshman as Austin Peay and has noticed her grades slipping. She needed a way to be reminded of the 
+  Amber is college freshman as Austin Peay and has noticed her grades slipping. She needed a way to be reminded of the 
 assignments and classes that she has that week. Amber decided to use the Homework Helper application to meet this need. 
 Amber has already made an account but forgot her password. She was able to reset her password by entering her username and 
 answering the security questions that she had already set up.  She was able to add her courses and the tasks that she needed
@@ -20,7 +20,7 @@ easy to see what needed to be done. Amber was able to be notified of the tasks t
 day that each task needed to be completed by. 
 
 
-Blake is a college student at Austin Peay using the Homework Helper application. The semester had just started, and 
+  Blake is a college student at Austin Peay using the Homework Helper application. The semester had just started, and 
 Blake was still having trouble remembering where his classes were. He added his classes and the meeting times in the 
 app and was able to view his schedule at a glance in a week view. After adding classes, it was easy to add tasks for 
 each class such as quizzes and assignments. His professor said that they will have a weekly quiz each week on Wednesday. 
