@@ -71,10 +71,13 @@ namespace HomeWorkHelperLibrary
         //methods 
         
         // constructor
-        Student()
+        public Student(string name, string userName, string Password)
         {
-
+            _name = name;
+            _userName = userName;
+            _password = Password;
         }
+
 
         
 
