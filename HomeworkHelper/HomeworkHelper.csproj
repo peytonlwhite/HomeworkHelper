@@ -95,6 +95,12 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\HomeWorkHelperLibrary\HomeWorkHelperLibrary.csproj">
+      <Project>{62dd5f30-721c-4ebf-a573-c43b05aafc93}</Project>
+      <Name>HomeWorkHelperLibrary</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
