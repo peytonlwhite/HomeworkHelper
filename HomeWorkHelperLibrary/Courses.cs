@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace HomeWorkHelperLibrary
 {
-    class Courses
+   public class Courses
     {
     }
 }
