@@ -8,5 +8,7 @@ namespace HomeWorkHelperLibrary
 {
    public class Courses
     {
+
+
     }
 }
