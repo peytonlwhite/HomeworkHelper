@@ -14,6 +14,7 @@ namespace HomeWorkHelperLibrary
         DateTime _remindTime;
         DateTime _dueDate;
         DateTime _dueDateEnd;
+        Student stud;
         //Enum _taskType;
         
             
@@ -56,7 +57,16 @@ namespace HomeWorkHelperLibrary
         public Tasks(string taskName)
         {
             TaskName = taskName;
+
+           
         }
+
+        public void AddTask(Tasks task)
+        {
+            
+
+        }
+
 
 
     }

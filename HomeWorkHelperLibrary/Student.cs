@@ -14,7 +14,7 @@ namespace HomeWorkHelperLibrary
         string _password;
         string[] _securityQuestions = new string[3];
         List<Courses> _courseList = new List<Courses>();
-        List<Tasks> _taskList = new List<Tasks>();
+        public List<Tasks> _taskList = new List<Tasks>();
 
         // properties 
         public string Name {

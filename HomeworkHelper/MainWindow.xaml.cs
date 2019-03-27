@@ -25,7 +25,8 @@ namespace HomeworkHelper
         {
             InitializeComponent();
 
-           
+            Student Peyton = new Student();
+            
 
         }
     }
