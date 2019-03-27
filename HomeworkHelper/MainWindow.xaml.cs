@@ -26,7 +26,7 @@ namespace HomeworkHelper
             InitializeComponent();
 
             Student Peyton = new Student();
-            
+            Tasks task = new Tasks();
 
         }
     }
