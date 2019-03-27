@@ -25,9 +25,7 @@ namespace HomeworkHelper
         {
             InitializeComponent();
 
-            Student Peyton = new Student("Peyton","Pwhite15","Peyton18!");
-            Console.WriteLine(Peyton.Name);
-            
+           
 
         }
     }

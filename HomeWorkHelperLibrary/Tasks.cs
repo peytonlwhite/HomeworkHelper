@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace HomeWorkHelperLibrary
 {
-    public class Tasks
+    public class Tasks : Student
     {
         // member variables 
         string _taskName;
@@ -15,6 +15,8 @@ namespace HomeWorkHelperLibrary
         DateTime _dueDate;
         DateTime _dueDateEnd;
         //Enum _taskType;
+        
+            
 
         public string TaskName
         {
@@ -55,6 +57,7 @@ namespace HomeWorkHelperLibrary
         {
             TaskName = taskName;
         }
+
 
     }
 }
