@@ -69,7 +69,10 @@ namespace HomeWorkHelperLibrary
             }
 
         }
+        public Student()
+        {
 
+        }
        public Student(string name, string passWord, string userName, string[] SQ)
         {
             Name = name;

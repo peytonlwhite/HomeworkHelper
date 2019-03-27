@@ -20,7 +20,7 @@ namespace HomeWorkHelperLibrary
         Project
 
     };
-    public class Tasks : Student
+    public class Tasks
     {
       
         // member variables 
@@ -30,7 +30,8 @@ namespace HomeWorkHelperLibrary
         DateTime _dueDate;
         DateTime _dueDateEnd;
         List<TaskType> TaskTypes = new List<TaskType>();
-      
+        Student student = new Student();
+    
         
         
             

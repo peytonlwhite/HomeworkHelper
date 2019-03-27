@@ -6,9 +6,21 @@ using System.Threading.Tasks;
 
 namespace HomeWorkHelperLibrary
 {
-    class UpdateLogin
+   public class UpdateLogin
     {
 
+
+       public void ChangePassword(Student student)
+        {
+            
+        }
+       public void ShowSecurityQuestions(Student student)
+        {
+            
+        }
+
+        
+       
 
     }
 

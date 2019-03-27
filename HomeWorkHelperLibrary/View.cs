@@ -6,7 +6,14 @@ using System.Threading.Tasks;
 
 namespace HomeWorkHelperLibrary
 {
-    class View
+  public class View
     {
+        List<Tasks> _taskList = new List<Tasks>();
+
+
+        public void ShowTask()
+        {
+
+        }
     }
 }

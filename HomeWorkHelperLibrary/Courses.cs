@@ -19,7 +19,7 @@ enum DayOfWeek
 
 namespace HomeWorkHelperLibrary
 {
-    public class Courses : Student
+    public class Courses
     {
         int _courseNumber;
         string _courseName;
