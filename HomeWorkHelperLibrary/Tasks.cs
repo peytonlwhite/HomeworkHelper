@@ -4,18 +4,34 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
+
+
+
+
 namespace HomeWorkHelperLibrary
 {
+
+    public enum TaskType
+    {
+
+        HomeWork,
+        Quiz,
+        Test,
+        Project
+
+    };
     public class Tasks : Student
     {
+      
         // member variables 
         string _taskName;
         bool _reoccuringTask;
         DateTime _remindTime;
         DateTime _dueDate;
         DateTime _dueDateEnd;
-        Student stud;
-        //Enum _taskType;
+        List<TaskType> TaskTypes = new List<TaskType>();
+      
+        
         
             
 
@@ -54,11 +70,10 @@ namespace HomeWorkHelperLibrary
             }
         }
 
-        public Tasks(string taskName)
+        public Tasks()
         {
-            TaskName = taskName;
-
-           
+            
+            
         }
 
         public void AddTask(Tasks task)
@@ -66,8 +81,30 @@ namespace HomeWorkHelperLibrary
             
 
         }
+        public void EditTask(Tasks task)
+        {
+
+        }
+        public void DeleteTask(Tasks task)
+        {
+            int i = 0;
+            foreach(Tasks t in _taskList)
+            {
+                if(t.Name == task.Name)
+                {
+                    _taskList.RemoveAt(i);
+                }
+                i++;
+            }
+
+        }
+        public void ChangeDueDate(Tasks task, DateTime changedDate)
+        {
+            task.DueDate = changedDate;
+        }
 
 
+        
 
     }
 }
