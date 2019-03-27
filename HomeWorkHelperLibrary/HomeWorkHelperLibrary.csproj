@@ -42,7 +42,6 @@
   <ItemGroup>
     <Compile Include="Courses.cs" />
     <Compile Include="Student.cs" />
-    <Compile Include="Task.cs" />
     <Compile Include="Tasks.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
