@@ -28,13 +28,24 @@ namespace HomeWorkHelperLibrary
         DateTime _remindTime;
         DateTime _dueDate;
         DateTime _dueDateEnd;
-        List<TaskType> TaskTypes = new List<TaskType>();
+        //List<TaskType> TaskTypes = new List<TaskType>();
         Student student = new Student();
         
         
         
             
-
+        public bool ReoccuringTask
+        {
+            get
+            {
+                return _reoccuringTask;
+            }
+            private set
+            {
+                _reoccuringTask = value;
+            }
+        }
+        
         public string TaskName
         {
             get
@@ -44,6 +55,18 @@ namespace HomeWorkHelperLibrary
             private set
             {
                 _taskName = value;
+            }
+        }
+
+        public DateTime DueDateEnd
+        {
+            get
+            {
+                return _dueDateEnd;
+            }
+           private set
+            {
+                _dueDateEnd = value;
             }
         }
         public DateTime RemindTime
@@ -70,8 +93,13 @@ namespace HomeWorkHelperLibrary
             }
         }
 
-        public Tasks()
+        public Tasks(string taskName, bool reTask, DateTime remindTime,DateTime dueDate, DateTime endDueDate)
         {
+            TaskName = taskName;
+            _reoccuringTask = reTask;
+            RemindTime = remindTime;
+            DueDate = dueDate;
+            DueDateEnd = endDueDate;
             
             
         }

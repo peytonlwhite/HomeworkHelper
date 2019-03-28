@@ -24,9 +24,14 @@ namespace HomeworkHelper
         public MainWindow()
         {
             InitializeComponent();
+            string[] arr = { "yes", "yes", "yes"};
 
-            Student Peyton = new Student();
- 
+            DateTime date = new DateTime(2010, 5, 5);
+            Student Peyton = new Student("Peyton", "Peyton18", "Peyton White",arr);
+            Tasks HomeWorkTask = new Tasks("assignent 1",false,date,date, date);
+            Peyton._taskList.Add(HomeWorkTask);
+            
+            
 
 
 
