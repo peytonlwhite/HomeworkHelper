@@ -13,7 +13,6 @@ namespace HomeWorkHelperLibrary
 
     public enum TaskType
     {
-
         HomeWork,
         Quiz,
         Test,
@@ -31,7 +30,7 @@ namespace HomeWorkHelperLibrary
         DateTime _dueDateEnd;
         List<TaskType> TaskTypes = new List<TaskType>();
         Student student = new Student();
-    
+        
         
         
             
