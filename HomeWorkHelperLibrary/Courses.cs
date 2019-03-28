@@ -26,8 +26,8 @@ namespace HomeWorkHelperLibrary
         string _courseDescription;
         DateTime _courseTime;
         string _courseDay;
+        Student student = new Student();
 
-       
 
         public int CourseNumber
         {
@@ -98,7 +98,7 @@ namespace HomeWorkHelperLibrary
 
         public void AddCourse(Courses Course)
         {
-
+ 
 
         }
         public void EditCourse(Courses Course)
@@ -108,11 +108,11 @@ namespace HomeWorkHelperLibrary
         public void DeleteCourse(Courses Course)
         {
             int i = 0;
-            foreach (Courses c in _courseList)
+            foreach (Courses c in student._courseList)
             {
-                if (c.Name == Course.Name)
+                if (c._courseName == Course.CourseName)
                 {
-                    _courseList.RemoveAt(i);
+                    student._courseList.RemoveAt(i);
                 }
                 i++;
             }

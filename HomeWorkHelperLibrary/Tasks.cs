@@ -89,11 +89,11 @@ namespace HomeWorkHelperLibrary
         public void DeleteTask(Tasks task)
         {
             int i = 0;
-            foreach(Tasks t in _taskList)
+            foreach(Tasks t in student._taskList)
             {
-                if(t.Name == task.Name)
+                if(t._taskName == task.TaskName)
                 {
-                    _taskList.RemoveAt(i);
+                    student._taskList.RemoveAt(i);
                 }
                 i++;
             }
