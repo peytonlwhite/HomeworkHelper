@@ -68,23 +68,33 @@ namespace HomeWorkHelperLibrary
             }
 
         }
+
+        public Courses(int courseNumber,string courseName,string courseDescription,
+                       List<DateTime> courseTime,List<DateTime> courseDay)
+        {
+            CourseNumber = courseNumber;
+            CourseName = courseName;
+            CourseDescription = courseDescription;
+            _courseTime = courseTime;
+            _courseDay = courseDay;
+        }
         
 
-        public void EditCourseNumber(Courses Course,int newNumber)
+        public void EditCourseNumber(Courses course,int newNumber)
         {
-            Course.CourseNumber = newNumber;
+            course.CourseNumber = newNumber;
         }
-        public void EditCourseName(Courses Course, string newName)
+        public void EditCourseName(Courses course, string newName)
         {
-            Course.CourseName = newName;
+            course.CourseName = newName;
         }
-        public void EditCourseDescription(Courses Course, string newDescription)
+        public void EditCourseDescription(Courses course, string newDescription)
         {
-            Course.CourseDescription = newDescription;
+            course.CourseDescription = newDescription;
         }
-        public void EditCourseTime(Courses Course, List<DateTime> newTime)
+        public void EditCourseTime(Courses course, List<DateTime> newTime)
         {
-            Course._courseTime = newTime;
+            course._courseTime = newTime;
         }
         public void EditCourseDay(Courses course, List<DateTime> newDay)
         {
@@ -96,7 +106,7 @@ namespace HomeWorkHelperLibrary
             int i = 0;
             foreach (Courses c in student._courseList)
             {
-                if (c._courseName == Course.CourseName)
+                if (c == Course)
                 {
                     student._courseList.RemoveAt(i);
                 }

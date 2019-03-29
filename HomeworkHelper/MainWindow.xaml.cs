@@ -27,15 +27,23 @@ namespace HomeworkHelper
             string[] arr = { "yes", "yes", "yes"};
 
             DateTime date = new DateTime(2010, 5, 5);
+            List<DateTime> dates = new List<DateTime>();
+
             Student Peyton = new Student("Peyton", "Peyton18", "Peyton White",arr);
+
             Tasks HomeWorkTask = new Tasks("assignent 1",false,date,date, date,0);
-            Peyton._taskList.Add(HomeWorkTask);
-            Tasks Quiz = new Tasks("quiz 1" ,true, date, date, date, 1);
-            Peyton._taskList.Add(Quiz);
-           
-            Peyton.AddTask(new Tasks("quiz 1", true, date, date, date, 1));
+            Tasks Quiz = new Tasks("quiz 1", true, date, date, date, 1);
 
+            Peyton.AddTask(HomeWorkTask);
+            Peyton.AddTask(Quiz);
+            Peyton.AddTask(new Tasks("quiz 2", true, date, date, date, 1));
+            Quiz.EditTaskName(Quiz, "quiz 3");
 
+            Courses MathCourse = new Courses(2010, "stats", "sucks", dates, dates);
+
+            Peyton.AddCourse(MathCourse);
+
+            
 
         }
     }

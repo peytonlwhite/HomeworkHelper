@@ -8,8 +8,7 @@ namespace HomeWorkHelperLibrary
 {
   public class View
     {
-        List<Tasks> _taskList = new List<Tasks>();
-
+        
 
         public void ShowTask()
         {
