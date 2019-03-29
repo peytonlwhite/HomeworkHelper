@@ -6,16 +6,7 @@ using System.Threading.Tasks;
 
 
 
-enum DayOfWeek
-{
-    Monday,
-    Tuesday,
-    Wednesday,
-    Thursday,
-    Friday,
-    Saturday,
-    Sunday
-};
+
 
 namespace HomeWorkHelperLibrary
 {

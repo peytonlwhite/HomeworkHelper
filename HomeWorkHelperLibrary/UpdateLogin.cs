@@ -10,14 +10,16 @@ namespace HomeWorkHelperLibrary
     {
 
 
-       public void ChangePassword(Student student)
+       public void ChangePassword(Student student, string newPassword)
         {
-            
+            // check if sec questions are answered correctly first -- in UI???
+            // change it
         }
        public void ShowSecurityQuestions(Student student)
         {
-            
+            // 3 Security questions
         }
+
     }
 
 
