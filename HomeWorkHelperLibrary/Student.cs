@@ -93,5 +93,17 @@ namespace HomeWorkHelperLibrary
             return false;
             
         }
+    
+    public void AddTask(Tasks task)
+        {
+            _taskList.Add(task);
+        }
+     
+    public void AddCourse(Courses course)
+        {
+            _courseList.Add(course);
+        }
+
+
     }
 }

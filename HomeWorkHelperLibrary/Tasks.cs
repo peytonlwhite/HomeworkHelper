@@ -11,25 +11,19 @@ using System.Threading.Tasks;
 namespace HomeWorkHelperLibrary
 {
 
-    public enum TaskType
-    {
-        HomeWork,
-        Quiz,
-        Test,
-        Project
-
-    };
     public class Tasks
     {
       
-        // member variables 
+        // member variables
         string _taskName;
         bool _reoccuringTask;
         DateTime _remindTime;
         DateTime _dueDate;
         DateTime _dueDateEnd;
-        //List<TaskType> TaskTypes = new List<TaskType>();
-        Student student = new Student();
+        int _type;
+
+      
+       
         
         
         
@@ -93,7 +87,19 @@ namespace HomeWorkHelperLibrary
             }
         }
 
-        public Tasks(string taskName, bool reTask, DateTime remindTime,DateTime dueDate, DateTime endDueDate)
+        public int Type
+        {
+            get
+            {
+                return _type;
+            }
+            set
+            {
+                _type = value;
+            }
+        }
+
+        public Tasks(string taskName, bool reTask, DateTime remindTime,DateTime dueDate, DateTime endDueDate,int typeOf)
         {
             TaskName = taskName;
             _reoccuringTask = reTask;
@@ -104,21 +110,34 @@ namespace HomeWorkHelperLibrary
             
         }
 
-        public void AddTask(Tasks task)
+        
+        
+        public void EditTaskName(Tasks task,string newName)
         {
-            
-
+            task.TaskName = newName;
         }
-        public void EditTask(Tasks task)
+        public void EditTaskReoCurring(Tasks task, bool newReo)
         {
-
+            task.ReoccuringTask = newReo;
         }
-        public void DeleteTask(Tasks task)
+        public void EditTaskRemindTime(Tasks task, DateTime newDate)
+        {
+            task.RemindTime = newDate;
+        }
+        public void EditTaskDueDate(Tasks task, DateTime newDueDate)
+        {
+            task.DueDate = newDueDate;
+        }
+        public void EditTaskEndDate(Tasks task, DateTime newDateEnd)
+        {
+            task.DueDateEnd = newDateEnd;
+        }
+        public void DeleteTask(Tasks task,Student student)
         {
             int i = 0;
             foreach(Tasks t in student._taskList)
             {
-                if(t._taskName == task.TaskName)
+                if(t == task)
                 {
                     student._taskList.RemoveAt(i);
                 }
@@ -126,10 +145,7 @@ namespace HomeWorkHelperLibrary
             }
 
         }
-        public void ChangeDueDate(Tasks task, DateTime changedDate)
-        {
-            task.DueDate = changedDate;
-        }
+       
 
 
 

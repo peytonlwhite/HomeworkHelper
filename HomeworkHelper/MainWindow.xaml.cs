@@ -28,10 +28,12 @@ namespace HomeworkHelper
 
             DateTime date = new DateTime(2010, 5, 5);
             Student Peyton = new Student("Peyton", "Peyton18", "Peyton White",arr);
-            Tasks HomeWorkTask = new Tasks("assignent 1",false,date,date, date);
+            Tasks HomeWorkTask = new Tasks("assignent 1",false,date,date, date,0);
             Peyton._taskList.Add(HomeWorkTask);
-            
-            
+            Tasks Quiz = new Tasks("quiz 1" ,true, date, date, date, 1);
+            Peyton._taskList.Add(Quiz);
+           
+            Peyton.AddTask(new Tasks("quiz 1", true, date, date, date, 1));
 
 
 

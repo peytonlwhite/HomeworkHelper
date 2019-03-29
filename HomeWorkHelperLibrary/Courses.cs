@@ -24,9 +24,9 @@ namespace HomeWorkHelperLibrary
         int _courseNumber;
         string _courseName;
         string _courseDescription;
-        DateTime _courseTime;
-        string _courseDay;
-        Student student = new Student();
+        List<DateTime> _courseTime;
+        List<DateTime> _courseDay;
+       
 
 
         public int CourseNumber
@@ -68,44 +68,30 @@ namespace HomeWorkHelperLibrary
             }
 
         }
+        
 
-        public DateTime CourseTime
+        public void EditCourseNumber(Courses Course,int newNumber)
         {
-            get
-            {
-                return _courseTime;
-            }
-            private set
-            {
-                _courseTime = value;
-            }
-
+            Course.CourseNumber = newNumber;
+        }
+        public void EditCourseName(Courses Course, string newName)
+        {
+            Course.CourseName = newName;
+        }
+        public void EditCourseDescription(Courses Course, string newDescription)
+        {
+            Course.CourseDescription = newDescription;
+        }
+        public void EditCourseTime(Courses Course, List<DateTime> newTime)
+        {
+            Course._courseTime = newTime;
+        }
+        public void EditCourseDay(Courses course, List<DateTime> newDay)
+        {
+            course._courseDay = newDay;
         }
 
-        public string CourseDay
-        {
-            get
-            {
-                return _courseDay;
-            }
-            private set
-            {
-                _courseDay = value;
-            }
-
-        }
-
-
-        public void AddCourse(Courses Course)
-        {
- 
-
-        }
-        public void EditCourse(Courses Course)
-        {
-
-        }
-        public void DeleteCourse(Courses Course)
+        public void DeleteCourse(Courses Course,Student student)
         {
             int i = 0;
             foreach (Courses c in student._courseList)
