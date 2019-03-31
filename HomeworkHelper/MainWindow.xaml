@@ -5,6 +5,21 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:HomeworkHelper"
         mc:Ignorable="d"
-        Title="MainWindow" Height="350" Width="525">
-    <Grid/>
+        Title="MainWindow" Height="350" Width="700">
+    <Grid>
+        <Menu HorizontalAlignment="Left" Height="20" Margin="10,10,0,0" VerticalAlignment="Top" Width="308">
+            <MenuItem Header="Courses" Click="MenuItem_Click">
+                <MenuItem Header="Add Course"/>
+                <MenuItem Header="Edit Course"/>
+                <MenuItem Header="Delete Course"/>
+            </MenuItem>
+            <MenuItem Header="Tasks">
+                <MenuItem Header="Add Task"/>
+                <MenuItem Header="Edit Task"/>
+                <MenuItem Header="Delete Task"/>
+            </MenuItem>
+        </Menu>
+
+    </Grid>
+    
 </Window>

@@ -21,11 +21,6 @@ namespace HomeWorkHelperLibrary
         DateTime _dueDate;
         DateTime _dueDateEnd;
         int _type;
-
-      
-       
-        
-        
         
             
         public bool ReoccuringTask
@@ -99,18 +94,15 @@ namespace HomeWorkHelperLibrary
             }
         }
 
+        // constructor 
         public Tasks(string taskName, bool reTask, DateTime remindTime,DateTime dueDate, DateTime endDueDate,int typeOf)
         {
             TaskName = taskName;
             _reoccuringTask = reTask;
             RemindTime = remindTime;
             DueDate = dueDate;
-            DueDateEnd = endDueDate;
-            
-            
+            DueDateEnd = endDueDate; 
         }
-
-        
         
         public void EditTaskName(Tasks task,string newName)
         {
@@ -145,11 +137,5 @@ namespace HomeWorkHelperLibrary
             }
 
         }
-       
-
-
-
-        
-
     }
 }

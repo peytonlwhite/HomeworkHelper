@@ -24,6 +24,7 @@ namespace HomeworkHelper
         public MainWindow()
         {
             InitializeComponent();
+            /*
             string[] arr = { "yes", "yes", "yes"};
 
             DateTime date = new DateTime(2010, 5, 5);
@@ -42,9 +43,15 @@ namespace HomeworkHelper
             Courses MathCourse = new Courses(2010, "stats", "sucks", dates, dates);
 
             Peyton.AddCourse(MathCourse);
+            */
 
             
 
+        }
+
+        private void MenuItem_Click(object sender, RoutedEventArgs e)
+        {
+            
         }
     }
 }
