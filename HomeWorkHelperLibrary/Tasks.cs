@@ -4,7 +4,15 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
+public enum TaskType
+{
+    HomeWork,
+    Quiz,
+    Test,
+    Paper
 
+
+};
 
 
 
@@ -20,8 +28,7 @@ namespace HomeWorkHelperLibrary
         DateTime _remindTime;
         DateTime _dueDate;
         DateTime _dueDateEnd;
-        int _type;
-        
+        TaskType type;
             
         public bool ReoccuringTask
         {
@@ -82,19 +89,18 @@ namespace HomeWorkHelperLibrary
             }
         }
 
-        public int Type
-        {
-            get
-            {
-                return _type;
-            }
-            set
-            {
-                _type = value;
-            }
-        }
+       
 
-        // constructor 
+       
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="taskName"></param>
+        /// <param name="reTask"></param>
+        /// <param name="remindTime"></param>
+        /// <param name="dueDate"></param>
+        /// <param name="endDueDate"></param>
+        /// <param name="typeOf"></param>
         public Tasks(string taskName, bool reTask, DateTime remindTime,DateTime dueDate, DateTime endDueDate,int typeOf)
         {
             TaskName = taskName;
@@ -137,5 +143,30 @@ namespace HomeWorkHelperLibrary
             }
 
         }
+
+        public void CheckForTask(TaskType taskType)
+        {
+            if (taskType == TaskType.HomeWork)
+            {
+                type = TaskType.HomeWork;
+            }
+            else if (taskType == TaskType.Paper)
+            {
+                type = TaskType.Paper;
+            }
+            else if(taskType == TaskType.Quiz)
+            {
+                type = TaskType.Quiz;
+            }
+            else if(taskType == TaskType.Test)
+            {
+                type = TaskType.Quiz;
+            }
+
+
+        }
+
+
+
     }
 }

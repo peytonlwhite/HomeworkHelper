@@ -73,6 +73,14 @@ namespace HomeWorkHelperLibrary
         {
 
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="name"></param>
+        /// <param name="passWord"></param>
+        /// <param name="userName"></param>
+        /// <param name="SQ"></param>
        public Student(string name, string passWord, string userName, string[] SQ)
         {
             Name = name;
@@ -82,7 +90,12 @@ namespace HomeWorkHelperLibrary
 
             
         }
-       
+
+       /// <summary>
+       /// Checks for password when logging in
+       /// </summary>
+       /// <param name="passWord">the password that the user inputed in login</param>
+       /// <returns>returns true if passwords match return false if not</returns>
      public bool CheckForPassword(string passWord)
         {
             if(Password == passWord)
@@ -94,11 +107,20 @@ namespace HomeWorkHelperLibrary
             
         }
     
+    /// <summary>
+    /// Adds a task to the task list inside the student class
+    /// </summary>
+    /// <param name="task">lets it know what task it is</param>
+            
     public void AddTask(Tasks task)
         {
             _taskList.Add(task);
         }
      
+        /// <summary>
+        /// adds a course to the courseList inside the student class
+        /// </summary>
+        /// <param name="course">lets it know what course it is</param>
     public void AddCourse(Courses course)
         {
             _courseList.Add(course);
