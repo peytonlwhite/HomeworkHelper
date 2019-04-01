@@ -32,12 +32,12 @@ namespace HomeworkHelper
 
             Student Peyton = new Student("Peyton", "Peyton18", "Peyton White",arr);
 
-            Tasks HomeWorkTask = new Tasks("assignent 1",false,date,date, date,0);
-            Tasks Quiz = new Tasks("quiz 1", true, date, date, date, 1);
+            Tasks HomeWorkTask = new Tasks("assignent 1",false,date,date, date);
+            Tasks Quiz = new Tasks("quiz 1", true, date, date, date);
 
             Peyton.AddTask(HomeWorkTask);
             Peyton.AddTask(Quiz);
-            Peyton.AddTask(new Tasks("quiz 2", true, date, date, date, 1));
+            Peyton.AddTask(new Tasks("quiz 2", true, date, date, date));
             Quiz.EditTaskName(Quiz, "quiz 3");
 
             Courses MathCourse = new Courses(2010, "stats", "sucks", dates, dates);

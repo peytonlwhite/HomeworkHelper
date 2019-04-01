@@ -100,7 +100,15 @@ namespace HomeWorkHelperLibrary
         }
 
 
-        public Tasks(string taskName, bool reTask, DateTime remindTime,DateTime dueDate, DateTime endDueDate,int typeOf)
+        /// <summary>
+        /// Accepts what makes a task and defines the task
+        /// </summary>
+        /// <param name="taskName"> string for the task name</param>
+        /// <param name="reTask"> bool for if the task is a reocurring task</param>
+        /// <param name="remindTime">the user sets to remind them about the task</param>
+        /// <param name="dueDate">the user sets the date when the task is due</param>
+        /// <param name="endDueDate">the user sets the date when the last day to turn in the task</param>
+        public Tasks(string taskName, bool reTask, DateTime remindTime,DateTime dueDate, DateTime endDueDate)
         {
             TaskName = taskName;
             _reoccuringTask = reTask;
@@ -109,14 +117,31 @@ namespace HomeWorkHelperLibrary
             DueDateEnd = endDueDate; 
         }
         
+        /// <summary>
+        /// Edits the task name
+        /// </summary>
+        /// <param name="task">Which task the user is editing</param>
+        /// <param name="newName">a string for the new name the user inputs</param>
         public void EditTaskName(Tasks task,string newName)
         {
             task.TaskName = newName;
         }
+
+        /// <summary>
+        /// Edits the reocurring selection
+        /// </summary>
+        /// <param name="task">Which task the user is editing</param>
+        /// <param name="newName">a bool that the user changes the task to</param>
         public void EditTaskReoCurring(Tasks task, bool newReo)
         {
             task.ReoccuringTask = newReo;
         }
+
+        /// <summary>
+        /// Edits the remindTime for the task
+        /// </summary>
+        /// <param name="task"></param>
+        /// <param name="newDate"></param>
         public void EditTaskRemindTime(Tasks task, DateTime newDate)
         {
             task.RemindTime = newDate;
