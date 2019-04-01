@@ -146,14 +146,32 @@ namespace HomeWorkHelperLibrary
         {
             task.RemindTime = newDate;
         }
+
+        /// <summary>
+        /// Edits the due date for the task
+        /// </summary>
+        /// <param name="task">which task the user is editing</param>
+        /// <param name="newDueDate">the new due date the user picks</param>
         public void EditTaskDueDate(Tasks task, DateTime newDueDate)
         {
             task.DueDate = newDueDate;
         }
+
+        /// <summary>
+        /// Edits the end date of the task
+        /// </summary>
+        /// <param name="task">which task the user is editing</param>
+        /// <param name="newDateEnd">what the new end date is</param>
         public void EditTaskEndDate(Tasks task, DateTime newDateEnd)
         {
             task.DueDateEnd = newDateEnd;
         }
+
+        /// <summary>
+        /// deletes a certain task in the list
+        /// </summary>
+        /// <param name="task">which task the user is deleting</param>
+        /// <param name="student">which student to delete the task from</param>
         public void DeleteTask(Tasks task,Student student)
         {
             int i = 0;
@@ -168,7 +186,11 @@ namespace HomeWorkHelperLibrary
 
         }
 
-        // Checks for the task and assigns it 
+       /// <summary>
+       /// checks for the task and assigns it to enum and defines the type
+       /// Homework,Quiz.....
+       /// </summary>
+       /// <param name="taskType">An Enum list that has HW, quiz...</param>
         public void CheckForTask(TaskType taskType)
         {
             if (taskType == TaskType.HomeWork)
