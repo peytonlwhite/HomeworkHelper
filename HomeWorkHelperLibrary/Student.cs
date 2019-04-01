@@ -104,7 +104,7 @@ namespace HomeWorkHelperLibrary
     /// <summary>
     /// Adds a task to the task list inside the student class
     /// </summary>
-    /// <param name="task">lets it know what task it is</param>
+    /// <param name="task">Lets it know what task it is</param>
             
     public void AddTask(Tasks task)
         {
@@ -112,9 +112,9 @@ namespace HomeWorkHelperLibrary
         }
      
         /// <summary>
-        /// adds a course to the courseList inside the student class
+        /// Adds a course to the courseList inside the student class
         /// </summary>
-        /// <param name="course">lets it know what course it is</param>
+        /// <param name="course">Lets it know what course it is</param>
     public void AddCourse(Courses course)
         {
             _courseList.Add(course);

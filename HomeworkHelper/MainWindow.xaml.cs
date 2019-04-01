@@ -32,7 +32,7 @@ namespace HomeworkHelper
 
             Student Peyton = new Student("Peyton", "Peyton18", "Peyton White",arr);
 
-            Tasks HomeWorkTask = new Tasks("assignent 1",false,date,date, date);
+            Tasks HomeWorkTask = new Tasks("assignment 1",false,date,date, date);
             Tasks Quiz = new Tasks("quiz 1", true, date, date, date);
 
             Peyton.AddTask(HomeWorkTask);
@@ -43,7 +43,17 @@ namespace HomeworkHelper
             Courses MathCourse = new Courses(2010, "stats", "sucks", dates, dates);
 
             Peyton.AddCourse(MathCourse);
-         
+
+            foreach(Tasks t in Peyton._taskList)
+            {
+                Console.WriteLine(t.TaskName);
+            }
+            Quiz.DeleteTask(HomeWorkTask, Peyton);
+            foreach (Tasks t in Peyton._taskList)
+            {
+                Console.WriteLine(t.TaskName);
+            }
+
 
         }
 
