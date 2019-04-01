@@ -167,6 +167,18 @@ namespace HomeWorkHelperLibrary
             task.DueDateEnd = newDateEnd;
         }
 
+
+
+        /// <summary>
+        /// Adds a task to the task list inside the student class
+        /// </summary>
+        /// <param name="task">Lets it know what task it is</param>
+        public void AddTask(Tasks task,Student student)
+        {
+            student._taskList.Add(task);
+        }
+
+
         /// <summary>
         /// Deletes a certain task in the list
         /// </summary>

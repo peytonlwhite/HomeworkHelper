@@ -130,6 +130,16 @@ namespace HomeWorkHelperLibrary
         }
 
         /// <summary>
+        /// Adds a course to the courseList inside the student class
+        /// </summary>
+        /// <param name="course">Lets it know what course it is</param>
+        public void AddCourse(Courses course,Student student)
+        {
+            student._courseList.Add(course);
+        }
+
+
+        /// <summary>
         /// Deletes a certain course
         /// </summary>
         /// <param name="Course">Which course to delete</param>

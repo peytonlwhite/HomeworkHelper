@@ -101,25 +101,8 @@ namespace HomeWorkHelperLibrary
             
         }
     
-    /// <summary>
-    /// Adds a task to the task list inside the student class
-    /// </summary>
-    /// <param name="task">Lets it know what task it is</param>
-            
-    public void AddTask(Tasks task)
-        {
-            _taskList.Add(task);
-        }
      
-        /// <summary>
-        /// Adds a course to the courseList inside the student class
-        /// </summary>
-        /// <param name="course">Lets it know what course it is</param>
-    public void AddCourse(Courses course)
-        {
-            _courseList.Add(course);
-        }
-
+      
 
     }
 }
