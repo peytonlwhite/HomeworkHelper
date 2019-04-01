@@ -60,7 +60,6 @@ namespace HomeWorkHelperLibrary
 
         }
 
-
         public Courses(int courseNumber,string courseName,string courseDescription,
                        List<DateTime> courseTime,List<DateTime> courseDay)
         {

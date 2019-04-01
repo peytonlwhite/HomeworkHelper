@@ -162,11 +162,6 @@ namespace HomeWorkHelperLibrary
             {
                 type = TaskType.Quiz;
             }
-
-
         }
-
-
-
     }
 }

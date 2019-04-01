@@ -24,8 +24,8 @@ namespace HomeworkHelper
         public MainWindow()
         {
             InitializeComponent();
-            /*
-            string[] arr = { "yes", "yes", "yes"};
+           
+            string[] arr = { "Clarksville", "APSU", "Chevy"};
 
             DateTime date = new DateTime(2010, 5, 5);
             List<DateTime> dates = new List<DateTime>();
@@ -43,9 +43,7 @@ namespace HomeworkHelper
             Courses MathCourse = new Courses(2010, "stats", "sucks", dates, dates);
 
             Peyton.AddCourse(MathCourse);
-            */
-
-            
+         
 
         }
 
