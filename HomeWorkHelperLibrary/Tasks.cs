@@ -10,10 +10,7 @@ public enum TaskType
     Quiz,
     Test,
     Paper
-
-
 };
-
 
 
 namespace HomeWorkHelperLibrary
@@ -26,6 +23,7 @@ namespace HomeWorkHelperLibrary
         string _taskName;
         bool _reoccuringTask;
         DateTime _remindTime;
+        DateTime _remindDate;
         DateTime _dueDate;
         DateTime _dueDateEnd;
         TaskType type;
@@ -77,6 +75,18 @@ namespace HomeWorkHelperLibrary
             }
         }
 
+        public DateTime RemindDate
+        {
+            get
+            {
+                return _remindDate;
+            }
+            private set
+            {
+                _remindDate = value;
+            }
+        }
+
         public DateTime DueDate
         {
             get
@@ -89,18 +99,7 @@ namespace HomeWorkHelperLibrary
             }
         }
 
-       
 
-       
-        /// <summary>
-        /// 
-        /// </summary>
-        /// <param name="taskName"></param>
-        /// <param name="reTask"></param>
-        /// <param name="remindTime"></param>
-        /// <param name="dueDate"></param>
-        /// <param name="endDueDate"></param>
-        /// <param name="typeOf"></param>
         public Tasks(string taskName, bool reTask, DateTime remindTime,DateTime dueDate, DateTime endDueDate,int typeOf)
         {
             TaskName = taskName;
@@ -144,6 +143,7 @@ namespace HomeWorkHelperLibrary
 
         }
 
+        // Checks for the task and assigns it 
         public void CheckForTask(TaskType taskType)
         {
             if (taskType == TaskType.HomeWork)

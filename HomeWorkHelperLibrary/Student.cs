@@ -69,26 +69,20 @@ namespace HomeWorkHelperLibrary
             }
 
         }
+
+        // Default constructor 
         public Student()
         {
 
         }
 
-        /// <summary>
-        /// 
-        /// </summary>
-        /// <param name="name"></param>
-        /// <param name="passWord"></param>
-        /// <param name="userName"></param>
-        /// <param name="SQ"></param>
+        // Constructor 
        public Student(string name, string passWord, string userName, string[] SQ)
         {
             Name = name;
             UserName = userName;
             SecurityQuestions = SQ;
             Password = passWord;
-
-            
         }
 
        /// <summary>
