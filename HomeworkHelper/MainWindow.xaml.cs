@@ -1,4 +1,5 @@
-﻿using System;
+﻿using HomeWorkHelperLibrary;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -10,46 +11,45 @@ using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
 using System.Windows.Shapes;
-using HomeWorkHelperLibrary;
 
 namespace HomeworkHelper
 {
     /// <summary>
-    /// Interaction logic for MainWindow.xaml
+    /// Interaction logic for loginForm.xaml
     /// </summary>
-    public partial class MainWindow : Window
+    public partial class loginForm : Window
     {
-        public MainWindow()
+        public loginForm()
         {
             InitializeComponent();
-           
-            string[] arr = { "Clarksville", "APSU", "Chevy"};
+            
+        }
 
-            DateTime date = new DateTime(2010, 5, 5);
-            List<DateTime> dates = new List<DateTime>();
-
-            Student Peyton = new Student("Peyton", "Peyton18", "Peyton White",arr);
-
-            Tasks HomeWorkTask = new Tasks("assignent 1",false,date,date, date,0);
-            Tasks Quiz = new Tasks("quiz 1", true, date, date, date, 1);
-
-            Peyton.AddTask(HomeWorkTask);
-            Peyton.AddTask(Quiz);
-            Peyton.AddTask(new Tasks("quiz 2", true, date, date, date, 1));
-            Quiz.EditTaskName(Quiz, "quiz 3");
-
-            Courses MathCourse = new Courses(2010, "stats", "sucks", dates, dates);
-
-            Peyton.AddCourse(MathCourse);
-         
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
 
         }
 
-        private void MenuItem_Click(object sender, RoutedEventArgs e)
+        private void Button_Click_1(object sender, RoutedEventArgs e)
         {
-            
+            if (usernameTB.Text.Trim() == "" && passwordBox.Password == "")
+            {
+                MessageBox.Show("Please enter Username and Password.");
+            }
+            else
+            {
+                if (usernameTB.Text == "admin" && passwordBox.Password == "admin")
+                {
+                    student studentForm = new student();
+                    studentForm.ShowDialog();
+                    this.Close();
+                }
+                else
+                {
+                    MessageBox.Show("Username and password is incorrect.");
+                }
+            }
         }
     }
 }
