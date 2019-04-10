@@ -9,12 +9,12 @@ namespace HomeWorkHelperLibrary
    public class Student
     {
         // member variables
-        string _name;
-        string _userName;
-        string _password;
-        string[] _securityQuestions = new string[3];
-        public  List<Courses> _courseList = new List<Courses>();
-        public List<Tasks> _taskList = new List<Tasks>();
+        private string _name;
+        private string _userName;
+        private string _password;
+        private string[] _securityQuestionAnswers;
+        private  List<Course> _courseList = new List<Course>();
+        private List<Task> _taskList = new List<Task>();
 
         
 
@@ -55,17 +55,17 @@ namespace HomeWorkHelperLibrary
                 _password = value;
             }
         }
-        public string[] SecurityQuestions
+        public string[] SecurityQuestionAnswers
         {
 
             get
             {
-                return SecurityQuestions;
+                return _securityQuestionAnswers;
 
             }
            private set
             {
-                _securityQuestions = value;
+                _securityQuestionAnswers = value;
             }
 
         }
@@ -99,9 +99,48 @@ namespace HomeWorkHelperLibrary
             return false;
             
         }
-    
-     
-      
+        public void DeleteTask(Task task, Student student)
+        {
+            int i = 0;
+            foreach (Task t in student._taskList)
+            {
+                if (t == task)
+                {
+                    student._taskList.RemoveAt(i);
+                }
+                i++;
+            }
+
+        }
+        public void AddTask(Task task, Student student)
+        {
+            student._taskList.Add(task);
+        }
+
+        public void AddCourse(Course course, Student student)
+        {
+            student._courseList.Add(course);
+        }
+
+
+        /// <summary>
+        /// Deletes a certain course
+        /// </summary>
+        /// <param name="Course">Which course to delete</param>
+        /// <param name="student">Which student to delete it from</param>
+        public void DeleteCourse(Course Course, Student student)
+        {
+            int i = 0;
+            foreach (Course c in student._courseList)
+            {
+                if (c == Course)
+                {
+                    student._courseList.RemoveAt(i);
+                }
+                i++;
+            }
+
+        }
 
     }
 }

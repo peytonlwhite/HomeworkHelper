@@ -62,8 +62,8 @@
     <Compile Include="newUser.xaml.cs">
       <DependentUpon>newUser.xaml</DependentUpon>
     </Compile>
-    <Compile Include="student.xaml.cs">
-      <DependentUpon>student.xaml</DependentUpon>
+    <Compile Include="homeScreen.xaml.cs">
+      <DependentUpon>homeScreen.xaml</DependentUpon>
     </Compile>
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
@@ -81,7 +81,7 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="student.xaml">
+    <Page Include="homeScreen.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

@@ -21,26 +21,21 @@ namespace HomeworkHelper
     public partial class newUser : Window
     {
 
-        String name;
-        String userName;
-        String password;
+        Student student;
 
         public newUser()
         {
             InitializeComponent();
 
-
-            firstNameTB.Text = name;
-
-            usernameTB1.Text = userName;
-
-            passwordTB.Text = password;
-
-            Student student = new Student(name, userName, password);
+            student = new Student(firstNameTB.Text, usernameTB1.Text, passwordTB.Text);
 
 
         }
 
+        private void answerTB_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            //student.SecurityQuestionAnswers[0] = answerTB.Text;
+        }
     }
 
 }
