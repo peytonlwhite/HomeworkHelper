@@ -1,5 +1,4 @@
-﻿using HomeWorkHelperLibrary;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -16,18 +15,13 @@ using System.Windows.Shapes;
 namespace HomeworkHelper
 {
     /// <summary>
-    /// Interaction logic for student.xaml
+    /// Interaction logic for AddCourse.xaml
     /// </summary>
-    public partial class student : Window
+    public partial class AddCourse : Window
     {
-        public student()
+        public AddCourse()
         {
             InitializeComponent();
-        }
-
-        private void AddCourse_Click(object sender, RoutedEventArgs e)
-        {
-
         }
     }
 }

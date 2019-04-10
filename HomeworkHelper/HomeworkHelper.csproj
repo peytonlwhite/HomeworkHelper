@@ -59,12 +59,19 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="AddCourse.xaml.cs">
+      <DependentUpon>AddCourse.xaml</DependentUpon>
+    </Compile>
     <Compile Include="newUser.xaml.cs">
       <DependentUpon>newUser.xaml</DependentUpon>
     </Compile>
     <Compile Include="homeScreen.xaml.cs">
       <DependentUpon>homeScreen.xaml</DependentUpon>
     </Compile>
+    <Page Include="AddCourse.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>

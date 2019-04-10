@@ -7,9 +7,25 @@
         mc:Ignorable="d"
         Title="student" Height="400" Width="600">
     <Grid>
+
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="347*"/>
             <ColumnDefinition Width="249*"/>
         </Grid.ColumnDefinitions>
+        <Menu x:Name="menu">
+            <MenuItem Header="Task">
+            <MenuItem Header="Add Task">
+                </MenuItem>
+                <MenuItem Header="Edit Task"/>
+                <MenuItem Header="Delete Task"/>
+            </MenuItem>
+            <MenuItem Header="Course">
+                <MenuItem Header="Add Course" Click="AddCourse_Click">
+                </MenuItem>
+                <MenuItem Header="Edit Course"/>
+                <MenuItem Header="Delete Course"/>
+            </MenuItem>
+        </Menu>
     </Grid>
+    
 </Window>
