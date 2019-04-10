@@ -28,6 +28,9 @@ namespace HomeworkHelper
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
+            newUser newU = new newUser();
+            this.Close();
+            newU.ShowDialog();
 
         }
 

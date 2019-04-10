@@ -6,5 +6,10 @@
         xmlns:local="clr-namespace:HomeworkHelper"
         mc:Ignorable="d"
         Title="student" Height="400" Width="600">
-    <Grid/>
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="347*"/>
+            <ColumnDefinition Width="249*"/>
+        </Grid.ColumnDefinitions>
+    </Grid>
 </Window>

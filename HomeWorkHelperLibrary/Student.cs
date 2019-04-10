@@ -25,7 +25,7 @@ namespace HomeWorkHelperLibrary
             {
                 return _name;
             }
-            private set
+            set
             {
                 _name = value;
             }
@@ -37,7 +37,7 @@ namespace HomeWorkHelperLibrary
                 return _userName;
 
             }
-           private set
+           set
             {
                 _userName = value;
             }
@@ -50,7 +50,7 @@ namespace HomeWorkHelperLibrary
             {
                 return _password;
             }
-            private set
+             set
             {
                 _password = value;
             }
@@ -63,7 +63,7 @@ namespace HomeWorkHelperLibrary
                 return SecurityQuestions;
 
             }
-          private set
+           set
             {
                 _securityQuestions = value;
             }
@@ -77,11 +77,10 @@ namespace HomeWorkHelperLibrary
         }
 
         // Constructor 
-       public Student(string name, string passWord, string userName, string[] SQ)
+       public Student(string name, string userName, string passWord)
         {
             Name = name;
             UserName = userName;
-            SecurityQuestions = SQ;
             Password = passWord;
         }
 

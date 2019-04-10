@@ -16,13 +16,31 @@ using System.Windows.Shapes;
 namespace HomeworkHelper
 {
     /// <summary>
-    /// Interaction logic for student.xaml
+    /// Interaction logic for newUser.xaml
     /// </summary>
-    public partial class student : Window
+    public partial class newUser : Window
     {
-        public student()
+
+        String name;
+        String userName;
+        String password;
+
+        public newUser()
         {
             InitializeComponent();
+
+
+            firstNameTB.Text = name;
+
+            usernameTB1.Text = userName;
+
+            passwordTB.Text = password;
+
+            Student student = new Student(name, userName, password);
+
+
         }
+
     }
+
 }
