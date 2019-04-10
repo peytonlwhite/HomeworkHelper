@@ -25,7 +25,7 @@ namespace HomeWorkHelperLibrary
             {
                 return _name;
             }
-            set
+            private set
             {
                 _name = value;
             }
@@ -37,7 +37,7 @@ namespace HomeWorkHelperLibrary
                 return _userName;
 
             }
-           set
+           private set
             {
                 _userName = value;
             }
@@ -63,7 +63,7 @@ namespace HomeWorkHelperLibrary
                 return SecurityQuestions;
 
             }
-           set
+           private set
             {
                 _securityQuestions = value;
             }

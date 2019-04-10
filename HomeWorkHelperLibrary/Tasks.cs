@@ -203,7 +203,7 @@ namespace HomeWorkHelperLibrary
        /// Homework,Quiz.....
        /// </summary>
        /// <param name="taskType">An Enum list that has HW, quiz...</param>
-        public void CheckForTask(TaskType taskType)
+        public void setTask(TaskType taskType)
         {
             if (taskType == TaskType.HomeWork)
             {
