@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -58,16 +59,8 @@ namespace HomeWorkHelperLibrary
         public string[] SecurityQuestionAnswers
         {
 
-            get
-            {
-                return _securityQuestionAnswers;
-
-            }
-           private set
-            {
-                _securityQuestionAnswers = value;
-            }
-
+            get;
+            set;
         }
 
         // Default constructor 
@@ -141,6 +134,38 @@ namespace HomeWorkHelperLibrary
             }
 
         }
+        public void AddStudentToFile()
+        {
+            
+
+            string fileName = "StudentDetails.txt";
+            TextWriter tw = new StreamWriter(fileName);
+            
+
+            if (!File.Exists(fileName))
+            {
+                File.Create(fileName);
+                File.AppendText(fileName).WriteLine(UserName);
+                File.AppendText(fileName).WriteLine(Password);
+                tw.Close();
+
+
+            }
+            else if (File.Exists(fileName))
+            {
+
+                File.AppendText(fileName).WriteLine(UserName);
+                File.AppendText(fileName).WriteLine(Password);
+
+            }
+
+
+
+        }
+
+
+
+
 
     }
 }
