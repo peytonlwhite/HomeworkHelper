@@ -136,30 +136,18 @@ namespace HomeWorkHelperLibrary
         }
         public void AddStudentToFile()
         {
-            
 
             string fileName = "StudentDetails.txt";
-            TextWriter tw = new StreamWriter(fileName);
-            
+            // Set a variable to the Documents path.
+            string docPath = Environment.GetFolderPath(Environment.SpecialFolder.Desktop);
 
-            if (!File.Exists(fileName))
+            // Append text to an existing file named "WriteLines.txt".
+            using (StreamWriter outputFile = new StreamWriter(Path.Combine(docPath,fileName), true))
             {
-                File.Create(fileName);
-                File.AppendText(fileName).WriteLine(UserName);
-                File.AppendText(fileName).WriteLine(Password);
-                tw.Close();
-
+                outputFile.WriteLine(UserName);
+                outputFile.WriteLine(Password);
 
             }
-            else if (File.Exists(fileName))
-            {
-
-                File.AppendText(fileName).WriteLine(UserName);
-                File.AppendText(fileName).WriteLine(Password);
-
-            }
-
-
 
         }
 

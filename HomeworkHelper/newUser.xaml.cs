@@ -26,8 +26,7 @@ namespace HomeworkHelper
         public newUser()
         {
             InitializeComponent();
-
-           
+     
 
         }
 
@@ -39,6 +38,7 @@ namespace HomeworkHelper
 
         private void addButton_Click(object sender, RoutedEventArgs e)
         {
+            // student = new Student(firstNameTB.Text, usernameTB1.Text, passwordTB.Text);
             student = new Student(firstNameTB.Text, usernameTB1.Text, passwordTB.Text);
 
             student.AddStudentToFile();
