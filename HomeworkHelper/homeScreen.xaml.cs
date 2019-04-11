@@ -27,7 +27,9 @@ namespace HomeworkHelper
 
         private void AddCourse_Click(object sender, RoutedEventArgs e)
         {
-
+            AddCourse addcourse = new AddCourse();
+            this.Close();
+            addcourse.Show();
         }
     }
 }

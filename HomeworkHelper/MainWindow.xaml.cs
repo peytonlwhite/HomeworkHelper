@@ -20,6 +20,8 @@ namespace HomeworkHelper
     /// </summary>
     public partial class loginForm : Window
     {
+
+        private Student student;
         public loginForm()
         {
             InitializeComponent();
@@ -42,7 +44,7 @@ namespace HomeworkHelper
             }
             else
             {
-                if (usernameTB.Text == "admin" && passwordBox.Password == "admin")
+                if (usernameTB.Text == student.UserName && passwordBox.Password == student.Password)
                 {
                     student studentForm = new student();
                     studentForm.ShowDialog();
