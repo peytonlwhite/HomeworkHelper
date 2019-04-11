@@ -20,15 +20,17 @@ namespace HomeworkHelper
     /// </summary>
     public partial class student : Window
     {
+
         public student()
         {
             InitializeComponent();
-            List<Course> list = new List<Course>();
-         
         }
+
+        
 
         private void AddCourse_Click(object sender, RoutedEventArgs e)
         {
+
             AddCourse addcourse = new AddCourse();
             this.Close();
             addcourse.Show();

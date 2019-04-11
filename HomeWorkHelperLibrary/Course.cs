@@ -60,6 +60,12 @@ namespace HomeWorkHelperLibrary
 
         }
 
+        public Course(int courseNumber, string courseName)
+        {
+            CourseNumber = courseNumber;
+            CourseName = courseName;
+        }
+
         /// <summary>
         /// Sets the member variables that defines a course
         /// </summary>

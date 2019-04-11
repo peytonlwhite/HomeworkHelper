@@ -1,4 +1,5 @@
-﻿using System;
+﻿using HomeWorkHelperLibrary;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -22,6 +23,12 @@ namespace HomeworkHelper
         public AddCourse()
         {
             InitializeComponent();
+        }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            Course task = new Course(Convert.ToInt32(CourseNumberTB.Text), courseNameTB.Text);
+
         }
     }
 }

@@ -100,6 +100,7 @@ namespace HomeWorkHelperLibrary
         }
 
 
+
         /// <summary>
         /// Accepts what makes a task and defines the task
         /// </summary>
@@ -116,9 +117,7 @@ namespace HomeWorkHelperLibrary
             DueDate = dueDate;
             DueDateEnd = endDueDate; 
         }
-        
-        
-       
+                
 
        /// <summary>
        /// Checks for the task and assigns it to enum and defines the type
