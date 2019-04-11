@@ -23,6 +23,8 @@ namespace HomeworkHelper
         public student()
         {
             InitializeComponent();
+            List<Course> list = new List<Course>();
+         
         }
 
         private void AddCourse_Click(object sender, RoutedEventArgs e)

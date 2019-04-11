@@ -21,7 +21,7 @@ namespace HomeworkHelper
     public partial class loginForm : Window
     {
 
-        private Student student;
+        private Student student = new Student("Jacob", "jakeg", "admin");
         public loginForm()
         {
             InitializeComponent();

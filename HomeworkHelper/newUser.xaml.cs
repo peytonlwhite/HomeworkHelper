@@ -21,7 +21,7 @@ namespace HomeworkHelper
     public partial class newUser : Window
     {
 
-        Student student;
+        Student student; 
 
         public newUser()
         {
@@ -40,8 +40,13 @@ namespace HomeworkHelper
         {
             // student = new Student(firstNameTB.Text, usernameTB1.Text, passwordTB.Text);
             student = new Student(firstNameTB.Text, usernameTB1.Text, passwordTB.Text);
-
+            
             student.AddStudentToFile();
+            this.Close();
+            
+            
+            
+            
         }
     }
 

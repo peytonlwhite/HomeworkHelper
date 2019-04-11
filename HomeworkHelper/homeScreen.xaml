@@ -9,12 +9,12 @@
     <Grid>
 
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="347*"/>
-            <ColumnDefinition Width="249*"/>
+            <ColumnDefinition/>
+            <ColumnDefinition Width="0*"/>
         </Grid.ColumnDefinitions>
-        <Menu x:Name="menu">
+        <Menu x:Name="menu" Margin="0,0,0,0.5">
             <MenuItem Header="Task">
-            <MenuItem Header="Add Task">
+                <MenuItem Header="Add Task">
                 </MenuItem>
                 <MenuItem Header="Edit Task"/>
                 <MenuItem Header="Delete Task"/>
@@ -25,7 +25,16 @@
                 <MenuItem Header="Edit Course"/>
                 <MenuItem Header="Delete Course"/>
             </MenuItem>
+            <ListView Height="352" Width="585">
+                <ListView.View>
+                    <GridView>
+                        <GridViewColumn Header="Course Name"/>
+                        <GridViewColumn Header="Course Number"/>
+                        <GridViewColumn Header="Course Time"/>
+                    </GridView>
+                </ListView.View>
+            </ListView>
         </Menu>
     </Grid>
-    
+
 </Window>
