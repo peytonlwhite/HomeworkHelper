@@ -47,8 +47,9 @@ namespace HomeworkHelper
                 if (usernameTB.Text == student.UserName && passwordBox.Password == student.Password)
                 {
                     student studentForm = new student();
-                    studentForm.ShowDialog();
                     this.Close();
+                    studentForm.ShowDialog();
+                   
                 }
                 else
                 {

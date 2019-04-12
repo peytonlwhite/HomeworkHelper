@@ -42,10 +42,7 @@ namespace HomeworkHelper
             student = new Student(firstNameTB.Text, usernameTB1.Text, passwordTB.Text);
             
             student.AddStudentToFile();
-            this.Close();
-            
-            
-            
+            this.Close();        
             
         }
     }

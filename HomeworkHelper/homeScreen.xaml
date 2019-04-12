@@ -25,10 +25,11 @@
                 <MenuItem Header="Edit Course"/>
                 <MenuItem Header="Delete Course"/>
             </MenuItem>
-            <ListView Height="352" Width="585">
+            <ListView Height="352" Width="585" Name="lvUsers">
                 <ListView.View>
                     <GridView>
                         <GridViewColumn Header="Course Name"/>
+                        
                         <GridViewColumn Header="Course Number"/>
                         <GridViewColumn Header="Course Time"/>
                     </GridView>

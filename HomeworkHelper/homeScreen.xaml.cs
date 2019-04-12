@@ -21,9 +21,14 @@ namespace HomeworkHelper
     public partial class student : Window
     {
 
+        private Course course;
+
         public student()
         {
             InitializeComponent();
+
+            InitializeComponent();
+            List<Course> items = new List<Course>();
         }
 
         
