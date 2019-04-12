@@ -38,8 +38,8 @@ namespace HomeworkHelper
 
         private void addButton_Click(object sender, RoutedEventArgs e)
         {
-            // student = new Student(firstNameTB.Text, usernameTB1.Text, passwordTB.Text);
-            student = new Student(firstNameTB.Text, usernameTB1.Text, passwordTB.Text);
+            string[] sQA = { answerTB.Text.Trim(), answerTB2.Text.Trim() };
+            student = new Student(firstNameTB.Text, usernameTB1.Text, passwordTB.Text,sQA);
             
             student.AddStudentToFile();
             this.Close();        

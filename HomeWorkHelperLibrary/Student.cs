@@ -4,6 +4,7 @@ using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using static System.Net.Mime.MediaTypeNames;
 
 namespace HomeWorkHelperLibrary
 {
@@ -59,8 +60,14 @@ namespace HomeWorkHelperLibrary
         public string[] SecurityQuestionAnswers
         {
 
-            get;
-            set;
+            get
+            {
+                return _securityQuestionAnswers;
+            }
+           private set
+            {
+                _securityQuestionAnswers = value;
+            }
         }
 
         // Default constructor 
@@ -70,11 +77,12 @@ namespace HomeWorkHelperLibrary
         }
 
         // Constructor 
-       public Student(string name, string userName, string passWord)
+       public Student(string name, string userName, string passWord,string[] sQA)
         {
             Name = name;
             UserName = userName;
             Password = passWord;
+            sQA = SecurityQuestionAnswers;
         }
 
        /// <summary>
@@ -139,16 +147,27 @@ namespace HomeWorkHelperLibrary
 
             string fileName = "StudentDetails.txt";
             // Set a variable to the Documents path.
-            string docPath = Environment.GetFolderPath(Environment.SpecialFolder.Desktop);
-
-            // Append text to an existing file named "WriteLines.txt".
-            using (StreamWriter outputFile = new StreamWriter(Path.Combine(docPath,fileName), true))
+            if (!File.Exists(fileName))
             {
-                outputFile.WriteLine(UserName);
-                outputFile.WriteLine(Password);
+                File.Create(fileName).Close();
+                
+            }
+            else
+            {
+                //string docPath = Environment.GetFolderPath(Environment.SpecialFolder.Desktop);
+
+               string docPath = Path.GetFullPath(fileName);
+
+                // Append text to an existing file named "WriteLines.txt".
+                using (StreamWriter outputFile = new StreamWriter(docPath, true))
+                {
+                    outputFile.WriteLine(UserName);
+                    outputFile.WriteLine(Password);
+                    outputFile.WriteLine();
+                    outputFile.Close();
+                }
 
             }
-
         }
 
 

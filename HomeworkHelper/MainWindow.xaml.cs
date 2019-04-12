@@ -15,17 +15,20 @@ using System.Windows.Shapes;
 
 namespace HomeworkHelper
 {
+
     /// <summary>
     /// Interaction logic for loginForm.xaml
     /// </summary>
     public partial class loginForm : Window
     {
-
-        private Student student = new Student("Jacob", "jakeg", "admin");
+        private static string[] test = { "yes", "yes" };
+        private Student student = new Student("Jacob", "jakeg", "admin",test);
         public loginForm()
         {
             InitializeComponent();
+
             
+
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)
