@@ -5,9 +5,41 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:HomeworkHelper"
         mc:Ignorable="d"
-        Title="ViewCourses" Height="300" Width="500">
+        Title="student" Height="400" Width="600">
     <Grid>
 
-        
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition Width="0*"/>
+        </Grid.ColumnDefinitions>
+        <Menu x:Name="menu" Margin="0,0,0,0.5">
+            <MenuItem Header="Task">
+                <MenuItem Header="Add Task">
+                </MenuItem>
+                <MenuItem Header="Edit Task"/>
+                <MenuItem Header="Delete Task"/>
+                <MenuItem Header= "View Tasks"/>
+            </MenuItem>
+            <MenuItem Header="Course">
+                <MenuItem Header="Add Course">
+                </MenuItem>
+                <MenuItem Header="Edit Course"/>
+                <MenuItem Header="Delete Course"/>
+                <MenuItem Header= "View Courses"/>
+
+            </MenuItem>
+            <ListView Height="352" Width="585" Name="lVCourse">
+                <ListView.View>
+                    <GridView>
+                        <GridViewColumn Header="Course Name"  Width="150"/>
+                        <GridViewColumn Header="Course Number" Width="150"/>
+                        <GridViewColumn Header="Course Meeting Time" Width="150" />
+                        <GridViewColumn Header="Course Date" Width="150" />
+                        <GridViewColumn Header="Course Description" Width="150" />
+                    </GridView>
+                </ListView.View>
+            </ListView>
+        </Menu>
     </Grid>
+
 </Window>

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using HomeWorkHelperLibrary;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -19,9 +20,12 @@ namespace HomeworkHelper
     /// </summary>
     public partial class ViewCourses : Window
     {
-        public ViewCourses()
+        public ViewCourses(Student newStudent)
         {
             InitializeComponent();
+            List<Course> courses = new List<Course>();
+
+            lVCourse.ItemsSource = newStudent.CourseList;
         }
     }
 }
