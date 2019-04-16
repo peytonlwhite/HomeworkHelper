@@ -89,6 +89,10 @@ namespace HomeWorkHelperLibrary
             DateOfCourse = date;
             CourseDescription = courseDes;
         }
+        public Course(string name)
+        {
+            CourseName = name;
+        }
 
     
 
