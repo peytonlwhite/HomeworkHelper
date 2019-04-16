@@ -13,10 +13,9 @@
         <TextBox x:Name="courseNameTB" HorizontalAlignment="Left" Height="23" Margin="142,23,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
         <TextBox x:Name="CourseNumberTB" HorizontalAlignment="Left" Height="23" Margin="142,68,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
         <TextBox x:Name="MeetingTimeTB" HorizontalAlignment="Left" Height="23" Margin="142,108,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
-        <Button Content="Add Course" HorizontalAlignment="Left" Margin="363,93,0,0" VerticalAlignment="Top" Width="75" Click="Add_Course_Button"/>
+        <Button Content="Add Course" HorizontalAlignment="Left" Margin="224,221,0,0" VerticalAlignment="Top" Width="75" Click="Add_Course_Button"/>
         <DatePicker x:Name="DateOfCourse" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="142,155,0,0" IsTodayHighlighted="False"/>
-        <TextBox x:Name="MeetingDateTB" HorizontalAlignment="Left" Height="23" Margin="142,201,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
-        <Label Content="Class Meeting Date:" HorizontalAlignment="Left" Margin="22,198,0,0" VerticalAlignment="Top"/>
+        <TextBox x:Name="CourseDescriptionTB" HorizontalAlignment="Left" Height="108" Margin="319,23,0,0" TextWrapping="Wrap" Text="Course Description" VerticalAlignment="Top" Width="155"/>
 
     </Grid>
 </Window>

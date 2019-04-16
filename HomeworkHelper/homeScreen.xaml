@@ -18,12 +18,15 @@
                 </MenuItem>
                 <MenuItem Header="Edit Task"/>
                 <MenuItem Header="Delete Task"/>
+                <MenuItem Header= "View Tasks"/>
             </MenuItem>
             <MenuItem Header="Course">
                 <MenuItem Header="Add Course" Click="AddCourse_Click">
                 </MenuItem>
                 <MenuItem Header="Edit Course"/>
                 <MenuItem Header="Delete Course"/>
+                <MenuItem Header= "View Courses" Click = "View_CourseClick"/>
+
             </MenuItem>
             <ListView Height="352" Width="585" Name="lVTask">
                 <ListView.View>

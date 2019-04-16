@@ -68,6 +68,9 @@
     <Compile Include="homeScreen.xaml.cs">
       <DependentUpon>homeScreen.xaml</DependentUpon>
     </Compile>
+    <Compile Include="ViewCourses.xaml.cs">
+      <DependentUpon>ViewCourses.xaml</DependentUpon>
+    </Compile>
     <Page Include="AddCourse.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -89,6 +92,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="homeScreen.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ViewCourses.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

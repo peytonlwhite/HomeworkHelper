@@ -16,7 +16,7 @@ namespace HomeWorkHelperLibrary
         string _courseName;
         string _courseDescription;
         string _courseTime;
-        List<DateTime> _courseDay;
+        DateTime _courseDay;
        
 
 
@@ -70,31 +70,27 @@ namespace HomeWorkHelperLibrary
             }
 
         }
-
-        public Course(int courseNumber, string courseName,string time)
+        public DateTime DateOfCourse
+        {
+            get
+            {
+                return _courseDay;
+            }
+            set
+            {
+                _courseDay = value;
+            }
+        }
+        public Course(int courseNumber, string courseName,string time,DateTime date,string courseDes)
         {
             CourseNumber = courseNumber;
             CourseName = courseName;
             CourseTime = time;
+            DateOfCourse = date;
+            CourseDescription = courseDes;
         }
 
-        /// <summary>
-        /// Sets the member variables that defines a course
-        /// </summary>
-        /// <param name="courseNumber">Int for Course number. EX- 2010</param>
-        /// <param name="courseName">String for the coursename</param>
-        /// <param name="courseDescription">String to describe the course</param>
-        /// <param name="courseTime">List of datetime to set the time for the course</param>
-        /// <param name="courseDay">List of datetime to set the days of the courses</param>
-        public Course(int courseNumber,string courseName,string courseDescription,
-                       string courseTime,List<DateTime> courseDay)
-        {
-            CourseNumber = courseNumber;
-            CourseName = courseName;
-            CourseDescription = courseDescription;
-            _courseTime = courseTime;
-            _courseDay = courseDay;
-        }
+    
 
     }
 }
