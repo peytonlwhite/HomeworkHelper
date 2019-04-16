@@ -27,18 +27,18 @@ namespace HomeworkHelper
             InitializeComponent();
             courses = new List<Course>();
 
-            for(int i = 0; i < newStudent.CourseList.Count; i++)
+            for (int i = 0; i < newStudent.CourseList.Count; i++)
             {
                 courses.Add(newStudent.CourseList[i]);
             }
             DataContext = this;
 
-
         }
-     
-        private void LoadListView()
+
+        private void Add_course_Click(object sender, RoutedEventArgs e)
         {
             
         }
+
     }
 }
