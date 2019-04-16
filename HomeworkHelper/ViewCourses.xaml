@@ -28,13 +28,13 @@
                 <MenuItem Header= "View Courses"/>
 
             </MenuItem>
-            <ListView Height="352" Width="585" Name="lVCourse">
+            <ListView ItemsSource="{Binding courses}" Height="352" Width="585" x:Name="lVCourse">
                 <ListView.View>
                     <GridView>
-                        <GridViewColumn Header="Course Name"  Width="150" DisplayMemberBinding="{Binding Name}"  />
-                        <GridViewColumn Header="Course Number" Width="150"/>
-                        <GridViewColumn Header="Course Meeting Time" Width="150" />
-                        <GridViewColumn Header="Course Date" Width="150" />
+                        <GridViewColumn DisplayMemberBinding="{Binding CourseName}" Header="Course Name"  Width="150" />
+                        <GridViewColumn DisplayMemberBinding="{Binding CourseNumber}" Header="Course Number" Width="150"/>
+                        <GridViewColumn DisplayMemberBinding="{Binding CourseTime}" Header="Course Meeting Time" Width="150" />
+                        <GridViewColumn DisplayMemberBinding="{Binding DateOfCourse}" Header="Course Date" Width="150" />
                         <GridViewColumn Header="Course Description" Width="150" />
                     </GridView>
                 </ListView.View>
