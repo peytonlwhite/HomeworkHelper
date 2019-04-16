@@ -14,14 +14,14 @@
         </Grid.ColumnDefinitions>
         <Menu x:Name="menu" Margin="0,0,0,0.5">
             <MenuItem Header="Course">
-                <MenuItem Header="Add Course" Click="MenuItem_Click_1"/>
+                <MenuItem Header="Add Course" Click="Add_course_Click"/>
 
                 <MenuItem Header="Edit Course"/>
                 <MenuItem Header="Delete Course"/>
                 <MenuItem Header= "View Courses"/>
             </MenuItem>
             <MenuItem Header="Task">
-                <MenuItem Header= "View Tasks"/>
+                <MenuItem Header= "View Tasks" Click="View_Task_Click"/>
             </MenuItem>
             <ListView ItemsSource="{Binding courses}" Height="352" Width="585" x:Name="lVCourse">
                 <ListView.View>

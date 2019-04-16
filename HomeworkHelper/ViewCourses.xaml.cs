@@ -21,10 +21,11 @@ namespace HomeworkHelper
     public partial class ViewCourses : Window
     {
         public List<Course> courses { get; set; }
-
+        Student student;
         public ViewCourses(Student newStudent)
         {
             InitializeComponent();
+            student = newStudent;
             courses = new List<Course>();
 
             for (int i = 0; i < newStudent.CourseList.Count; i++)
@@ -37,8 +38,19 @@ namespace HomeworkHelper
 
         private void Add_course_Click(object sender, RoutedEventArgs e)
         {
-            
+
+            AddCourse addcourse = new AddCourse(student);
+
+            this.Close();
+            addcourse.Show();
         }
 
+        private void View_Task_Click(object sender, RoutedEventArgs e)
+        {
+            homeScreen home = new homeScreen(student);
+            this.Close();
+            home.Show();
+            
+        }
     }
 }
