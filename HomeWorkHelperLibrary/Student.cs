@@ -61,7 +61,7 @@ namespace HomeWorkHelperLibrary
                 return _userName;
 
             }
-           private set
+           set
             {
                 _userName = value;
             }
@@ -165,36 +165,7 @@ namespace HomeWorkHelperLibrary
             }
 
         }
-        public void AddStudentToFile()
-        {
-
-            string fileName = "StudentDetails.txt";
-            // Set a variable to the Documents path.
-            if (!File.Exists(fileName))
-            {
-                File.Create(fileName);
-                
-            }
-            else
-            {
-                //string docPath = Environment.GetFolderPath(Environment.SpecialFolder.Desktop);
-
-               string docPath = Path.GetFullPath(fileName);
-
-                // Append text to an existing file named "WriteLines.txt".
-                using (StreamWriter outputFile = new StreamWriter(docPath, true))
-                {
-                    outputFile.Write(UserName);
-                    outputFile.Write(",");
-                    outputFile.Write(Password);
-                    outputFile.Write(",");
-                    outputFile.WriteLine();
-                    //outputFile.Close();
-                }
-
-            }
-        }
-
+       
 
      
 

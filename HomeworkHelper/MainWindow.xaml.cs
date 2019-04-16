@@ -21,9 +21,8 @@ namespace HomeworkHelper
     /// </summary>
     public partial class loginForm : Window
     {
-        private static string[] test = { "yes", "yes" };
-        private Student student = new Student("Jacob", "jakeg", "admin",test);
-        
+        private Student student = new Student();
+      //  private FileReadWrite file;
         public loginForm()
         {
             InitializeComponent();
@@ -42,13 +41,14 @@ namespace HomeworkHelper
 
         private void Button_Click_1(object sender, RoutedEventArgs e)
         {
+            FileReadWrite file = new FileReadWrite();
             if (usernameTB.Text.Trim() == "" && passwordBox.Password == "")
             {
                 MessageBox.Show("Please enter Username and Password.");
             }
             else
             {
-                if (usernameTB.Text == student.UserName && passwordBox.Password == student.Password)
+                if (file.readStudentFromFile(ref student, usernameTB.Text.Trim(), passwordBox.Password.Trim()))
                 {
                     homeScreen studentForm = new homeScreen(student);
                     this.Close();

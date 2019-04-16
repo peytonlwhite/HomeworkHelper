@@ -40,11 +40,7 @@ namespace HomeworkHelper
 
             lVCourse.ItemsSource = rows;
         }
-        public string Name
-        {
-            get;
-            set;
-        }
+     
         private void LoadListView()
         {
             

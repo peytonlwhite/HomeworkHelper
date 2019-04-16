@@ -21,11 +21,13 @@ namespace HomeworkHelper
     public partial class newUser : Window
     {
 
-        Student student; 
+        Student student;
+        
 
         public newUser()
         {
             InitializeComponent();
+          
      
         }
 
@@ -39,8 +41,9 @@ namespace HomeworkHelper
         {
             string[] sQA = { answerTB.Text.Trim(), answerTB2.Text.Trim() };
             student = new Student(firstNameTB.Text, usernameTB1.Text, passwordTB.Text,sQA);
-            
-            student.AddStudentToFile();
+            FileReadWrite file = new FileReadWrite();
+
+            file.AddStudentToFile(student);
             this.Close();        
             
         }
