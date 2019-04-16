@@ -1,4 +1,4 @@
-﻿<Window x:Class="HomeworkHelper.student"
+﻿<Window x:Class="HomeworkHelper.homeScreen"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
@@ -25,13 +25,12 @@
                 <MenuItem Header="Edit Course"/>
                 <MenuItem Header="Delete Course"/>
             </MenuItem>
-            <ListView Height="352" Width="585" Name="lvUsers">
+            <ListView Height="352" Width="585" Name="lVTask">
                 <ListView.View>
                     <GridView>
-                        <GridViewColumn Header="Course Name"/>
-                        
-                        <GridViewColumn Header="Course Number"/>
-                        <GridViewColumn Header="Course Time"/>
+                        <GridViewColumn Header="Task Name"  Width="150"/>
+                        <GridViewColumn Header="Task Type" Width="150"/>
+                        <GridViewColumn Header="Duedate" Width="150" />
                     </GridView>
                 </ListView.View>
             </ListView>

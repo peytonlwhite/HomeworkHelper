@@ -23,10 +23,11 @@ namespace HomeworkHelper
     {
         private static string[] test = { "yes", "yes" };
         private Student student = new Student("Jacob", "jakeg", "admin",test);
+        
         public loginForm()
         {
             InitializeComponent();
-
+     
             
 
         }
@@ -49,7 +50,7 @@ namespace HomeworkHelper
             {
                 if (usernameTB.Text == student.UserName && passwordBox.Password == student.Password)
                 {
-                    student studentForm = new student();
+                    homeScreen studentForm = new homeScreen(student);
                     this.Close();
                     studentForm.ShowDialog();
                    

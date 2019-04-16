@@ -27,7 +27,6 @@ namespace HomeworkHelper
         {
             InitializeComponent();
      
-
         }
 
         private void answerTB_TextChanged(object sender, TextChangedEventArgs e)
@@ -45,6 +44,9 @@ namespace HomeworkHelper
             this.Close();        
             
         }
+
+     
+
     }
 
 }

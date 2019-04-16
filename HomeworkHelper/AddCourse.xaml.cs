@@ -20,15 +20,20 @@ namespace HomeworkHelper
     /// </summary>
     public partial class AddCourse : Window
     {
-        public AddCourse()
+        Student newStudent;
+        public AddCourse(Student stu)
         {
             InitializeComponent();
+            newStudent = stu;
         }
-
-        private void Button_Click(object sender, RoutedEventArgs e)
+        
+        private void Add_Course_Button(object sender, RoutedEventArgs e)
         {
-            Course task = new Course(Convert.ToInt32(CourseNumberTB.Text), courseNameTB.Text);
-
+            Course course = new Course(Convert.ToInt32(CourseNumberTB.Text), courseNameTB.Text,MeetingTimeTB.Text);
+            newStudent.AddCourse(course);
+            
         }
+        
+       
     }
 }

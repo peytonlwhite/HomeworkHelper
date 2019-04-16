@@ -15,7 +15,7 @@ namespace HomeWorkHelperLibrary
         int _courseNumber;
         string _courseName;
         string _courseDescription;
-        List<DateTime> _courseTime;
+        string _courseTime;
         List<DateTime> _courseDay;
        
 
@@ -31,6 +31,17 @@ namespace HomeWorkHelperLibrary
                 _courseNumber = value;
             }
 
+        }
+        public string CourseTime
+        {
+            get
+            {
+                return _courseTime;
+            }
+            set
+            {
+                _courseTime = value;
+            }
         }
 
         public string CourseName
@@ -60,10 +71,11 @@ namespace HomeWorkHelperLibrary
 
         }
 
-        public Course(int courseNumber, string courseName)
+        public Course(int courseNumber, string courseName,string time)
         {
             CourseNumber = courseNumber;
             CourseName = courseName;
+            CourseTime = time;
         }
 
         /// <summary>
@@ -75,7 +87,7 @@ namespace HomeWorkHelperLibrary
         /// <param name="courseTime">List of datetime to set the time for the course</param>
         /// <param name="courseDay">List of datetime to set the days of the courses</param>
         public Course(int courseNumber,string courseName,string courseDescription,
-                       List<DateTime> courseTime,List<DateTime> courseDay)
+                       string courseTime,List<DateTime> courseDay)
         {
             CourseNumber = courseNumber;
             CourseName = courseName;

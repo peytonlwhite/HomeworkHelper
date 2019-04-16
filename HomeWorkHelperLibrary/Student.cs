@@ -16,7 +16,7 @@ namespace HomeWorkHelperLibrary
         private string _password;
         private string[] _securityQuestionAnswers;
         private  List<Course> _courseList = new List<Course>();
-        private List<Task> _taskList = new List<Task>();
+        private List<Task_> _taskList = new List<Task_>();
 
         
 
@@ -30,6 +30,28 @@ namespace HomeWorkHelperLibrary
             private set
             {
                 _name = value;
+            }
+        }
+       public List<Course> CourseList
+        {
+            get
+            {
+                return _courseList;
+            }
+            set
+            {
+                _courseList = value;
+            }
+        }
+        public List<Task_> TaskList
+        {
+            get
+            {
+                return _taskList;
+            }
+            set
+            {
+                _taskList = value;
             }
         }
         public string UserName {
@@ -73,7 +95,8 @@ namespace HomeWorkHelperLibrary
         // Default constructor 
         public Student()
         {
-
+            DateTime date = new DateTime(2015, 12, 15);
+            _taskList.Add(new HomeWorkHelperLibrary.Task_("name", true,date,date,date ));
         }
 
         // Constructor 
@@ -100,10 +123,10 @@ namespace HomeWorkHelperLibrary
             return false;
             
         }
-        public void DeleteTask(Task task, Student student)
+        public void DeleteTask(Task_ task, Student student)
         {
             int i = 0;
-            foreach (Task t in student._taskList)
+            foreach (Task_ t in student._taskList)
             {
                 if (t == task)
                 {
@@ -113,14 +136,14 @@ namespace HomeWorkHelperLibrary
             }
 
         }
-        public void AddTask(Task task, Student student)
+        public void AddTask(Task_ task, Student student)
         {
             student._taskList.Add(task);
         }
 
-        public void AddCourse(Course course, Student student)
+        public void AddCourse(Course course)
         {
-            student._courseList.Add(course);
+            _courseList.Add(course);
         }
 
 
@@ -129,14 +152,14 @@ namespace HomeWorkHelperLibrary
         /// </summary>
         /// <param name="Course">Which course to delete</param>
         /// <param name="student">Which student to delete it from</param>
-        public void DeleteCourse(Course Course, Student student)
+        public void DeleteCourse(Course Course)
         {
             int i = 0;
-            foreach (Course c in student._courseList)
+            foreach (Course c in _courseList)
             {
                 if (c == Course)
                 {
-                    student._courseList.RemoveAt(i);
+                    _courseList.RemoveAt(i);
                 }
                 i++;
             }
@@ -149,7 +172,7 @@ namespace HomeWorkHelperLibrary
             // Set a variable to the Documents path.
             if (!File.Exists(fileName))
             {
-                File.Create(fileName).Close();
+                File.Create(fileName);
                 
             }
             else
@@ -161,14 +184,19 @@ namespace HomeWorkHelperLibrary
                 // Append text to an existing file named "WriteLines.txt".
                 using (StreamWriter outputFile = new StreamWriter(docPath, true))
                 {
-                    outputFile.WriteLine(UserName);
-                    outputFile.WriteLine(Password);
+                    outputFile.Write(UserName);
+                    outputFile.Write(",");
+                    outputFile.Write(Password);
+                    outputFile.Write(",");
                     outputFile.WriteLine();
-                    outputFile.Close();
+                    //outputFile.Close();
                 }
 
             }
         }
+
+
+     
 
 
 
