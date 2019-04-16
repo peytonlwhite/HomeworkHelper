@@ -31,7 +31,7 @@
             <ListView Height="352" Width="585" Name="lVCourse">
                 <ListView.View>
                     <GridView>
-                        <GridViewColumn Header="Course Name"  Width="150"/>
+                        <GridViewColumn Header="Course Name"  Width="150" DisplayMemberBinding="{Binding CourseName}"/>
                         <GridViewColumn Header="Course Number" Width="150"/>
                         <GridViewColumn Header="Course Meeting Time" Width="150" />
                         <GridViewColumn Header="Course Date" Width="150" />

@@ -24,6 +24,7 @@ namespace HomeworkHelper
         {
             InitializeComponent();
             List<Course> courses = new List<Course>();
+            courses.Add(newStudent.CourseList.ElementAt(0));
 
             lVCourse.ItemsSource = newStudent.CourseList;
         }
