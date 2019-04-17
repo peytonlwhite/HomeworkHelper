@@ -49,5 +49,12 @@ namespace HomeworkHelper
             this.Close();
             viewCourse.Show();
         }
+
+        private void AddTask_Click(object sender, RoutedEventArgs e)
+        {
+            AddTask add = new AddTask();
+            this.Close();
+            add.Show();
+        }
     }
 }

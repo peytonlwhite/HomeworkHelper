@@ -7,10 +7,11 @@
         mc:Ignorable="d"
         Title="AddTask" Height="300" Width="500">
     <Grid>
-        <TextBox HorizontalAlignment="Left" Height="23" Margin="114,33,0,0" TextWrapping="Wrap" Text="Taskname" VerticalAlignment="Top" Width="120"/>
-        <TextBox HorizontalAlignment="Left" Height="23" Margin="114,73,0,0" TextWrapping="Wrap" Text="Taskduedate" VerticalAlignment="Top" Width="120"/>
+        <TextBox HorizontalAlignment="Left" Height="23" Margin="114,33,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+        <TextBox HorizontalAlignment="Left" Height="23" Margin="114,73,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
         <TextBox HorizontalAlignment="Left" Height="23" Margin="19,134,0,0" TextWrapping="Wrap" Text="taskdueDateEnd" VerticalAlignment="Top" Width="120"/>
         <Label Content="Name:" HorizontalAlignment="Left" Margin="55,33,0,0" VerticalAlignment="Top"/>
+        <DatePicker x:Name="date_picker" HorizontalAlignment="Left" Margin="262,157,0,0" VerticalAlignment="Top"/>
 
     </Grid>
 </Window>
