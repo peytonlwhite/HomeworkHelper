@@ -29,7 +29,6 @@ namespace HomeworkHelper
         
         private void Add_Course_Button(object sender, RoutedEventArgs e)
         {
-            
             Course course = new Course(Convert.ToInt32(CourseNumberTB.Text), courseNameTB.Text,
                                        MeetingTimeTB.Text,(DateTime)DateOfCourse.SelectedDate,CourseDescriptionTB.Text);
             newStudent.AddCourse(course);
@@ -37,8 +36,6 @@ namespace HomeworkHelper
             this.Close();
             viewCourse.Show();
             
-        }
-
-       
+        }   
     }
 }

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using HomeWorkHelperLibrary;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -19,13 +20,27 @@ namespace HomeworkHelper
     /// </summary>
     public partial class AddTask : Window
     {
-        public AddTask()
+        Student student;
+        public AddTask(Student stu)
         {
             InitializeComponent();
-            string time = "11:11";
-            var newTime = Convert.ToDateTime(time);
-            DateTime realTime = newTime;
+            student = stu;
 
+        }
+
+        private void add_task_button_Click(object sender, RoutedEventArgs e)
+        {
+            //Task task = new Task(task_title_tb.Text, type, Convert.ToDateTime(remind_time_tb.Text),
+             // Convert.ToDateTime(due_date_tb.Text));
+            //student.AddTask(task);
+            homeScreen hs = new homeScreen(student);
+            this.Close();
+            hs.Show();
+        }
+
+        private void task_type_select_cb_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+ 
         }
     }
 }

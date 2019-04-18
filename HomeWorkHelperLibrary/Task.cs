@@ -26,7 +26,7 @@ namespace HomeWorkHelperLibrary
         DateTime _remindDate;
         DateTime _dueDate;
         DateTime _dueDateEnd;
-        TaskType type;
+        string type;
             
         public bool ReoccuringTask
         {
@@ -39,11 +39,15 @@ namespace HomeWorkHelperLibrary
                 _reoccuringTask = value;
             }
         }
-        public TaskType Type
+        public string Type
         {
             get
             {
                 return type;
+            }
+            set
+            {
+                type = value;
             }
            
         }
@@ -117,19 +121,16 @@ namespace HomeWorkHelperLibrary
         /// <param name="remindTime">The user sets to remind them about the task</param>
         /// <param name="dueDate">The user sets the date when the task is due</param>
         /// <param name="endDueDate">The user sets the date when the last day to turn in the task</param>
-        public Task_(string taskName, bool reTask, DateTime remindTime,DateTime dueDate, DateTime endDueDate)
+        public Task_(string taskName, string type1, DateTime remindTime,DateTime dueDate) 
         {
             TaskName = taskName;
-            _reoccuringTask = reTask;
+            Type = type1;
             RemindTime = remindTime;
             DueDate = dueDate;
-            DueDateEnd = endDueDate; 
         }
-        public Task_(string taskName)
-        {
-            TaskName = taskName;
-        }
-                
+       
+              
+        /*  
 
        /// <summary>
        /// Checks for the task and assigns it to enum and defines the type
@@ -155,5 +156,6 @@ namespace HomeWorkHelperLibrary
                 type = TaskType.Quiz;
             }
         }
+        */
     }
 }
