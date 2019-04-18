@@ -25,17 +25,22 @@ namespace HomeworkHelper
         Student stu;
         public homeScreen(Student newStudent)
         {
+
             InitializeComponent();
             stu = newStudent;
+           
         }
     
 
         private void AddCourse_Click(object sender, RoutedEventArgs e)
         {
+            
+
             AddCourse addcourse = new AddCourse(stu);
 
             this.Close();
             addcourse.Show();
+
         }
 
         private void View_CourseClick(object sender, RoutedEventArgs e)
@@ -47,7 +52,7 @@ namespace HomeworkHelper
 
         private void AddTask_Click(object sender, RoutedEventArgs e)
         {
-            AddTask add = new AddTask(stu);
+            AddTask add = new AddTask();
             this.Close();
             add.Show();
         }
