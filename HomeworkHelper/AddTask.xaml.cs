@@ -25,17 +25,7 @@ namespace HomeworkHelper
             string time = "11:11";
             var newTime = Convert.ToDateTime(time);
             DateTime realTime = newTime;
-            
-            
+
         }
-
-
-      
-
-       
     }
-
-    
-    }
-
-
+}
