@@ -38,7 +38,8 @@ namespace HomeworkHelper
             {
                 reocurring = true;
             }
-            Task_ task = new Task_(NameOfTaskTB.Text,Convert.ToString(TypeComboBox.SelectedItem), reocurring, (DateTime)RemindOfTaskDP.SelectedDate, 
+            Task_ task = new Task_(NameOfTaskTB.Text, Convert.ToString(TypeComboBox.Text), reocurring,
+                (DateTime)RemindOfTaskDP.SelectedDate,
                                   (DateTime)DueDateOfTaskDP.SelectedDate, (DateTime)EndDateOfTaskDP.SelectedDate);
 
             student.AddTask(task);

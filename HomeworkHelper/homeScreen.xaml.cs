@@ -18,16 +18,26 @@ namespace HomeworkHelper
     /// <summary>
     /// Interaction logic for student.xaml
     /// </summary>
+    /// 
+
     public partial class homeScreen : Window
     {
 
-
+        public List<Task_> tasks { get; set; }
         Student stu;
         public homeScreen(Student newStudent)
         {
 
             InitializeComponent();
             stu = newStudent;
+            tasks = new List<Task_>();
+
+            for (int i = 0; i < newStudent.TaskList.Count; i++)
+            {
+                tasks.Add(newStudent.TaskList[i]);
+            }
+
+            DataContext = this;
            
         }
     

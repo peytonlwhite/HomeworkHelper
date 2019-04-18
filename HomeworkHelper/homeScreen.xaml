@@ -23,13 +23,13 @@
             <MenuItem Header="Course">
                 <MenuItem Header= "View Courses" Click = "View_CourseClick"/>
             </MenuItem>
-            <ListView Height="352" Width="585" Name="lVTask">
+            <ListView ItemsSource="{Binding tasks}" Height="352" Width="585" x:Name="lVTask">
                 <ListView.View>
                     <GridView>
-                        <GridViewColumn Header="Task Name"  Width="140"/>
-                        <GridViewColumn Header="Task Type" Width="140"/>
-                        <GridViewColumn Header="Duedate" Width="150" />
-                        <GridViewColumn Header="Class" Width="150" />
+                        <GridViewColumn DisplayMemberBinding="{Binding TaskName}" Header="Task Name"  Width="150" />
+                        <GridViewColumn DisplayMemberBinding="{Binding Type}" Header="Task Type" Width="150"/>
+                        <GridViewColumn DisplayMemberBinding="{Binding RemindDate}" Header="Remind Date" Width="150" />
+                        <GridViewColumn DisplayMemberBinding="{Binding DueDate}" Header="Due Date" Width="150" />
                     </GridView>
                 </ListView.View>
             </ListView>
