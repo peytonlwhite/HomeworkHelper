@@ -40,7 +40,6 @@ namespace HomeworkHelper
             viewCourse.Show();
             
         }
-
        
     }
 }

@@ -34,6 +34,7 @@ namespace HomeworkHelper
         private void AddTaskButton(object sender, RoutedEventArgs e)
         {
             bool reocurring = false;
+         
             if (YesRB.IsChecked == true)
             {
                 reocurring = true;
@@ -41,6 +42,8 @@ namespace HomeworkHelper
             Task_ task = new Task_(NameOfTaskTB.Text, Convert.ToString(TypeComboBox.Text), reocurring,
                 (DateTime)RemindOfTaskDP.SelectedDate,
                                   (DateTime)DueDateOfTaskDP.SelectedDate, (DateTime)EndDateOfTaskDP.SelectedDate);
+
+            //DateTime Start = StartDate = DateTime.Parse(n.Element("HireFromDate").Value).ToShortDateString()
 
             student.AddTask(task);
 

@@ -28,7 +28,7 @@
                     <GridView>
                         <GridViewColumn DisplayMemberBinding="{Binding TaskName}" Header="Task Name"  Width="150" />
                         <GridViewColumn DisplayMemberBinding="{Binding Type}" Header="Task Type" Width="150"/>
-                        <GridViewColumn DisplayMemberBinding="{Binding RemindDate}" Header="Remind Date" Width="150" />
+                        <GridViewColumn DisplayMemberBinding="{Binding RemindTime}" Header="Remind Date" Width="150" />
                         <GridViewColumn DisplayMemberBinding="{Binding DueDate}" Header="Due Date" Width="150" />
                     </GridView>
                 </ListView.View>

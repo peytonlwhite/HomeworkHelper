@@ -114,7 +114,7 @@ namespace HomeWorkHelperLibrary
         /// <param name="remindTime">The user sets to remind them about the task</param>
         /// <param name="dueDate">The user sets the date when the task is due</param>
         /// <param name="endDueDate">The user sets the date when the last day to turn in the task</param>
-        public Task_(string taskName,string type, bool reTask, DateTime dueDate,DateTime remindTime, DateTime endDueDate)
+        public Task_(string taskName,string type, bool reTask, DateTime remindTime,DateTime dueDate, DateTime endDueDate)
         {
             TaskName = taskName;
             _reoccuringTask = reTask;
