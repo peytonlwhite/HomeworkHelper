@@ -4,13 +4,6 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-public enum TaskType
-{
-    HomeWork,
-    Quiz,
-    Test,
-    Paper
-};
 
 
 namespace HomeWorkHelperLibrary
@@ -26,8 +19,20 @@ namespace HomeWorkHelperLibrary
         DateTime _remindDate;
         DateTime _dueDate;
         DateTime _dueDateEnd;
-        TaskType type;
+        string _type;
             
+
+        public string Type
+        {
+            get
+            {
+                return _type;
+            }
+            set
+            {
+                _type = value;
+            }
+        }
         public bool ReoccuringTask
         {
             get
@@ -39,15 +44,7 @@ namespace HomeWorkHelperLibrary
                 _reoccuringTask = value;
             }
         }
-        public TaskType Type
-        {
-            get
-            {
-                return type;
-            }
-           
-        }
-        
+      
         public string TaskName
         {
             get
@@ -117,13 +114,14 @@ namespace HomeWorkHelperLibrary
         /// <param name="remindTime">The user sets to remind them about the task</param>
         /// <param name="dueDate">The user sets the date when the task is due</param>
         /// <param name="endDueDate">The user sets the date when the last day to turn in the task</param>
-        public Task_(string taskName, bool reTask, DateTime remindTime,DateTime dueDate, DateTime endDueDate)
+        public Task_(string taskName,string type, bool reTask, DateTime remindTime,DateTime dueDate, DateTime endDueDate)
         {
             TaskName = taskName;
             _reoccuringTask = reTask;
             RemindTime = remindTime;
             DueDate = dueDate;
-            DueDateEnd = endDueDate; 
+            DueDateEnd = endDueDate;
+            Type = type;
         }
         public Task_(string taskName)
         {
@@ -131,29 +129,5 @@ namespace HomeWorkHelperLibrary
         }
                 
 
-       /// <summary>
-       /// Checks for the task and assigns it to enum and defines the type
-       /// Homework,Quiz.....
-       /// </summary>
-       /// <param name="taskType">An Enum list that has HW, quiz...</param>
-        public void setTask(TaskType taskType)
-        {
-            if (taskType == TaskType.HomeWork)
-            {
-                type = TaskType.HomeWork;
-            }
-            else if (taskType == TaskType.Paper)
-            {
-                type = TaskType.Paper;
-            }
-            else if(taskType == TaskType.Quiz)
-            {
-                type = TaskType.Quiz;
-            }
-            else if(taskType == TaskType.Test)
-            {
-                type = TaskType.Quiz;
-            }
-        }
     }
 }

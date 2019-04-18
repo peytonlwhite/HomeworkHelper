@@ -95,8 +95,7 @@ namespace HomeWorkHelperLibrary
         // Default constructor 
         public Student()
         {
-            DateTime date = new DateTime(2015, 12, 15);
-            _taskList.Add(new HomeWorkHelperLibrary.Task_("name", true,date,date,date ));
+           
         }
 
         // Constructor 
@@ -136,9 +135,9 @@ namespace HomeWorkHelperLibrary
             }
 
         }
-        public void AddTask(Task_ task, Student student)
+        public void AddTask(Task_ task)
         {
-            student._taskList.Add(task);
+            _taskList.Add(task);
         }
 
         public void AddCourse(Course course)

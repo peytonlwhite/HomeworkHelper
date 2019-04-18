@@ -21,6 +21,7 @@ namespace HomeworkHelper
     public partial class AddCourse : Window
     {
         Student newStudent;
+       
         public AddCourse(Student stu)
         {
             InitializeComponent();
@@ -34,6 +35,7 @@ namespace HomeworkHelper
                                        MeetingTimeTB.Text,(DateTime)DateOfCourse.SelectedDate,CourseDescriptionTB.Text);
             newStudent.AddCourse(course);
             ViewCourses viewCourse = new ViewCourses(newStudent);
+            
             this.Close();
             viewCourse.Show();
             

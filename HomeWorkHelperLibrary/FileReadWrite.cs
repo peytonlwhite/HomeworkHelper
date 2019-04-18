@@ -55,7 +55,7 @@ namespace HomeWorkHelperLibrary
 
             }
         }
-        
+      
         public bool readStudentFromFile(ref Student student,string userName,string password)
         {
             string docPath = Path.GetFullPath(fileName);
