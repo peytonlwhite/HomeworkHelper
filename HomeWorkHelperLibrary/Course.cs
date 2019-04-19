@@ -81,13 +81,13 @@ namespace HomeWorkHelperLibrary
                 _courseDay = value;
             }
         }
-        public Course(int courseNumber, string courseName,string time,DateTime date,string courseDes)
+        public Course(int courseNumber, string courseName,string time,DateTime date)
         {
             CourseNumber = courseNumber;
             CourseName = courseName;
             CourseTime = time;
             DateOfCourse = date;
-            CourseDescription = courseDes;
+            
         }
         public Course(string name)
         {

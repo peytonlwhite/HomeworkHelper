@@ -32,7 +32,7 @@ namespace HomeworkHelper
         {
             
             Course course = new Course(Convert.ToInt32(CourseNumberTB.Text), courseNameTB.Text,
-                                       MeetingTimeTB.Text,(DateTime)DateOfCourse.SelectedDate,CourseDescriptionTB.Text);
+                                       MeetingTimeTB.Text,(DateTime)DateOfCourse.SelectedDate);
             newStudent.AddCourse(course);
             ViewCourses viewCourse = new ViewCourses(newStudent);
             

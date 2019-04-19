@@ -22,6 +22,7 @@ namespace HomeworkHelper
     {
         Student student;
         int courseNums;
+        int index;
         public EditCourse(Student newStudent)
         {
             InitializeComponent();
@@ -36,7 +37,27 @@ namespace HomeworkHelper
         private void ComboBox1_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
            
-         
+            index = editCourseCB.SelectedIndex;
+
+            courseNameTb.Text = student.CourseList[index].CourseName;
+            courseNumberTB.Text = Convert.ToString(student.CourseList[index].CourseNumber);
+            courseMeetingTimeTB.Text = student.CourseList[index].CourseTime;
+            datepicker.SelectedDate = student.CourseList[index].DateOfCourse;
+
+
+        }
+
+        private void Edit_Button_Click(object sender, RoutedEventArgs e)
+        {
+            Course EditCourse = new Course(Convert.ToInt32(courseNumberTB.Text), courseNameTb.Text, courseMeetingTimeTB.Text, (DateTime)datepicker.SelectedDate);
+
+            student.CourseList[index] = EditCourse;
+
+            ViewCourses vc = new ViewCourses(student);
+            this.Close();
+            vc.Show();
+
+
         }
     }
 }
