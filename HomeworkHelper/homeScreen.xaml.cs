@@ -66,5 +66,12 @@ namespace HomeworkHelper
             this.Close();
             add.Show();
         }
+
+        private void edit_task_click(object sender, RoutedEventArgs e)
+        {
+            EditTask et = new EditTask(stu);
+            this.Close();
+            et.Show();
+        }
     }
 }
