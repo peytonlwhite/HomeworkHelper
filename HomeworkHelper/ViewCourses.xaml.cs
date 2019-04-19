@@ -52,5 +52,13 @@ namespace HomeworkHelper
             home.Show();
             
         }
+
+        private void Edit_course_click(object sender, RoutedEventArgs e)
+        {
+            EditCourse ec = new EditCourse(student);
+            this.Close();
+            ec.Show();
+
+        }
     }
 }

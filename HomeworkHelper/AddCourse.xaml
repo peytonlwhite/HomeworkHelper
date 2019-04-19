@@ -15,7 +15,6 @@
         <TextBox x:Name="MeetingTimeTB" HorizontalAlignment="Left" Height="23" Margin="142,108,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
         <Button Content="Add Course" HorizontalAlignment="Left" Margin="224,221,0,0" VerticalAlignment="Top" Width="75" Click="Add_Course_Button"/>
         <DatePicker x:Name="DateOfCourse" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="142,155,0,0" IsTodayHighlighted="False"/>
-        <TextBox x:Name="CourseDescriptionTB" HorizontalAlignment="Left" Height="108" Margin="319,23,0,0" TextWrapping="Wrap" Text="Course Description" VerticalAlignment="Top" Width="155"/>
 
     </Grid>
 </Window>
