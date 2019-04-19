@@ -151,18 +151,11 @@ namespace HomeWorkHelperLibrary
         /// </summary>
         /// <param name="Course">Which course to delete</param>
         /// <param name="student">Which student to delete it from</param>
-        public void DeleteCourse(Course Course)
+        public void DeleteCourse(int i)
         {
-            int i = 0;
-            foreach (Course c in _courseList)
-            {
-                if (c == Course)
-                {
-                    _courseList.RemoveAt(i);
-                }
-                i++;
-            }
-
+             
+             _courseList.RemoveAt(i);
+              
         }
        
 

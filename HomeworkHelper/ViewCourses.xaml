@@ -17,7 +17,7 @@
                 <MenuItem Header="Add Course" Click="Add_course_Click"/>
 
                 <MenuItem Header="Edit Course" Click="Edit_course_click"/>
-                <MenuItem Header="Delete Course"/>
+                <MenuItem Header="Delete Course" Click ="Delete_Course_Click"/>
                 <MenuItem Header= "View Courses"/>
             </MenuItem>
             <MenuItem Header="Task">

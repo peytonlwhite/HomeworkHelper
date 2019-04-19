@@ -60,5 +60,19 @@ namespace HomeworkHelper
             ec.Show();
 
         }
+
+        private void Delete_Course_Click(object sender, RoutedEventArgs e)
+        {
+            if (student.CourseList.Count == 0)
+            {
+                MessageBox.Show("There are no Courses to be deleted");
+            }
+            else
+            {
+                DeleteCourse dc = new DeleteCourse(student);
+                this.Close();
+                dc.Show();
+            }
+        }
     }
 }

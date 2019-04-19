@@ -22,6 +22,7 @@ namespace HomeworkHelper
     {
         Student student;
         int courseNums;
+       
         public DeleteCourse(Student newStudent)
         {
             InitializeComponent();
@@ -33,9 +34,16 @@ namespace HomeworkHelper
             }
         }
 
-        private void deleteCB_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        private void delete_button_Click(object sender, RoutedEventArgs e)
         {
+
+          
             
+                student.DeleteCourse(deleteCB.SelectedIndex);
+            
+            ViewCourses vc = new ViewCourses(student);
+            this.Close();
+            vc.Show();
         }
     }
 }
