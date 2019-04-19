@@ -17,7 +17,7 @@
                 <MenuItem Header="Add Task" Click="AddTask_Click">
                 </MenuItem>
                 <MenuItem Header="Edit Task" Click="edit_task_click"/>
-                <MenuItem Header="Delete Task"/>
+                <MenuItem Header="Delete Task" Click="delete_task_click"/>
                 <MenuItem Header= "View Tasks"/>
             </MenuItem>
             <MenuItem Header="Course">

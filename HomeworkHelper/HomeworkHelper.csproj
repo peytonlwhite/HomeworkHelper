@@ -68,6 +68,9 @@
     <Compile Include="DeleteCourse.xaml.cs">
       <DependentUpon>DeleteCourse.xaml</DependentUpon>
     </Compile>
+    <Compile Include="DeleteTask.xaml.cs">
+      <DependentUpon>DeleteTask.xaml</DependentUpon>
+    </Compile>
     <Compile Include="EditCourse.xaml.cs">
       <DependentUpon>EditCourse.xaml</DependentUpon>
     </Compile>
@@ -92,6 +95,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="DeleteCourse.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="DeleteTask.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

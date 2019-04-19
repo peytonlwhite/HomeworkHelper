@@ -24,12 +24,12 @@ namespace HomeworkHelper
     {
 
         public List<Task_> tasks { get; set; }
-        Student stu;
+        Student student;
         public homeScreen(Student newStudent)
         {
 
             InitializeComponent();
-            stu = newStudent;
+            student = newStudent;
             tasks = new List<Task_>();
 
             for (int i = 0; i < newStudent.TaskList.Count; i++)
@@ -46,7 +46,7 @@ namespace HomeworkHelper
         {
             
 
-            AddCourse addcourse = new AddCourse(stu);
+            AddCourse addcourse = new AddCourse(student);
 
             this.Close();
             addcourse.Show();
@@ -55,23 +55,39 @@ namespace HomeworkHelper
 
         private void View_CourseClick(object sender, RoutedEventArgs e)
         {
-            ViewCourses viewCourse = new ViewCourses(stu);
+            ViewCourses viewCourse = new ViewCourses(student);
             this.Close();
             viewCourse.Show();
         }
 
         private void AddTask_Click(object sender, RoutedEventArgs e)
         {
-            AddTask add = new AddTask(stu);
+            AddTask add = new AddTask(student);
             this.Close();
             add.Show();
         }
 
         private void edit_task_click(object sender, RoutedEventArgs e)
         {
-            EditTask et = new EditTask(stu);
+            EditTask et = new EditTask(student);
             this.Close();
             et.Show();
+        }
+
+        private void delete_task_click(object sender, RoutedEventArgs e)
+        {
+            if (student.TaskList.Count == 0)
+            {
+                MessageBox.Show("There are no Tasks to be deleted");
+            }
+            else
+            {
+                DeleteTask dt = new DeleteTask(student);
+                this.Close();
+                dt.Show();
+            }
+
+
         }
     }
 }

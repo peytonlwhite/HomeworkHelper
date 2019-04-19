@@ -122,17 +122,9 @@ namespace HomeWorkHelperLibrary
             return false;
             
         }
-        public void DeleteTask(Task_ task, Student student)
+        public void DeleteTask(int index)
         {
-            int i = 0;
-            foreach (Task_ t in student._taskList)
-            {
-                if (t == task)
-                {
-                    student._taskList.RemoveAt(i);
-                }
-                i++;
-            }
+            TaskList.RemoveAt(index);
 
         }
         public void AddTask(Task_ task)

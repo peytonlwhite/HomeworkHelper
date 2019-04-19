@@ -16,32 +16,30 @@ using System.Windows.Shapes;
 namespace HomeworkHelper
 {
     /// <summary>
-    /// Interaction logic for DeleteCourse.xaml
+    /// Interaction logic for DeleteTask.xaml
     /// </summary>
-    public partial class DeleteCourse : Window
+    public partial class DeleteTask : Window
     {
         Student student;
-        int courseNums;
-       
-        public DeleteCourse(Student newStudent)
+        string taskNames;
+        public DeleteTask(Student newStudent)
         {
             InitializeComponent();
             student = newStudent;
-            for (int i = 0; i < student.CourseList.Count; i++)
+            for (int i = 0; i < student.TaskList.Count; i++)
             {
-                courseNums = (student.CourseList[i].CourseNumber);
-                deleteCB.Items.Add(courseNums);
+                taskNames = (student.TaskList[i].TaskName);
+                deleteCB.Items.Add(taskNames);
             }
         }
 
         private void delete_button_Click(object sender, RoutedEventArgs e)
         {
-           
-            student.DeleteCourse(deleteCB.SelectedIndex);
-            
-            ViewCourses vc = new ViewCourses(student);
+            student.DeleteTask(deleteCB.SelectedIndex);
+
+            homeScreen hs = new homeScreen(student);
             this.Close();
-            vc.Show();
+            hs.Show();
         }
     }
 }
