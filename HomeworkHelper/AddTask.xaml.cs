@@ -39,18 +39,27 @@ namespace HomeworkHelper
             {
                 reocurring = true;
             }
-            Task_ task = new Task_(NameOfTaskTB.Text, Convert.ToString(TypeComboBox.Text), reocurring,
-                (DateTime)RemindOfTaskDP.SelectedDate,
-                                  (DateTime)DueDateOfTaskDP.SelectedDate, (DateTime)EndDateOfTaskDP.SelectedDate);
+            if (NameOfTaskTB.Text == "" || Convert.ToString(TypeComboBox.Text) == null
+                || (DateTime)RemindOfTaskDP.SelectedDate == null)
+            {
+                MessageBox.Show("Please enter all information");
 
-            //DateTime Start = StartDate = DateTime.Parse(n.Element("HireFromDate").Value).ToShortDateString()
+            }
+            else
+            {
+                Task_ task = new Task_(NameOfTaskTB.Text, Convert.ToString(TypeComboBox.Text), reocurring,
+                    (DateTime)RemindOfTaskDP.SelectedDate,
+                                      (DateTime)DueDateOfTaskDP.SelectedDate, (DateTime)EndDateOfTaskDP.SelectedDate);
 
-            student.AddTask(task);
 
-            homeScreen home = new homeScreen(student);
+                student.AddTask(task);
 
-            this.Close();
-            home.Show();
+
+                homeScreen home = new homeScreen(student);
+
+                this.Close();
+                home.Show();
+            }
 
         }
     }

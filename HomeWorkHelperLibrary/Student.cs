@@ -17,7 +17,6 @@ namespace HomeWorkHelperLibrary
         private string[] _securityQuestionAnswers;
         private  List<Course> _courseList = new List<Course>();
         private List<Task_> _taskList = new List<Task_>();
-
         
 
         // properties 
