@@ -5,6 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:HomeworkHelper"
         mc:Ignorable="d"
+        WindowStartupLocation="CenterScreen"
         Title="student" Height="400" Width="600">
     <Grid>
 
@@ -18,7 +19,6 @@
 
                 <MenuItem Header="Edit Course" Click="Edit_course_click"/>
                 <MenuItem Header="Delete Course" Click ="Delete_Course_Click"/>
-                <MenuItem Header= "View Courses"/>
             </MenuItem>
             <MenuItem Header="Task">
                 <MenuItem Header= "View Tasks" Click="View_Task_Click"/>

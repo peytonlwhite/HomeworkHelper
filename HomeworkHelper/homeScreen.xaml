@@ -5,6 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:HomeworkHelper"
         mc:Ignorable="d"
+        WindowStartupLocation="CenterScreen"
         Title="student" Height="400" Width="600">
     <Grid>
 
@@ -18,7 +19,6 @@
                 </MenuItem>
                 <MenuItem Header="Edit Task" Click="edit_task_click"/>
                 <MenuItem Header="Delete Task" Click="delete_task_click"/>
-                <MenuItem Header= "View Tasks"/>
             </MenuItem>
             <MenuItem Header="Course">
                 <MenuItem Header= "View Courses" Click = "View_CourseClick"/>
@@ -28,8 +28,8 @@
                     <GridView>
                         <GridViewColumn DisplayMemberBinding="{Binding TaskName}" Header="Task Name"  Width="150" />
                         <GridViewColumn DisplayMemberBinding="{Binding Type}" Header="Task Type" Width="150"/>
-                        <GridViewColumn DisplayMemberBinding="{Binding RemindTime}" Header="Remind Date" Width="150" />
                         <GridViewColumn DisplayMemberBinding="{Binding DueDate}" Header="Due Date" Width="150" />
+                        <GridViewColumn DisplayMemberBinding="{Binding DueDateEnd}" Header="End Date" Width="150" />
                     </GridView>
                 </ListView.View>
             </ListView>

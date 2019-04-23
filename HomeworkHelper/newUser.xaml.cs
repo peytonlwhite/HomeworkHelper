@@ -43,12 +43,19 @@ namespace HomeworkHelper
             student = new Student(firstNameTB.Text, usernameTB1.Text, passwordTB.Text,sQA);
             FileReadWrite file = new FileReadWrite();
 
-            file.AddStudentToFile(student);
-            this.Close();        
+            if (answerTB.Text.Trim() == "" || answerTB2.Text.Trim() == "" || firstNameTB.Text.Trim() == "" ||
+                usernameTB1.Text.Trim() == "" || passwordTB.Text.Trim() == "")
+            {
+                MessageBox.Show("Please enter all information");
+            }
+            else
+            {
+                file.AddStudentToFile(student);
+                this.Close();
+                
+            }       
             
         }
-
-     
 
     }
 

@@ -15,8 +15,6 @@ namespace HomeWorkHelperLibrary
         // member variables
         string _taskName;
         bool _reoccuringTask;
-        DateTime _remindTime;
-        DateTime _remindDate;
         DateTime _dueDate;
         DateTime _dueDateEnd;
         string _type;
@@ -68,29 +66,6 @@ namespace HomeWorkHelperLibrary
                 _dueDateEnd = value;
             }
         }
-        public DateTime RemindTime
-        {
-            get
-            {
-                return _remindTime;
-            }
-            private set
-            {
-                _remindTime = value;
-            }
-        }
-
-        public DateTime RemindDate
-        {
-            get
-            {
-                return _remindDate;
-            }
-            private set
-            {
-                _remindDate = value;
-            }
-        }
 
         public DateTime DueDate
         {
@@ -114,11 +89,10 @@ namespace HomeWorkHelperLibrary
         /// <param name="remindTime">The user sets to remind them about the task</param>
         /// <param name="dueDate">The user sets the date when the task is due</param>
         /// <param name="endDueDate">The user sets the date when the last day to turn in the task</param>
-        public Task_(string taskName,string type, bool reTask, DateTime remindTime,DateTime dueDate, DateTime endDueDate)
+        public Task_(string taskName,string type, bool reTask,DateTime dueDate, DateTime endDueDate)
         {
             TaskName = taskName;
             _reoccuringTask = reTask;
-            RemindTime = remindTime;
             DueDate = dueDate;
             DueDateEnd = endDueDate;
             Type = type;

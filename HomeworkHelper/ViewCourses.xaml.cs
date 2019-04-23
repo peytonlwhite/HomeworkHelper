@@ -55,17 +55,23 @@ namespace HomeworkHelper
 
         private void Edit_course_click(object sender, RoutedEventArgs e)
         {
-            EditCourse ec = new EditCourse(student);
-            this.Close();
-            ec.Show();
-
+            if (student.CourseList.Count == 0)
+            {
+                MessageBox.Show("There are no courses to be edited");
+            }
+            else
+            {
+                EditCourse ec = new EditCourse(student);
+                this.Close();
+                ec.Show();
+            }
         }
 
         private void Delete_Course_Click(object sender, RoutedEventArgs e)
         {
             if (student.CourseList.Count == 0)
             {
-                MessageBox.Show("There are no Courses to be deleted");
+                MessageBox.Show("There are no courses to be deleted");
             }
             else
             {

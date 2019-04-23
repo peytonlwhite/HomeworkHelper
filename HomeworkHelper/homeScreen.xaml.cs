@@ -69,16 +69,23 @@ namespace HomeworkHelper
 
         private void edit_task_click(object sender, RoutedEventArgs e)
         {
-            EditTask et = new EditTask(student);
-            this.Close();
-            et.Show();
+            if (student.TaskList.Count == 0)
+            {
+                MessageBox.Show("There are no tasks to be edited");
+            }
+            else
+            {
+                EditTask et = new EditTask(student);
+                this.Close();
+                et.Show();
+            }
         }
 
         private void delete_task_click(object sender, RoutedEventArgs e)
         {
             if (student.TaskList.Count == 0)
             {
-                MessageBox.Show("There are no Tasks to be deleted");
+                MessageBox.Show("There are no tasks to be deleted");
             }
             else
             {

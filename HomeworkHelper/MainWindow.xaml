@@ -5,6 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:HomeworkHelper"
         mc:Ignorable="d"
+        WindowStartupLocation="CenterScreen"
         Title="loginForm" Height="300" Width="400">
     <Grid>
         <Label Content="Username" HorizontalAlignment="Left" Margin="57,68,0,0" VerticalAlignment="Top"/>

@@ -30,14 +30,25 @@ namespace HomeworkHelper
         
         private void Add_Course_Button(object sender, RoutedEventArgs e)
         {
-            
-            Course course = new Course(Convert.ToInt32(CourseNumberTB.Text), courseNameTB.Text,
-                                       MeetingTimeTB.Text,(DateTime)DateOfCourse.SelectedDate);
-            newStudent.AddCourse(course);
-            ViewCourses viewCourse = new ViewCourses(newStudent);
-            
-            this.Close();
-            viewCourse.Show();
+
+            int courseNum = Convert.ToInt32(CourseNumberTB.Text);
+            string courseName = courseNameTB.Text;
+            string meetingTime = MeetingTimeTB.Text;
+            DateTime courseDate = (DateTime)DateOfCourse.SelectedDate;
+
+            if (courseNum <= 0 || courseName.Length == 0 || meetingTime.Length == 0)
+            {
+                MessageBox.Show("Please enter all information");
+            }
+            else
+            {
+                Course course = new Course(courseNum, courseName, meetingTime, courseDate);
+                newStudent.AddCourse(course);
+                ViewCourses viewCourse = new ViewCourses(newStudent);
+
+                this.Close();
+                viewCourse.Show();
+            }
             
         }
        

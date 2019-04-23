@@ -25,35 +25,30 @@ namespace HomeworkHelper
         {
             InitializeComponent();
             student = stu;
-            string time = "11:11";
-            var newTime = Convert.ToDateTime(time);
-            DateTime realTime = newTime;
 
         }
 
         private void AddTaskButton(object sender, RoutedEventArgs e)
         {
             bool reocurring = false;
-         
+            string taskName = NameOfTaskTB.Text;
+            string type = Convert.ToString(TypeComboBox.Text);
+            DateTime dueDate = (DateTime)DueDateOfTaskDP.SelectedDate;
+            DateTime endDate = (DateTime)EndDateOfTaskDP.SelectedDate;
+
             if (YesRB.IsChecked == true)
             {
                 reocurring = true;
             }
-            if (NameOfTaskTB.Text == "" || Convert.ToString(TypeComboBox.Text) == null
-                || (DateTime)RemindOfTaskDP.SelectedDate == null)
+            if (taskName.Length == 0 || type.Length == 0 || dueDate == null || endDate == null)
             {
                 MessageBox.Show("Please enter all information");
-
             }
             else
             {
-                Task_ task = new Task_(NameOfTaskTB.Text, Convert.ToString(TypeComboBox.Text), reocurring,
-                    (DateTime)RemindOfTaskDP.SelectedDate,
-                                      (DateTime)DueDateOfTaskDP.SelectedDate, (DateTime)EndDateOfTaskDP.SelectedDate);
-
+                Task_ task = new Task_(taskName, type, reocurring, dueDate, endDate);
 
                 student.AddTask(task);
-
 
                 homeScreen home = new homeScreen(student);
 

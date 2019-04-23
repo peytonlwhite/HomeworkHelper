@@ -45,7 +45,6 @@ namespace HomeworkHelper
             TypeComboBox.SelectedItem = student.TaskList[index].Type;
             DueDateOfTaskDP.SelectedDate = student.TaskList[index].DueDate;
             EndDateOfTaskDP.SelectedDate = student.TaskList[index].DueDateEnd;
-            RemindOfTaskDP.SelectedDate = student.TaskList[index].RemindTime;
             if (reocurring)
             {
                 YesRB.IsChecked = true;
@@ -65,10 +64,14 @@ namespace HomeworkHelper
 
         private void save_task_button(object sender, RoutedEventArgs e)
         {
-            Task_ editTask = new Task_(NameOfTaskTB.Text, Convert.ToString(TypeComboBox.Text), 
-                reocurring,
-                (DateTime) DueDateOfTaskDP.SelectedDate, (DateTime)EndDateOfTaskDP.SelectedDate, 
-                (DateTime)RemindOfTaskDP.SelectedDate);
+
+            string taskName = NameOfTaskTB.Text;
+            string type = Convert.ToString(TypeComboBox.Text);
+            DateTime dueDate = (DateTime)DueDateOfTaskDP.SelectedDate;
+            DateTime endDate = (DateTime)EndDateOfTaskDP.SelectedDate;
+
+            Task_ editTask = new Task_(taskName, type, reocurring, dueDate, endDate);
+  
             student.TaskList[index] = editTask;
 
             homeScreen hs = new homeScreen(student);

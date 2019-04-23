@@ -15,7 +15,6 @@
         </ComboBox>
         <TextBox x:Name="NameOfTaskTB" HorizontalAlignment="Left" Height="23" Margin="114,33,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
         <Label Content="Name:" HorizontalAlignment="Left" Margin="55,33,0,0" VerticalAlignment="Top"/>
-        <DatePicker x:Name="RemindOfTaskDP" HorizontalAlignment="Left" Margin="326,75,0,0" VerticalAlignment="Top"/>
         <Label x:Name="label" Content="Type:" HorizontalAlignment="Left" Margin="55,73,0,0" VerticalAlignment="Top"/>
         <Label x:Name="label1" Content="DueDate:" HorizontalAlignment="Left" Margin="55,117,0,0" VerticalAlignment="Top"/>
         <RadioButton x:Name="YesRB" Content="Yes" HorizontalAlignment="Left" Margin="318,119,0,0" VerticalAlignment="Top"/>
@@ -23,7 +22,6 @@
         <Label x:Name="label3" Content="EndDate:" HorizontalAlignment="Left" Margin="243,30,0,0" VerticalAlignment="Top"/>
         <DatePicker x:Name="EndDateOfTaskDP" HorizontalAlignment="Left" Margin="326,33,0,0" VerticalAlignment="Top"/>
         <DatePicker x:Name="DueDateOfTaskDP" HorizontalAlignment="Left" Margin="132,121,0,0" VerticalAlignment="Top"/>
-        <Label x:Name="label5" Content="RemindDate:" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="243,73,0,0"/>
         <Label x:Name="label2" Content="Reocurring:" HorizontalAlignment="Left" Margin="243,119,0,0" VerticalAlignment="Top"/>
         <Button x:Name="AddTask1" Content="Add Task" HorizontalAlignment="Left" Margin="212,188,0,0" VerticalAlignment="Top" Width="75" Click="AddTaskButton"/>
 
