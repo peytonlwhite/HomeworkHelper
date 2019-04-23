@@ -64,19 +64,32 @@ namespace HomeworkHelper
 
         private void save_task_button(object sender, RoutedEventArgs e)
         {
+            if (editTaskCB == null)
+            {
+                MessageBox.Show("Plese select a task to edit");
+            }
+            else {
+                string taskName = NameOfTaskTB.Text;
+                string type = Convert.ToString(TypeComboBox.Text);
+                DateTime dueDate = (DateTime)DueDateOfTaskDP.SelectedDate;
+                DateTime endDate = (DateTime)EndDateOfTaskDP.SelectedDate;
 
-            string taskName = NameOfTaskTB.Text;
-            string type = Convert.ToString(TypeComboBox.Text);
-            DateTime dueDate = (DateTime)DueDateOfTaskDP.SelectedDate;
-            DateTime endDate = (DateTime)EndDateOfTaskDP.SelectedDate;
+                if (taskName.Length == 0 || type.Length == 0 || dueDate == null || endDate == null)
+                {
+                    MessageBox.Show("Please enter all information");
+                }
+                else
+                {
 
-            Task_ editTask = new Task_(taskName, type, reocurring, dueDate, endDate);
-  
-            student.TaskList[index] = editTask;
+                    Task_ editTask = new Task_(taskName, type, reocurring, dueDate, endDate);
 
-            homeScreen hs = new homeScreen(student);
-            this.Close();
-            hs.Show();
+                    student.TaskList[index] = editTask;
+
+                    homeScreen hs = new homeScreen(student);
+                    this.Close();
+                    hs.Show();
+                }
+            }
         }
     }
 }

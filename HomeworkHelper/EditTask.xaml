@@ -5,6 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:HomeworkHelper"
         mc:Ignorable="d"
+        WindowStartupLocation="CenterScreen"
         Title="EditTask" Height="300" Width="600">
     <Grid>
         <ComboBox Margin="34,70,0,0" Name="editTaskCB"  HorizontalAlignment="Left" VerticalAlignment="Top" Width="85" Height="30" RenderTransformOrigin="0.884,1.625" SelectionChanged="editTaskCB_SelectionChanged"/>
