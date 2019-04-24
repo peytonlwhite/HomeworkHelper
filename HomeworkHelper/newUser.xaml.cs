@@ -41,7 +41,7 @@ namespace HomeworkHelper
         {
             string[] sQA = { answerTB.Text.Trim(), answerTB2.Text.Trim() };
             student = new Student(firstNameTB.Text, usernameTB1.Text, passwordTB.Text,sQA);
-            FileReadWrite file = new FileReadWrite();
+           
 
             if (answerTB.Text.Trim() == "" || answerTB2.Text.Trim() == "" || firstNameTB.Text.Trim() == "" ||
                 usernameTB1.Text.Trim() == "" || passwordTB.Text.Trim() == "")
@@ -50,7 +50,9 @@ namespace HomeworkHelper
             }
             else
             {
+                FileReadWrite file = new FileReadWrite();
                 file.AddStudentToFile(student);
+                
                 this.Close();
                 
             }       

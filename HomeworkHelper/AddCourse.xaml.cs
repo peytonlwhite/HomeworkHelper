@@ -22,6 +22,7 @@ namespace HomeworkHelper
     {
         Student newStudent;
        
+       
         public AddCourse(Student stu)
         {
             InitializeComponent();
@@ -30,7 +31,7 @@ namespace HomeworkHelper
         
         private void Add_Course_Button(object sender, RoutedEventArgs e)
         {
-
+            FileReadWrite file = new FileReadWrite();
             int courseNum = Convert.ToInt32(CourseNumberTB.Text);
             string courseName = courseNameTB.Text;
             string meetingTime = MeetingTimeTB.Text;
@@ -44,6 +45,7 @@ namespace HomeworkHelper
             {
                 Course course = new Course(courseNum, courseName, meetingTime, courseDate);
                 newStudent.AddCourse(course);
+                file.AddCourseToFile(newStudent,course);
                 ViewCourses viewCourse = new ViewCourses(newStudent);
 
                 this.Close();

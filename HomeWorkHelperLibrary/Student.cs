@@ -103,7 +103,7 @@ namespace HomeWorkHelperLibrary
             Name = name;
             UserName = userName;
             Password = passWord;
-            sQA = SecurityQuestionAnswers;
+            SecurityQuestionAnswers = sQA;
         }
 
        /// <summary>

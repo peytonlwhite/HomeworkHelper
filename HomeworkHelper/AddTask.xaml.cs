@@ -35,6 +35,7 @@ namespace HomeworkHelper
             string type = Convert.ToString(TypeComboBox.Text);
             DateTime dueDate = (DateTime)DueDateOfTaskDP.SelectedDate;
             DateTime endDate = (DateTime)EndDateOfTaskDP.SelectedDate;
+           
 
             if (YesRB.IsChecked == true)
             {
@@ -47,9 +48,10 @@ namespace HomeworkHelper
             else
             {
                 Task_ task = new Task_(taskName, type, reocurring, dueDate, endDate);
-
+ 
                 student.AddTask(task);
-
+                FileReadWrite file = new FileReadWrite();
+                file.AddTaskToFile(student, task);
                 homeScreen home = new homeScreen(student);
 
                 this.Close();
