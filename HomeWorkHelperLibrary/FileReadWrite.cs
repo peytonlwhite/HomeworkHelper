@@ -125,140 +125,223 @@ namespace HomeWorkHelperLibrary
 
 
             string docPath = Path.GetFullPath(fileName);
-             Stream file = new FileStream(docPath, FileMode.Open, FileAccess.ReadWrite, FileShare.ReadWrite);
-             reader = new StreamReader(file);
+            Stream file = new FileStream(docPath, FileMode.Open, FileAccess.ReadWrite, FileShare.ReadWrite);
+            reader = new StreamReader(file);
             outputFile = new StreamWriter(file);
-            string fileUserName = "";
-            string filePassword = "";
+            
             using (reader)
             {
 
+                reader.ReadToEnd();
 
-                string username = "";
-                string buffer = "";
-                string password = "";
+                using (outputFile)
+                {
+                    outputFile.WriteLine();
+                    outputFile.Write(student.UserName);
+                    outputFile.Write('c');
+                    outputFile.Write(',');
+                    outputFile.Write(course.CourseName);
+                    outputFile.Write(',');
+                    outputFile.Write(course.CourseNumber);
+                    outputFile.Write(',');
+                    outputFile.Write(course.CourseTime);
+                    outputFile.Write(',');
+                    outputFile.Write(course.DateOfCourse);
+                    outputFile.Write(';');
+
+
+
+                }
+            }
+
+        }
+
+
+
+        public void AddTaskToFile(Student student, Task_ task)
+        {
+
+
+            string docPath = Path.GetFullPath(fileName);
+            Stream file = new FileStream(docPath, FileMode.Open, FileAccess.ReadWrite, FileShare.ReadWrite);
+            reader = new StreamReader(file);
+            outputFile = new StreamWriter(file);
+
+            using (reader)
+            {
+
+                reader.ReadToEnd();
+
+                using (outputFile)
+                {
+                    outputFile.WriteLine();
+                    outputFile.Write(student.UserName);
+                    outputFile.Write('t');
+                    outputFile.Write(',');
+                    outputFile.Write(task.TaskName);
+                    outputFile.Write(',');
+                    outputFile.Write(task.Type);
+                    outputFile.Write(',');
+                    outputFile.Write(task.ReoccuringTask);
+                    outputFile.Write(',');
+                    outputFile.Write(task.DueDate);
+                    outputFile.Write(',');
+                    outputFile.Write(task.DueDate);
+                    outputFile.Write(';');
+
+
+                }
+            }
+
+        }
+
+
+
+   public void ReadDataFromFile(ref Student student)
+        {
+
+            string docPath = Path.GetFullPath(fileName);
+            Stream file = new FileStream(docPath, FileMode.Open, FileAccess.ReadWrite, FileShare.ReadWrite);
+            reader = new StreamReader(file);
+            Task_ newTask;
+            Course newCourse;
+            string username = "";
+            
+            string restOfLine = "";
+
+            using (reader)
+            {
                 while (!reader.EndOfStream)
                 {
+
                     while((char)reader.Peek() != ',')
                     {
                         username += (char)reader.Read();
                     }
-                    buffer += (char)reader.Read();
-                    while ((char)reader.Peek() != ',')
+                    restOfLine += (char)reader.Read();
+                    Console.WriteLine(username);
+                    if(username.Trim() == (student.UserName + 'c'))
                     {
-                        password += (char)reader.Read();
+                        string courseName = "";
+                        string courseNumber = "";
+                        string courseTime = "";
+                        string courseDate =  "";
+
+                        while((char)reader.Peek() != ',')
+                        {
+                            courseName += (char)reader.Read();
+                        }
+      
+                        restOfLine += (char)reader.Read();
+
+                        while ((char)reader.Peek() != ',')
+                        {
+                            courseNumber += (char)reader.Read();
+                        }
+                        restOfLine += (char)reader.Read();
+                        Console.WriteLine(courseNumber);
+                        while ((char)reader.Peek() != ',')
+                        {
+                            courseTime += (char)reader.Read();
+                        }
+                        restOfLine += (char)reader.Read();
+
+                        while ((char)reader.Peek() != ';')
+                        {
+                            courseDate += (char)reader.Read();
+                        }
+                        restOfLine += (char)reader.Read();
+
+                        newCourse = new Course(Convert.ToInt32(courseNumber), courseName, courseTime, Convert.ToDateTime(courseDate));
+
+                        student.AddCourse(newCourse);
+
+                        courseName = "";
+                        courseNumber = "";
+                        courseTime = "";
+                        courseDate = "";
+
+
+
                     }
-                    buffer += (char)reader.Read();
-                    while((char)reader.Peek() != ';')
+
+                    else if (username.Trim() == (student.UserName + 't'))
                     {
-                        buffer += (char)reader.Read();
+                        string taskName = "";
+                        string taskType = "";
+                        string TaskReocurring = "";
+                        string TaskStartDate = "";
+                        string TaskEndDate = "";
+
+
+                        while ((char)reader.Peek() != ',')
+                        {
+                            taskName += (char)reader.Read();
+                        }
+                        restOfLine += (char)reader.Read();
+
+                        while ((char)reader.Peek() != ',')
+                        {
+                            taskType += (char)reader.Read();
+                        }
+                        restOfLine += (char)reader.Read();
+
+                        while ((char)reader.Peek() != ',')
+                        {
+                            TaskReocurring += (char)reader.Read();
+                        }
+                        restOfLine += (char)reader.Read();
+
+                        while ((char)reader.Peek() != ',')
+                        {
+                            TaskStartDate += (char)reader.Read();
+                        }
+                        restOfLine += (char)reader.Read();
+
+                        while ((char)reader.Peek() != ';')
+                        {
+                            TaskEndDate += (char)reader.Read();
+                        }
+                        restOfLine += (char)reader.Read();
+
+                        newTask = new Task_(taskName, taskType, Convert.ToBoolean(TaskReocurring), Convert.ToDateTime(TaskStartDate), Convert.ToDateTime(TaskEndDate));
+
+                        student.AddTask(newTask);
+
+                        taskName = "";
+                        taskType = "";
+                        TaskReocurring = "";
+                        TaskStartDate = "";
+                        TaskEndDate = "";
+
+
                     }
-                    buffer += (char)reader.Read();
+                    else
+                    {
+                        while ((char)reader.Peek() != ';')
+                        {
+                            restOfLine += (char)reader.Read();
+                            Console.WriteLine(1);
+                        }
+                        restOfLine += (char)reader.Read();
+                        
+                    }
+                    username = "";
 
                     
-                        if (student.Password == password.Trim() && student.UserName == username.Trim())
-                        {
-                        using (outputFile)
-                        {
-                            outputFile.WriteLine();
-                            outputFile.Write(student.UserName);
-                            outputFile.Write('c');
-                            outputFile.Write(',');
-                            outputFile.Write(course.CourseName);
-                            outputFile.Write(',');
-                            outputFile.Write(course.CourseNumber);
-                            outputFile.Write(',');
-                            outputFile.Write(course.CourseTime);
-                            outputFile.Write(',');
-                            outputFile.Write(course.DateOfCourse);
-                            outputFile.Write(';');
-                            break;
-                        }
-                    }
 
-
+                    Console.WriteLine("end");
                 }
-            }
 
-               
-            
-
-        }
-
-                
-
-        public void AddTaskToFile(Student student, Task_ course)
-        {
-
-            string docPath = Path.GetFullPath(fileName);
-            reader = new StreamReader(docPath,true);
-            
-            
-
-            using (reader)
-            {
-
-                while (!reader.EndOfStream)
-                {
-                    string fileUserName = "";
-                    string filePassWord = "";
-                    string restOfLine = "";
-
-                    Console.WriteLine(1);
-                    while ((char)reader.Peek() != ',')
-                    {
-                        fileUserName += (char)reader.Read();
-                        Console.WriteLine(2);
-
-                    }
-                    string buffer = "";
-                    buffer += (char)reader.Read();
-                    while ((char)reader.Peek() != ',')
-                    {
-                        filePassWord += (char)reader.Read();
-                        Console.WriteLine(3);
-                    }
-
-
-                    restOfLine = Convert.ToString(reader.ReadLine());
-                    Console.WriteLine(student.Password);
-                    Console.WriteLine(filePassWord);
-
-                    Console.WriteLine(student.UserName);
-                    Console.WriteLine(fileUserName);
-
-                    if (student.Password.Trim() == filePassWord.Trim() && student.UserName.Trim() == fileUserName.Trim())
-                    {
-                        reader.Close();
-                        using (outputFile = new StreamWriter(docPath, true))
-                        {
-
-
-                            // outputFile.Write(course.CourseNumber);
-                            outputFile.Write(',');
-                            // outputFile.Write(course.CourseName);
-                            outputFile.Write(',');
-                            // outputFile.Write(course.CourseTime);
-                            outputFile.Write(',');
-                            // outputFile.Write(course.DateOfCourse);
-                            outputFile.Write(';');
-
-                            outputFile.Close();
-                            break;
-                        }
-
-
-
-                    }
-
-
-                }
+                reader.Close();
 
 
             }
 
+            
 
         }
+
 
 
 

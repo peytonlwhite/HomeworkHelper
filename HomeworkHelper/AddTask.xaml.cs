@@ -54,6 +54,7 @@ namespace HomeworkHelper
                 file.AddTaskToFile(student, task);
                 homeScreen home = new homeScreen(student);
 
+
                 this.Close();
                 home.Show();
             }

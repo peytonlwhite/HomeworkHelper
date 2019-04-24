@@ -50,7 +50,9 @@ namespace HomeworkHelper
               {
                   if (file.readStudentFromFile(ref student, usernameTB.Text.Trim(), passwordBox.Password.Trim()))
                   {
+                      file.ReadDataFromFile(ref student);
                       homeScreen studentForm = new homeScreen(student);
+                      
                       this.Close();
                       studentForm.ShowDialog();
 
