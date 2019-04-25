@@ -128,7 +128,7 @@ namespace HomeWorkHelperLibrary
             Stream file = new FileStream(docPath, FileMode.Open, FileAccess.ReadWrite, FileShare.ReadWrite);
             reader = new StreamReader(file);
             outputFile = new StreamWriter(file);
-            
+
             using (reader)
             {
 
@@ -197,7 +197,7 @@ namespace HomeWorkHelperLibrary
 
 
 
-   public void ReadDataFromFile(ref Student student)
+        public void ReadDataFromFile(ref Student student)
         {
 
             string docPath = Path.GetFullPath(fileName);
@@ -206,32 +206,46 @@ namespace HomeWorkHelperLibrary
             Task_ newTask;
             Course newCourse;
             string username = "";
-            
             string restOfLine = "";
+            int lines = 0;
+            while (!reader.EndOfStream)
+            {
+                reader.ReadLine();
+                lines++;
+            }
+            reader.BaseStream.Position = 0;
+
 
             using (reader)
             {
                 while (!reader.EndOfStream)
                 {
-
-                    while((char)reader.Peek() != ',')
+                    Console.WriteLine(5);
+                    while ((char)reader.Peek() != ',')
                     {
                         username += (char)reader.Read();
+                        Console.WriteLine(6);
                     }
+
                     restOfLine += (char)reader.Read();
+
                     Console.WriteLine(username);
-                    if(username.Trim() == (student.UserName + 'c'))
+                    if(lines == 1)
+                    {
+                        break;
+                    }
+                    if (username.Trim() == (student.UserName + 'c'))
                     {
                         string courseName = "";
                         string courseNumber = "";
                         string courseTime = "";
-                        string courseDate =  "";
-
-                        while((char)reader.Peek() != ',')
+                        string courseDate = "";
+                        Console.WriteLine(7);
+                        while ((char)reader.Peek() != ',')
                         {
                             courseName += (char)reader.Read();
                         }
-      
+
                         restOfLine += (char)reader.Read();
 
                         while ((char)reader.Peek() != ',')
@@ -260,7 +274,7 @@ namespace HomeWorkHelperLibrary
                         courseNumber = "";
                         courseTime = "";
                         courseDate = "";
-
+                        Console.WriteLine(8);
 
 
                     }
@@ -282,6 +296,7 @@ namespace HomeWorkHelperLibrary
 
                         while ((char)reader.Peek() != ',')
                         {
+                            Console.WriteLine(9);
                             taskType += (char)reader.Read();
                         }
                         restOfLine += (char)reader.Read();
@@ -316,19 +331,23 @@ namespace HomeWorkHelperLibrary
 
 
                     }
+                   
                     else
                     {
+
                         while ((char)reader.Peek() != ';')
                         {
                             restOfLine += (char)reader.Read();
                             Console.WriteLine(1);
+
                         }
+                       
                         restOfLine += (char)reader.Read();
-                        
+                        Console.WriteLine(10);
                     }
                     username = "";
 
-                    
+
 
                     Console.WriteLine("end");
                 }
@@ -338,7 +357,7 @@ namespace HomeWorkHelperLibrary
 
             }
 
-            
+
 
         }
 
@@ -366,7 +385,7 @@ namespace HomeWorkHelperLibrary
 
 
 
-    
+
 
 
 
