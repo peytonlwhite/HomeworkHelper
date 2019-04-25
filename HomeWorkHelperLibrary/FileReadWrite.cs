@@ -208,12 +208,8 @@ namespace HomeWorkHelperLibrary
             string username = "";
             string restOfLine = "";
             int lines = 0;
-            while (!reader.EndOfStream)
-            {
-                reader.ReadLine();
-                lines++;
-            }
-            reader.BaseStream.Position = 0;
+           
+            
 
 
             using (reader)
@@ -221,19 +217,17 @@ namespace HomeWorkHelperLibrary
                 while (!reader.EndOfStream)
                 {
                     Console.WriteLine(5);
+
                     while ((char)reader.Peek() != ',')
                     {
                         username += (char)reader.Read();
                         Console.WriteLine(6);
+
                     }
 
                     restOfLine += (char)reader.Read();
 
-                    Console.WriteLine(username);
-                    if(lines == 1)
-                    {
-                        break;
-                    }
+
                     if (username.Trim() == (student.UserName + 'c'))
                     {
                         string courseName = "";
@@ -331,20 +325,30 @@ namespace HomeWorkHelperLibrary
 
 
                     }
-                   
-                    else
+                    else if (username == student.UserName)
                     {
-
                         while ((char)reader.Peek() != ';')
                         {
                             restOfLine += (char)reader.Read();
                             Console.WriteLine(1);
 
                         }
-                       
+
                         restOfLine += (char)reader.Read();
-                        Console.WriteLine(10);
+
                     }
+                    else
+                    {
+                        while ((char)reader.Peek() != ';')
+                        {
+                            restOfLine += (char)reader.Read();
+                            Console.WriteLine(1);
+
+                        }
+
+                        restOfLine += (char)reader.Read();
+                    }
+                   
                     username = "";
 
 
