@@ -14,6 +14,9 @@
         <Button Content="Login" HorizontalAlignment="Left" Margin="102,208,0,0" VerticalAlignment="Top" Width="75" Click="Button_Click_1"/>
         <Button x:Name="newUser" Content="New User" HorizontalAlignment="Left" Margin="231,208,0,0" VerticalAlignment="Top" Width="75" Click="Button_Click" RenderTransformOrigin="1.16,0.364"/>
         <PasswordBox x:Name="passwordBox" HorizontalAlignment="Left" Height="22" Margin="152,136,0,0" VerticalAlignment="Top" Width="120"/>
-
+        <Grid.Background>
+            <ImageBrush ImageSource="pack://application:,,,/HomeworkHelper;component/Resources/apsu.png" />
+        </Grid.Background>
     </Grid>
+    
 </Window>
