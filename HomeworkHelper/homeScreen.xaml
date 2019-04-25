@@ -6,7 +6,7 @@
         xmlns:local="clr-namespace:HomeworkHelper"
         mc:Ignorable="d"
         WindowStartupLocation="CenterScreen"
-        Title="student" Height="400" Width="600">
+        Title="{Binding TitleOf}" Height="400" Width="600">
     <Grid>
 
         <Grid.ColumnDefinitions>

@@ -52,8 +52,10 @@ namespace HomeworkHelper
             {
                 FileReadWrite file = new FileReadWrite();
                 file.AddStudentToFile(student);
-                
+                homeScreen hs = new homeScreen(student);
+
                 this.Close();
+                hs.Show();
                 
             }       
             

@@ -22,6 +22,7 @@ namespace HomeworkHelper
     {
 
         Student student;
+        Task_ oldTask;
         string taskNames;
         int index;
         bool reocurring;
@@ -59,7 +60,18 @@ namespace HomeworkHelper
                 reocurring = true;
             }
             else
+            {
                 reocurring = false;
+            }
+
+            for(int i =0; i < student.TaskList.Count; i++)
+            {
+                if(student.TaskList[i].TaskName == NameOfTaskTB.Text)
+                {
+                    oldTask = student.TaskList[i];
+                }
+            }
+            
         }
 
         private void save_task_button(object sender, RoutedEventArgs e)
@@ -73,6 +85,7 @@ namespace HomeworkHelper
                 string type = Convert.ToString(TypeComboBox.Text);
                 DateTime dueDate = (DateTime)DueDateOfTaskDP.SelectedDate;
                 DateTime endDate = (DateTime)EndDateOfTaskDP.SelectedDate;
+                FileReadWrite file = new FileReadWrite();
 
                 if (taskName.Length == 0 || type.Length == 0 || dueDate == null || endDate == null)
                 {
@@ -82,9 +95,9 @@ namespace HomeworkHelper
                 {
 
                     Task_ editTask = new Task_(taskName, type, reocurring, dueDate, endDate);
-
+                    
                     student.TaskList[index] = editTask;
-
+                    file.EditTaskToFile(student,editTask, oldTask);
                     homeScreen hs = new homeScreen(student);
                     this.Close();
                     hs.Show();

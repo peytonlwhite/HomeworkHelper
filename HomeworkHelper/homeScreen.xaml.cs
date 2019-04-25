@@ -25,10 +25,13 @@ namespace HomeworkHelper
 
         public List<Task_> tasks { get; set; }
         Student student;
+        
         public homeScreen(Student newStudent)
         {
 
             InitializeComponent();
+            
+
             student = newStudent;
             tasks = new List<Task_>();
 
@@ -38,10 +41,12 @@ namespace HomeworkHelper
             }
 
             DataContext = this;
-           
-        }
-    
+            
 
+
+        }
+       
+        
         private void AddCourse_Click(object sender, RoutedEventArgs e)
         {
             
