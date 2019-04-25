@@ -517,8 +517,9 @@ namespace HomeWorkHelperLibrary
                 Console.WriteLine(line);
             }
             Console.WriteLine("count::::" + quotelist[1]);
-
+            Console.WriteLine(oldCourse.CourseName);
             reader = new StreamReader(file);
+
 
             int LineToDelete = 0;
             string courseName = "";
@@ -584,6 +585,7 @@ namespace HomeWorkHelperLibrary
 
             File.WriteAllLines(docPath, quotelist.ToArray());
             
+
         }
 
 
@@ -593,7 +595,7 @@ namespace HomeWorkHelperLibrary
             string docPath = Path.GetFullPath(fileName);
             List<string> quotelist = File.ReadAllLines(docPath).ToList(); ;
             Stream file = new FileStream(docPath, FileMode.Open, FileAccess.ReadWrite, FileShare.ReadWrite);
-
+            Console.WriteLine(oldTask.TaskName);
             foreach (var line in quotelist)
             {
                 Console.WriteLine(line);
