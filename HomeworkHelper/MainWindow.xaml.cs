@@ -16,19 +16,14 @@ using System.Windows.Shapes;
 namespace HomeworkHelper
 {
 
-    /// <summary>
-    /// Interaction logic for loginForm.xaml
-    /// </summary>
+ 
     public partial class loginForm : Window
     {
         private Student student = new Student();
-        //  private FileReadWrite file;
+
         public loginForm()
         {
             InitializeComponent();
-
-
-
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)
@@ -36,7 +31,6 @@ namespace HomeworkHelper
             newUser newU = new newUser();
             this.Close();
             newU.ShowDialog();
-
         }
 
         private void Button_Click_1(object sender, RoutedEventArgs e)

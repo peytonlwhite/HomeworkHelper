@@ -5,18 +5,19 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:HomeworkHelper"
         mc:Ignorable="d"
-        Title="EditCourse" Height="400" Width="600">
+        WindowStartupLocation="CenterScreen"
+        Title="EditCourse" Height="350" Width="600">
     <Grid>
-        <ComboBox Margin="34,70,0,0" Name="editCourseCB"  HorizontalAlignment="Left" VerticalAlignment="Top" Width="85" Height="30" SelectionChanged="ComboBox1_SelectionChanged" RenderTransformOrigin="0.884,1.625"/>
-        <Label Content="Select the course number you wish to delete" HorizontalAlignment="Left" Margin="34,31,0,0" VerticalAlignment="Top"/>
-        <Label Content="Course Name:" HorizontalAlignment="Left" Margin="323,56,0,0" VerticalAlignment="Top"/>
-        <TextBox x:Name="courseNameTb" HorizontalAlignment="Left" Height="23" Margin="426,56,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
-        <Label Content="Course Number:" HorizontalAlignment="Left" Margin="311,107,0,0" VerticalAlignment="Top"/>
+        <ComboBox Margin="94,133,0,0" Name="editCourseCB"  HorizontalAlignment="Left" VerticalAlignment="Top" Width="86" Height="30" SelectionChanged="ComboBox1_SelectionChanged" RenderTransformOrigin="0.884,1.625"/>
+        <Label Content="Select the course number you wish to edit" HorizontalAlignment="Left" Margin="30,77,0,0" VerticalAlignment="Top"/>
+        <Label Content="Course Name:" HorizontalAlignment="Left" Margin="323,39,0,0" VerticalAlignment="Top"/>
+        <TextBox x:Name="courseNameTb" HorizontalAlignment="Left" Height="23" Margin="426,34,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+        <Label Content="Course Number:" HorizontalAlignment="Left" Margin="311,100,0,0" VerticalAlignment="Top"/>
         <TextBox x:Name="courseMeetingTimeTB" HorizontalAlignment="Left" Height="23" Margin="426,157,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
-        <Label Content="Course Metting Time:" HorizontalAlignment="Left" Margin="284,157,0,0" VerticalAlignment="Top"/>
-        <TextBox x:Name="courseNumberTB" HorizontalAlignment="Left" Height="23" Margin="426,110,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
-        <DatePicker x:Name="datepicker" HorizontalAlignment="Left" Margin="426,244,0,0" VerticalAlignment="Top"/>
-        <Button x:Name="Edit_Course" Content="Edit Course" HorizontalAlignment="Left" Margin="279,300,0,0" VerticalAlignment="Top" Width="75" Click="Edit_Button_Click"/>
+        <Label Content="Course Meeting Time:" HorizontalAlignment="Left" Margin="284,157,0,0" VerticalAlignment="Top"/>
+        <TextBox x:Name="courseNumberTB" HorizontalAlignment="Left" Height="23" Margin="426,95,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+        <DatePicker x:Name="datepicker" HorizontalAlignment="Left" Margin="426,203,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.591,-1.062"/>
+        <Button x:Name="Edit_Course" Content="Edit Course" HorizontalAlignment="Left" Margin="232,238,0,0" VerticalAlignment="Top" Width="75" Click="Edit_Button_Click"/>
 
     </Grid>
 </Window>

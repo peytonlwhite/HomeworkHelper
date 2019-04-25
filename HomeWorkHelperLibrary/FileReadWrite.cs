@@ -11,7 +11,7 @@ namespace HomeWorkHelperLibrary
     {
 
         string fileName;
-        static int numofStudents =0;
+        static int numofStudents = 0;
         static int numOfAddFiles = 0;
         StreamReader reader;
         StreamWriter outputFile;
@@ -37,33 +37,33 @@ namespace HomeWorkHelperLibrary
             else
             {
 
-                
+
                 using (outputFile)
                 {
-                    
-                    outputFile.WriteLine(student.UserName + ',' + student.Password + ',' + student.Name + ',' + 
+
+                    outputFile.WriteLine(student.UserName + ',' + student.Password + ',' + student.Name + ',' +
                                           student.SecurityQuestionAnswers[0] + ',' + student.SecurityQuestionAnswers[1]
                                           + ';');
                     //outputFile.Write(",");
-                  //  outputFile.Write(student.Password);
-                  //  outputFile.Write(",");
-                  //  outputFile.Write(student.Name);
-                  //  outputFile.Write(",");
-                  //  for (int i = 0; i < student.SecurityQuestionAnswers.Count(); i++)
-                  //  {
-                   //     outputFile.Write(student.SecurityQuestionAnswers[i]);
+                    //  outputFile.Write(student.Password);
+                    //  outputFile.Write(",");
+                    //  outputFile.Write(student.Name);
+                    //  outputFile.Write(",");
+                    //  for (int i = 0; i < student.SecurityQuestionAnswers.Count(); i++)
+                    //  {
+                    //     outputFile.Write(student.SecurityQuestionAnswers[i]);
 
-                   //     if (i == student.SecurityQuestionAnswers.Count() - 1)
-                   //     {
-                   //         outputFile.Write(";");
+                    //     if (i == student.SecurityQuestionAnswers.Count() - 1)
+                    //     {
+                    //         outputFile.Write(";");
 
-                   //     }
-                   //     else
+                    //     }
+                    //     else
                     //    {
-                           // outputFile.Write(",");
+                    // outputFile.Write(",");
                     //    }
-                   // }
-                   
+                    // }
+
 
                 }
                 outputFile.Close();
@@ -113,15 +113,10 @@ namespace HomeWorkHelperLibrary
                         student.UserName = userName;
                         student.Password = password;
                         return true;
-
                     }
-
                 }
-
                 return false;
             }
-
-
         }
 
         public void AddCourseToFile(Student student, Course course)
@@ -152,17 +147,11 @@ namespace HomeWorkHelperLibrary
                     outputFile.Write(',');
                     outputFile.Write(course.DateOfCourse);
                     outputFile.Write(';');
-
-
-
                 }
             }
-
         }
 
-
-
-        public void AddTaskToFile(Student student, Task_ task,bool edit)
+        public void AddTaskToFile(Student student, Task_ task, bool edit)
         {
 
 
@@ -173,30 +162,28 @@ namespace HomeWorkHelperLibrary
 
             using (reader)
             {
-
                 reader.ReadToEnd();
 
                 using (outputFile)
                 {
-                    
-                    
+
                     outputFile.WriteLine(student.UserName + 't' + ',' + task.TaskName + ',' + task.Type + ','
                                          + task.ReoccuringTask + ',' + task.DueDate + ',' + task.DueDateEnd + ';');
 
-                  /* outputFile.Write('t');
-                   outputFile.Write(',');
-                   outputFile.Write(task.TaskName);
-                   outputFile.Write(',');
-                   outputFile.Write(task.Type);
-                   outputFile.Write(',');
-                   outputFile.Write(task.ReoccuringTask);
-                   outputFile.Write(',');
-                   outputFile.Write(task.DueDate);
-                   outputFile.Write(',');
-                   outputFile.Write(task.DueDate);
-                   outputFile.Write(';');
+                    /* outputFile.Write('t');
+                     outputFile.Write(',');
+                     outputFile.Write(task.TaskName);
+                     outputFile.Write(',');
+                     outputFile.Write(task.Type);
+                     outputFile.Write(',');
+                     outputFile.Write(task.ReoccuringTask);
+                     outputFile.Write(',');
+                     outputFile.Write(task.DueDate);
+                     outputFile.Write(',');
+                     outputFile.Write(task.DueDate);
+                     outputFile.Write(';');
 
-    */
+      */
                 }
             }
             numOfAddFiles++;
@@ -215,9 +202,6 @@ namespace HomeWorkHelperLibrary
             string username = "";
             string restOfLine = "";
             int lines = 0;
-           
-            
-
 
             using (reader)
             {
@@ -225,7 +209,7 @@ namespace HomeWorkHelperLibrary
                 {
 
                     Console.WriteLine(5);
-                    
+
                     while ((char)reader.Peek() != ',')
                     {
                         username += (char)reader.Read();
@@ -234,7 +218,6 @@ namespace HomeWorkHelperLibrary
                         {
                             return;
                         }
-                        
                     }
 
                     restOfLine += (char)reader.Read();
@@ -280,7 +263,6 @@ namespace HomeWorkHelperLibrary
                         courseNumber = "";
                         courseTime = "";
                         courseDate = "";
-                        Console.WriteLine(8);
 
 
                     }
@@ -334,8 +316,6 @@ namespace HomeWorkHelperLibrary
                         TaskReocurring = "";
                         TaskStartDate = "";
                         TaskEndDate = "";
-
-
                     }
                     else
                     {
@@ -343,47 +323,32 @@ namespace HomeWorkHelperLibrary
                         {
                             restOfLine += (char)reader.Read();
                             Console.WriteLine(1);
-
                         }
 
                         restOfLine += (char)reader.Read();
                     }
-                   
+
                     username = "";
-
-
-
-                    Console.WriteLine("end");
                 }
 
                 reader.Close();
-
-
             }
-
-
-
         }
 
-
-        public void EditTaskToFile(Student student,Task_ editTask,Task_ oldTask)
+        public void EditTaskToFile(Student student, Task_ editTask, Task_ oldTask)
         {
 
             string docPath = Path.GetFullPath(fileName);
-            List<string> quotelist = File.ReadAllLines(docPath).ToList();;
+            List<string> quotelist = File.ReadAllLines(docPath).ToList(); ;
             Stream file = new FileStream(docPath, FileMode.Open, FileAccess.ReadWrite, FileShare.ReadWrite);
-            
-            foreach(var line in quotelist)
+
+            foreach (var line in quotelist)
             {
                 Console.WriteLine(line);
             }
             Console.WriteLine("count::::" + quotelist[1]);
 
             reader = new StreamReader(file);
-            
-
-           
-           
 
             int LineToDelete = 0;
             string taskName = "";
@@ -391,7 +356,7 @@ namespace HomeWorkHelperLibrary
             string buffer = "";
             using (reader)
             {
-               
+
                 while (!reader.EndOfStream)
                 {
 
@@ -402,19 +367,19 @@ namespace HomeWorkHelperLibrary
                     buffer += (char)reader.Read();
 
                     Console.WriteLine(userName);
-                    if(userName.Trim() == student.UserName + 't')
+                    if (userName.Trim() == student.UserName + 't')
                     {
-                        while((char)reader.Peek() != ',')
+                        while ((char)reader.Peek() != ',')
                         {
                             taskName += (char)reader.Read();
                         }
                         buffer += (char)reader.Read();
-                        
-                        if(taskName.Trim() == oldTask.TaskName)
+
+                        if (taskName.Trim() == oldTask.TaskName)
                         {
                             break;
                         }
-                        else 
+                        else
                         {
                             while ((char)reader.Peek() != ';')
                             {
@@ -422,27 +387,22 @@ namespace HomeWorkHelperLibrary
                             }
                             buffer += (char)reader.Read();
                             LineToDelete++;
-                    taskName = "";
-                            
-                          
+                            taskName = "";
+
                         }
                     }
                     else
                     {
-                        while((char)reader.Peek() != ';')
+                        while ((char)reader.Peek() != ';')
                         {
                             buffer += (char)reader.Read();
                         }
                         buffer += (char)reader.Read();
                         LineToDelete++;
                     }
-                    
+
                     userName = "";
-
-                    
                 }
-
-
             }
 
             Console.WriteLine("linessssssss" + LineToDelete);
@@ -451,23 +411,10 @@ namespace HomeWorkHelperLibrary
             {
                 Console.WriteLine(line);
             }
-            
+
             File.WriteAllLines(docPath, quotelist.ToArray());
-            AddTaskToFile(student, editTask,true);
-
-
-
+            AddTaskToFile(student, editTask, true);
         }
-
-
-
-
-
-
-
-
-
-
     }
 }
 
