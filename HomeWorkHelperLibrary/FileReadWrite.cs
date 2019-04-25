@@ -492,7 +492,7 @@ namespace HomeWorkHelperLibrary
             }
 
             Console.WriteLine("linessssssss" + LineToDelete);
-            quotelist.RemoveAt(LineToDelete);
+            quotelist.RemoveAt(LineToDelete - 1);
             foreach (var line in quotelist)
             {
                 Console.WriteLine(line);
@@ -577,7 +577,7 @@ namespace HomeWorkHelperLibrary
             }
 
             Console.WriteLine("linessssssss" + LineToDelete);
-            quotelist.RemoveAt(LineToDelete);
+            quotelist.RemoveAt(LineToDelete - 1);
             foreach (var line in quotelist)
             {
                 Console.WriteLine(line);

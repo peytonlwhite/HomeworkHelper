@@ -13,7 +13,7 @@
         <Label Content="Course Number:" HorizontalAlignment="Left" Margin="50,80,0,0" VerticalAlignment="Top"/>
         <Label Content="Class Meeting Time:" HorizontalAlignment="Left" Margin="38,124,0,0" VerticalAlignment="Top"/>
         <TextBox x:Name="courseNameTB" HorizontalAlignment="Left" Height="23" Margin="200,40,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
-        <TextBox x:Name="CourseNumberTB" HorizontalAlignment="Left" Height="23" Margin="200,80,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+        <TextBox x:Name="CourseNumberTB" HorizontalAlignment="Left" PreviewTextInput="courseNameTB_PreviewTextInput" Height="23" Margin="200,80,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
         <TextBox x:Name="MeetingTimeTB" HorizontalAlignment="Left" Height="23" Margin="200,127,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
         <Button Content="Add Course" HorizontalAlignment="Left" Margin="140,220,0,0" VerticalAlignment="Top" Width="76" Click="Add_Course_Button"/>
         <DatePicker x:Name="DateOfCourse" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="218,170,0,0" IsTodayHighlighted="False"/>
