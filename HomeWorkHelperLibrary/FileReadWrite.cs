@@ -135,7 +135,10 @@ namespace HomeWorkHelperLibrary
 
                 using (outputFile)
                 {
-                    outputFile.WriteLine();
+
+                    outputFile.WriteLine(student.UserName + 'c' + ',' + course.CourseName + ',' + course.CourseNumber + ',' + course.CourseTime
+                                          + ',' + course.DateOfCourse + ';');
+                  /* outputFile.WriteLine();
                     outputFile.Write(student.UserName);
                     outputFile.Write('c');
                     outputFile.Write(',');
@@ -147,11 +150,12 @@ namespace HomeWorkHelperLibrary
                     outputFile.Write(',');
                     outputFile.Write(course.DateOfCourse);
                     outputFile.Write(';');
+                    */
                 }
             }
         }
 
-        public void AddTaskToFile(Student student, Task_ task, bool edit)
+        public void AddTaskToFile(Student student, Task_ task)
         {
 
 
@@ -413,8 +417,95 @@ namespace HomeWorkHelperLibrary
             }
 
             File.WriteAllLines(docPath, quotelist.ToArray());
-            AddTaskToFile(student, editTask, true);
+            AddTaskToFile(student, editTask);
         }
+
+
+        public void EditCourseToFile(Student student, Course oldCourse, Course newCourse)
+        {
+
+            string docPath = Path.GetFullPath(fileName);
+            List<string> quotelist = File.ReadAllLines(docPath).ToList(); ;
+            Stream file = new FileStream(docPath, FileMode.Open, FileAccess.ReadWrite, FileShare.ReadWrite);
+
+            foreach (var line in quotelist)
+            {
+                Console.WriteLine(line);
+            }
+            Console.WriteLine("count::::" + quotelist[1]);
+
+            reader = new StreamReader(file);
+
+            int LineToDelete = 0;
+            string courseName = "";
+            string userName = "";
+            string buffer = "";
+            using (reader)
+            {
+
+                while (!reader.EndOfStream)
+                {
+
+                    while ((char)reader.Peek() != ',')
+                    {
+                        userName += (char)reader.Read();
+                    }
+                    buffer += (char)reader.Read();
+
+                    Console.WriteLine(userName);
+                    if (userName.Trim() == student.UserName + 'c')
+                    {
+                        while ((char)reader.Peek() != ',')
+                        {
+                            courseName += (char)reader.Read();
+                        }
+                        buffer += (char)reader.Read();
+
+                        if (courseName.Trim() == oldCourse.CourseName)
+                        {
+                            break;
+                        }
+                        else
+                        {
+                            while ((char)reader.Peek() != ';')
+                            {
+                                buffer += (char)reader.Read();
+                            }
+                            buffer += (char)reader.Read();
+                            LineToDelete++;
+                            courseName = "";
+
+                        }
+                    }
+                    else
+                    {
+                        while ((char)reader.Peek() != ';')
+                        {
+                            buffer += (char)reader.Read();
+                        }
+                        buffer += (char)reader.Read();
+                        LineToDelete++;
+                    }
+
+                    userName = "";
+                }
+            }
+
+            Console.WriteLine("linessssssss" + LineToDelete);
+            quotelist.RemoveAt(LineToDelete);
+            foreach (var line in quotelist)
+            {
+                Console.WriteLine(line);
+            }
+
+            File.WriteAllLines(docPath, quotelist.ToArray());
+            AddCourseToFile(student, newCourse);
+        }
+
+
+
+
+
     }
 }
 

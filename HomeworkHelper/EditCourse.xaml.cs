@@ -21,6 +21,7 @@ namespace HomeworkHelper
     public partial class EditCourse : Window
     {
         Student student;
+        Course oldCourse;
         int courseNums;
         int index;
         public EditCourse(Student newStudent)
@@ -44,6 +45,14 @@ namespace HomeworkHelper
             courseMeetingTimeTB.Text = student.CourseList[index].CourseTime;
             datepicker.SelectedDate = student.CourseList[index].DateOfCourse;
 
+            for(int i =0;i < student.CourseList.Count; i++)
+            {
+                if(student.CourseList[i].CourseName == courseNameTb.Text)
+                {
+                    oldCourse = student.CourseList[i];
+                }
+            }
+
 
         }
 
@@ -56,10 +65,12 @@ namespace HomeworkHelper
             }
             else
             {
+                FileReadWrite file = new FileReadWrite();
                 Course EditCourse = new Course(Convert.ToInt32(courseNumberTB.Text),
                     courseNameTb.Text, courseMeetingTimeTB.Text, (DateTime)datepicker.SelectedDate);
 
                 student.CourseList[index] = EditCourse;
+                file.EditCourseToFile(student, oldCourse, EditCourse);
 
                 ViewCourses vc = new ViewCourses(student);
                 this.Close();
