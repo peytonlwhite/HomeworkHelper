@@ -26,7 +26,7 @@
             <ListView ItemsSource="{Binding tasks}" Height="352" Width="585" x:Name="lVTask">
                 <ListView.View>
                     <GridView>
-                        <GridViewColumn DisplayMemberBinding="{Binding TaskName}" Header="Task Name"  Width="150" />
+                        <GridViewColumn DisplayMemberBinding="{Binding TaskName}" Header="Task Name"  Width="150"/>
                         <GridViewColumn DisplayMemberBinding="{Binding Type}" Header="Task Type" Width="150"/>
                         <GridViewColumn DisplayMemberBinding="{Binding DueDate}" Header="Due Date" Width="150" />
                         <GridViewColumn DisplayMemberBinding="{Binding DueDateEnd}" Header="End Date" Width="150" />

@@ -168,7 +168,9 @@
       <Name>HomeWorkHelperLibrary</Name>
     </ProjectReference>
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Resource Include="Resources\book.jpg" />
+  </ItemGroup>
   <ItemGroup>
     <Resource Include="Resources\apsu.png" />
   </ItemGroup>
