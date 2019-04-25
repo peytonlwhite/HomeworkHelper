@@ -21,38 +21,46 @@ namespace HomeworkHelper
     public partial class AddCourse : Window
     {
         Student newStudent;
-       
-       
+
+
         public AddCourse(Student stu)
         {
             InitializeComponent();
             newStudent = stu;
         }
-        
+
         private void Add_Course_Button(object sender, RoutedEventArgs e)
         {
-            FileReadWrite file = new FileReadWrite();
-            int courseNum = Convert.ToInt32(CourseNumberTB.Text);
-            string courseName = courseNameTB.Text;
-            string meetingTime = MeetingTimeTB.Text;
-            DateTime courseDate = (DateTime)DateOfCourse.SelectedDate;
-
-            if (courseNum <= 0 || courseName.Length == 0 || meetingTime.Length == 0)
+            if (CourseNumberTB.Text == "" || courseNameTB.Text == ""
+                || MeetingTimeTB.Text == "" || DateOfCourse.SelectedDate == null)
             {
                 MessageBox.Show("Please enter all information");
             }
             else
             {
+
+                FileReadWrite file = new FileReadWrite();
+                int courseNum = Convert.ToInt32(CourseNumberTB.Text);
+                string courseName = courseNameTB.Text;
+                string meetingTime = MeetingTimeTB.Text;
+                DateTime courseDate = (DateTime)DateOfCourse.SelectedDate;
+
+
                 Course course = new Course(courseNum, courseName, meetingTime, courseDate);
                 newStudent.AddCourse(course);
-                file.AddCourseToFile(newStudent,course);
+                file.AddCourseToFile(newStudent, course);
                 ViewCourses viewCourse = new ViewCourses(newStudent);
 
                 this.Close();
                 viewCourse.Show();
             }
-            
         }
-       
+
+        private void button_Click(object sender, RoutedEventArgs e)
+        {
+            ViewCourses vs = new ViewCourses(newStudent);
+            this.Close();
+            vs.Show();
+        }
     }
 }

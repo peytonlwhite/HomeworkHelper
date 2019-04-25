@@ -17,7 +17,8 @@
         <Label Content="Course Meeting Time:" HorizontalAlignment="Left" Margin="284,157,0,0" VerticalAlignment="Top"/>
         <TextBox x:Name="courseNumberTB" HorizontalAlignment="Left" Height="23" Margin="426,95,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
         <DatePicker x:Name="datepicker" HorizontalAlignment="Left" Margin="426,203,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.591,-1.062"/>
-        <Button x:Name="Edit_Course" Content="Edit Course" HorizontalAlignment="Left" Margin="232,238,0,0" VerticalAlignment="Top" Width="75" Click="Edit_Button_Click"/>
+        <Button x:Name="Edit_Course" Content="Edit Course" HorizontalAlignment="Left" Margin="172,238,0,0" VerticalAlignment="Top" Width="76" Click="Edit_Button_Click"/>
+        <Button x:Name="button" Content="Cancel" HorizontalAlignment="Left" Margin="311,238,0,0" VerticalAlignment="Top" Width="75" Click="button_Click"/>
 
     </Grid>
 </Window>

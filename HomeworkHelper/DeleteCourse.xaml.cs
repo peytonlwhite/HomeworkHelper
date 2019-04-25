@@ -43,5 +43,12 @@ namespace HomeworkHelper
             this.Close();
             vc.Show();
         }
+
+        private void button_Click(object sender, RoutedEventArgs e)
+        {
+            ViewCourses vs = new ViewCourses(student);
+            this.Close();
+            vs.Show();
+        }
     }
 }
