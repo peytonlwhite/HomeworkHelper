@@ -40,13 +40,20 @@ namespace HomeworkHelper
 
         private void delete_button_Click(object sender, RoutedEventArgs e)
         {
-            FileReadWrite file = new FileReadWrite();
-            oldTask = student.TaskList[deleteCB.SelectedIndex];
-            student.DeleteTask(deleteCB.SelectedIndex);
-            file.DeleteTaskToFile(student,oldTask);
-            homeScreen hs = new homeScreen(student);
-            this.Close();
-            hs.Show();
+            if (deleteCB.SelectedItem == null)
+            {
+                MessageBox.Show("Please select an item to delete.");
+            }
+            else
+            {
+                FileReadWrite file = new FileReadWrite();
+                oldTask = student.TaskList[deleteCB.SelectedIndex];
+                student.DeleteTask(deleteCB.SelectedIndex);
+                file.DeleteTaskToFile(student, oldTask);
+                homeScreen hs = new homeScreen(student);
+                this.Close();
+                hs.Show();
+            }
         }
 
         private void button_Click(object sender, RoutedEventArgs e)

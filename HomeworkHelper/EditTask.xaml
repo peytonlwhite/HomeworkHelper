@@ -16,8 +16,9 @@
             <ComboBox Margin="114,73,0,0" x:Name="TypeComboBox" HorizontalAlignment="Left" VerticalAlignment="Top" Width="120" Height="26">
                 <ComboBoxItem Content="Quiz"/>
                 <ComboBoxItem Content="Test"/>
+                <ComboBoxItem Content="Task"/>
                 <ComboBoxItem Content="Paper"/>
-                <ComboBoxItem Content="Test"/>
+                <ComboBoxItem Content="Assignment"/>
             </ComboBox>
             <TextBox x:Name="NameOfTaskTB" HorizontalAlignment="Left" Height="23" Margin="114,33,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
             <Label Content="Name:" HorizontalAlignment="Left" Margin="55,33,0,0" VerticalAlignment="Top"/>
