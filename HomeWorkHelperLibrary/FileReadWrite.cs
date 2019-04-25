@@ -11,7 +11,8 @@ namespace HomeWorkHelperLibrary
     {
 
         string fileName;
-
+        static int numofStudents =0;
+        static int numOfAddFiles = 0;
         StreamReader reader;
         StreamWriter outputFile;
 
@@ -36,36 +37,39 @@ namespace HomeWorkHelperLibrary
             else
             {
 
-                // Append text to an existing file named "WriteLines.txt".
+                
                 using (outputFile)
                 {
-                    outputFile.WriteLine();
-                    outputFile.Write(student.UserName);
-                    outputFile.Write(",");
-                    outputFile.Write(student.Password);
-                    outputFile.Write(",");
-                    outputFile.Write(student.Name);
-                    outputFile.Write(",");
-                    for (int i = 0; i < student.SecurityQuestionAnswers.Count(); i++)
-                    {
-                        outputFile.Write(student.SecurityQuestionAnswers[i]);
+                    
+                    outputFile.WriteLine(student.UserName + ',' + student.Password + ',' + student.Name + ',' + 
+                                          student.SecurityQuestionAnswers[0] + ',' + student.SecurityQuestionAnswers[1]
+                                          + ';');
+                    //outputFile.Write(",");
+                  //  outputFile.Write(student.Password);
+                  //  outputFile.Write(",");
+                  //  outputFile.Write(student.Name);
+                  //  outputFile.Write(",");
+                  //  for (int i = 0; i < student.SecurityQuestionAnswers.Count(); i++)
+                  //  {
+                   //     outputFile.Write(student.SecurityQuestionAnswers[i]);
 
-                        if (i == student.SecurityQuestionAnswers.Count() - 1)
-                        {
-                            outputFile.Write(";");
+                   //     if (i == student.SecurityQuestionAnswers.Count() - 1)
+                   //     {
+                   //         outputFile.Write(";");
 
-                        }
-                        else
-                        {
-                            outputFile.Write(",");
-                        }
-                    }
-                    outputFile.WriteLine();
+                   //     }
+                   //     else
+                    //    {
+                           // outputFile.Write(",");
+                    //    }
+                   // }
+                   
 
                 }
                 outputFile.Close();
             }
             outputFile.Close();
+            numofStudents++;
         }
 
         public bool readStudentFromFile(ref Student student, string userName, string password)
@@ -158,7 +162,7 @@ namespace HomeWorkHelperLibrary
 
 
 
-        public void AddTaskToFile(Student student, Task_ task)
+        public void AddTaskToFile(Student student, Task_ task,bool edit)
         {
 
 
@@ -174,25 +178,28 @@ namespace HomeWorkHelperLibrary
 
                 using (outputFile)
                 {
-                    outputFile.WriteLine();
-                    outputFile.Write(student.UserName);
-                    outputFile.Write('t');
-                    outputFile.Write(',');
-                    outputFile.Write(task.TaskName);
-                    outputFile.Write(',');
-                    outputFile.Write(task.Type);
-                    outputFile.Write(',');
-                    outputFile.Write(task.ReoccuringTask);
-                    outputFile.Write(',');
-                    outputFile.Write(task.DueDate);
-                    outputFile.Write(',');
-                    outputFile.Write(task.DueDate);
-                    outputFile.Write(';');
+                    
+                    
+                    outputFile.WriteLine(student.UserName + 't' + ',' + task.TaskName + ',' + task.Type + ','
+                                         + task.ReoccuringTask + ',' + task.DueDate + ',' + task.DueDateEnd + ';');
 
+                  /* outputFile.Write('t');
+                   outputFile.Write(',');
+                   outputFile.Write(task.TaskName);
+                   outputFile.Write(',');
+                   outputFile.Write(task.Type);
+                   outputFile.Write(',');
+                   outputFile.Write(task.ReoccuringTask);
+                   outputFile.Write(',');
+                   outputFile.Write(task.DueDate);
+                   outputFile.Write(',');
+                   outputFile.Write(task.DueDate);
+                   outputFile.Write(';');
 
+    */
                 }
             }
-
+            numOfAddFiles++;
         }
 
 
@@ -217,12 +224,16 @@ namespace HomeWorkHelperLibrary
                 while (!reader.EndOfStream)
                 {
                     Console.WriteLine(5);
-
+                    
                     while ((char)reader.Peek() != ',')
                     {
                         username += (char)reader.Read();
                         Console.WriteLine(6);
-
+                        if (reader.EndOfStream)
+                        {
+                            return;
+                        }
+                        
                     }
 
                     restOfLine += (char)reader.Read();
@@ -325,18 +336,6 @@ namespace HomeWorkHelperLibrary
 
 
                     }
-                    else if (username == student.UserName)
-                    {
-                        while ((char)reader.Peek() != ';')
-                        {
-                            restOfLine += (char)reader.Read();
-                            Console.WriteLine(1);
-
-                        }
-
-                        restOfLine += (char)reader.Read();
-
-                    }
                     else
                     {
                         while ((char)reader.Peek() != ';')
@@ -380,7 +379,7 @@ namespace HomeWorkHelperLibrary
             Console.WriteLine("count::::" + quotelist[1]);
 
             reader = new StreamReader(file);
-            outputFile = new StreamWriter(file);
+            
 
            
            
@@ -402,19 +401,19 @@ namespace HomeWorkHelperLibrary
                     buffer += (char)reader.Read();
 
                     Console.WriteLine(userName);
-                    if(userName == student.UserName + 't')
+                    if(userName.Trim() == student.UserName + 't')
                     {
                         while((char)reader.Peek() != ',')
                         {
                             taskName += (char)reader.Read();
                         }
                         buffer += (char)reader.Read();
-                       
-                        if(taskName == oldTask.TaskName)
+                        
+                        if(taskName.Trim() == oldTask.TaskName)
                         {
                             break;
                         }
-                        else
+                        else 
                         {
                             while ((char)reader.Peek() != ';')
                             {
@@ -422,9 +421,12 @@ namespace HomeWorkHelperLibrary
                             }
                             buffer += (char)reader.Read();
                             LineToDelete++;
+                    taskName = "";
+                            
+                          
                         }
                     }
-                    else if(userName != student.UserName + 't')
+                    else
                     {
                         while((char)reader.Peek() != ';')
                         {
@@ -433,17 +435,24 @@ namespace HomeWorkHelperLibrary
                         buffer += (char)reader.Read();
                         LineToDelete++;
                     }
+                    
+                    userName = "";
 
-
+                    
                 }
 
 
             }
-            
-           
+
+            Console.WriteLine("linessssssss" + LineToDelete);
             quotelist.RemoveAt(LineToDelete);
+            foreach (var line in quotelist)
+            {
+                Console.WriteLine(line);
+            }
+            
             File.WriteAllLines(docPath, quotelist.ToArray());
-            AddTaskToFile(student, editTask);
+            AddTaskToFile(student, editTask,true);
 
 
 

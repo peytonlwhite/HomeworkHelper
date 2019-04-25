@@ -51,7 +51,7 @@ namespace HomeworkHelper
  
                 student.AddTask(task);
                 FileReadWrite file = new FileReadWrite();
-                file.AddTaskToFile(student, task);
+                file.AddTaskToFile(student, task,false);
                 homeScreen home = new homeScreen(student);
 
 
