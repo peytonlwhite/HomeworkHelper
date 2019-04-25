@@ -36,12 +36,18 @@ namespace HomeworkHelper
 
         private void delete_button_Click(object sender, RoutedEventArgs e)
         {
-           
-            student.DeleteCourse(deleteCB.SelectedIndex);
-            
-            ViewCourses vc = new ViewCourses(student);
-            this.Close();
-            vc.Show();
+            if (deleteCB.SelectedIndex <= 0)
+            {
+                MessageBox.Show("Please select an item to delete.");
+            }
+            else
+            {
+                student.DeleteCourse(deleteCB.SelectedIndex);
+
+                ViewCourses vc = new ViewCourses(student);
+                this.Close();
+                vc.Show();
+            }
         }
 
         private void button_Click(object sender, RoutedEventArgs e)

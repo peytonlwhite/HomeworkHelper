@@ -41,5 +41,12 @@ namespace HomeworkHelper
             this.Close();
             hs.Show();
         }
+
+        private void button_Click(object sender, RoutedEventArgs e)
+        {
+            homeScreen home = new homeScreen(student);
+            this.Close();
+            home.Show();
+        }
     }
 }

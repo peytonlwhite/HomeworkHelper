@@ -29,7 +29,8 @@
             <DatePicker x:Name="EndDateOfTaskDP" HorizontalAlignment="Left" Margin="326,33,0,0" VerticalAlignment="Top"/>
             <DatePicker x:Name="DueDateOfTaskDP" HorizontalAlignment="Left" Margin="132,121,0,0" VerticalAlignment="Top"/>
             <Label x:Name="label2" Content="Reocurring:" HorizontalAlignment="Left" Margin="243,119,0,0" VerticalAlignment="Top"/>
-            <Button x:Name="AddTask1" Content="Save Task" HorizontalAlignment="Left" Margin="212,188,0,0" VerticalAlignment="Top" Width="75" Click="save_task_button"/>
+            <Button x:Name="AddTask1" Content="Save Task" HorizontalAlignment="Left" Margin="0,179,0,0" VerticalAlignment="Top" Width="75" Click="save_task_button"/>
+            <Button x:Name="button" Content="Cancel" HorizontalAlignment="Left" Margin="147,179,0,0" VerticalAlignment="Top" Width="75" Click="button_Click"/>
 
         </Grid>
 

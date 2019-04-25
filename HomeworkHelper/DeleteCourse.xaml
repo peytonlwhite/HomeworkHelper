@@ -5,6 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:HomeworkHelper"
         mc:Ignorable="d"
+        WindowStartupLocation="CenterScreen"
         Title="DeleteCourse" Height="300" Width="300">
     <Grid>
         <ComboBox x:Name="deleteCB" HorizontalAlignment="Left" Margin="94,97,0,0" VerticalAlignment="Top" Width="120" />

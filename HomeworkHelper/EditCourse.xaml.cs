@@ -49,15 +49,23 @@ namespace HomeworkHelper
 
         private void Edit_Button_Click(object sender, RoutedEventArgs e)
         {
-            Course EditCourse = new Course(Convert.ToInt32(courseNumberTB.Text), courseNameTb.Text, courseMeetingTimeTB.Text, (DateTime)datepicker.SelectedDate);
+            if (courseNumberTB.Text == "" || courseNumberTB.Text == "" ||
+                courseMeetingTimeTB.Text == "" || datepicker.SelectedDate == null)
+            {
+                MessageBox.Show("Please enter all information.");
+            }
+            else
+            {
+                Course EditCourse = new Course(Convert.ToInt32(courseNumberTB.Text),
+                    courseNameTb.Text, courseMeetingTimeTB.Text, (DateTime)datepicker.SelectedDate);
 
-            student.CourseList[index] = EditCourse;
+                student.CourseList[index] = EditCourse;
 
-            ViewCourses vc = new ViewCourses(student);
-            this.Close();
-            vc.Show();
+                ViewCourses vc = new ViewCourses(student);
+                this.Close();
+                vc.Show();
 
-
+            }
         }
 
         private void button_Click(object sender, RoutedEventArgs e)

@@ -30,35 +30,44 @@ namespace HomeworkHelper
 
         private void AddTaskButton(object sender, RoutedEventArgs e)
         {
-            bool reocurring = false;
-            string taskName = NameOfTaskTB.Text;
-            string type = Convert.ToString(TypeComboBox.Text);
-            DateTime dueDate = (DateTime)DueDateOfTaskDP.SelectedDate;
-            DateTime endDate = (DateTime)EndDateOfTaskDP.SelectedDate;
-           
-
-            if (YesRB.IsChecked == true)
-            {
-                reocurring = true;
-            }
-            if (taskName.Length == 0 || type.Length == 0 || dueDate == null || endDate == null)
+            if (NameOfTaskTB.Text == "" || TypeComboBox.Text == "" || DueDateOfTaskDP.SelectedDate == null
+                || EndDateOfTaskDP.SelectedDate == null)
             {
                 MessageBox.Show("Please enter all information");
             }
             else
             {
+                bool reocurring = false;
+                string taskName = NameOfTaskTB.Text;
+                string type = Convert.ToString(TypeComboBox.Text);
+                DateTime dueDate = (DateTime)DueDateOfTaskDP.SelectedDate;
+                DateTime endDate = (DateTime)EndDateOfTaskDP.SelectedDate;
+
+
+                if (YesRB.IsChecked == true)
+                {
+                    reocurring = true;
+                }
+
                 Task_ task = new Task_(taskName, type, reocurring, dueDate, endDate);
- 
+
                 student.AddTask(task);
                 FileReadWrite file = new FileReadWrite();
-                file.AddTaskToFile(student, task,false);
+                file.AddTaskToFile(student, task, false);
                 homeScreen home = new homeScreen(student);
 
 
                 this.Close();
                 home.Show();
             }
+        }
 
+
+        private void button_Click(object sender, RoutedEventArgs e)
+        {
+            homeScreen home = new homeScreen(student);
+            this.Close();
+            home.Show();
         }
     }
 }
