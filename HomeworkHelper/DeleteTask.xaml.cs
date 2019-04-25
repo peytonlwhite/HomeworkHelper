@@ -21,6 +21,7 @@ namespace HomeworkHelper
     public partial class DeleteTask : Window
     {
         Student student;
+        Task_ oldTask;
         string taskNames;
         public DeleteTask(Student newStudent)
         {
@@ -31,12 +32,18 @@ namespace HomeworkHelper
                 taskNames = (student.TaskList[i].TaskName);
                 deleteCB.Items.Add(taskNames);
             }
+
+            
+
+
         }
 
         private void delete_button_Click(object sender, RoutedEventArgs e)
         {
+            FileReadWrite file = new FileReadWrite();
+            oldTask = student.TaskList[deleteCB.SelectedIndex];
             student.DeleteTask(deleteCB.SelectedIndex);
-
+            file.DeleteTaskToFile(student,oldTask);
             homeScreen hs = new homeScreen(student);
             this.Close();
             hs.Show();

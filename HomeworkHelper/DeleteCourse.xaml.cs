@@ -21,6 +21,7 @@ namespace HomeworkHelper
     public partial class DeleteCourse : Window
     {
         Student student;
+        Course oldCourse;
         int courseNums;
        
         public DeleteCourse(Student newStudent)
@@ -36,14 +37,18 @@ namespace HomeworkHelper
 
         private void delete_button_Click(object sender, RoutedEventArgs e)
         {
-            if (deleteCB.SelectedIndex <= 0)
+            if (deleteCB.SelectedItem == null)
             {
                 MessageBox.Show("Please select an item to delete.");
             }
             else
             {
+                oldCourse = student.CourseList[deleteCB.SelectedIndex];
                 student.DeleteCourse(deleteCB.SelectedIndex);
+                FileReadWrite file = new FileReadWrite();
 
+
+                file.DeleteCourseToFile(student, oldCourse);
                 ViewCourses vc = new ViewCourses(student);
                 this.Close();
                 vc.Show();
