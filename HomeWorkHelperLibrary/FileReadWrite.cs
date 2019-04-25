@@ -223,6 +223,7 @@ namespace HomeWorkHelperLibrary
             {
                 while (!reader.EndOfStream)
                 {
+
                     Console.WriteLine(5);
                     
                     while ((char)reader.Peek() != ',')
