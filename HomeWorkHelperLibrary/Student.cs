@@ -105,22 +105,6 @@ namespace HomeWorkHelperLibrary
             Password = passWord;
             SecurityQuestionAnswers = sQA;
         }
-
-       /// <summary>
-       /// Checks for password when logging in
-       /// </summary>
-       /// <param name="passWord">the password that the user inputed in login</param>
-       /// <returns>returns true if passwords match return false if not</returns>
-     public bool CheckForPassword(string passWord)
-        {
-            if(Password == passWord)
-            {
-                return true;
-            }
-
-            return false;
-            
-        }
         public void DeleteTask(int index)
         {
             TaskList.RemoveAt(index);
@@ -135,26 +119,9 @@ namespace HomeWorkHelperLibrary
         {
             _courseList.Add(course);
         }
-
-
-        /// <summary>
-        /// Deletes a certain course
-        /// </summary>
-        /// <param name="Course">Which course to delete</param>
-        /// <param name="student">Which student to delete it from</param>
         public void DeleteCourse(int i)
-        {
-             
-             _courseList.RemoveAt(i);
-              
+        {    
+             _courseList.RemoveAt(i);      
         }
-       
-
-     
-
-
-
-
-
     }
 }

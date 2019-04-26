@@ -10,17 +10,16 @@ namespace HomeWorkHelperLibrary
     public class FileReadWrite
     {
 
-        string fileName;
-        static int numofStudents = 0;
-        static int numOfAddFiles = 0;
-        StreamReader reader;
-        StreamWriter outputFile;
+        private string fileName;
+        private static int numofStudents = 0;
+        private static int numOfAddFiles = 0;
+        private StreamReader reader;
+        private StreamWriter outputFile;
 
 
         public FileReadWrite()
         {
             fileName = "StudentDetails.txt";
-
         }
 
         public void AddStudentToFile(Student student)
@@ -36,35 +35,13 @@ namespace HomeWorkHelperLibrary
             }
             else
             {
-
-
                 using (outputFile)
                 {
 
-                    outputFile.WriteLine(student.UserName + ',' + student.Password + ',' + student.Name + ',' +
-                                          student.SecurityQuestionAnswers[0] + ',' + student.SecurityQuestionAnswers[1]
-                                          + ';');
-                    //outputFile.Write(",");
-                    //  outputFile.Write(student.Password);
-                    //  outputFile.Write(",");
-                    //  outputFile.Write(student.Name);
-                    //  outputFile.Write(",");
-                    //  for (int i = 0; i < student.SecurityQuestionAnswers.Count(); i++)
-                    //  {
-                    //     outputFile.Write(student.SecurityQuestionAnswers[i]);
-
-                    //     if (i == student.SecurityQuestionAnswers.Count() - 1)
-                    //     {
-                    //         outputFile.Write(";");
-
-                    //     }
-                    //     else
-                    //    {
-                    // outputFile.Write(",");
-                    //    }
-                    // }
-
-
+                    outputFile.WriteLine(student.UserName + ',' + 
+                        student.Password + ',' + student.Name + ',' +
+                        student.SecurityQuestionAnswers[0] + ',' + student.SecurityQuestionAnswers[1]
+                        + ';');
                 }
                 outputFile.Close();
             }
@@ -74,40 +51,29 @@ namespace HomeWorkHelperLibrary
 
         public bool readStudentFromFile(ref Student student, string userName, string password)
         {
-
             string docPath = Path.GetFullPath(fileName);
             reader = new StreamReader(docPath, true);
 
-
             using (reader)
             {
-
                 while (!reader.EndOfStream)
                 {
                     string fileUserName = "";
                     string filePassWord = "";
                     string restOfLine = "";
-                    Console.WriteLine(1);
                     while ((char)reader.Peek() != ',')
                     {
                         fileUserName += (char)reader.Read();
-                        Console.WriteLine(2);
                     }
                     string buffer = "";
                     buffer += (char)reader.Read();
                     while ((char)reader.Peek() != ',')
                     {
                         filePassWord += (char)reader.Read();
-                        Console.WriteLine(3);
                     }
-                    Console.WriteLine(fileUserName);
-                    Console.WriteLine(filePassWord);
                     restOfLine = Convert.ToString(reader.ReadLine());
-                    // while (reader.Read() != ';')
-                    //{
-                    //    restOfLine += reader.Read();
-                    Console.WriteLine(4);
-                    //}
+
+
                     if (fileUserName.Trim() == userName && filePassWord.Trim() == password)
                     {
                         student.UserName = userName;
@@ -121,8 +87,6 @@ namespace HomeWorkHelperLibrary
 
         public void AddCourseToFile(Student student, Course course)
         {
-
-
             string docPath = Path.GetFullPath(fileName);
             Stream file = new FileStream(docPath, FileMode.Open, FileAccess.ReadWrite, FileShare.ReadWrite);
             reader = new StreamReader(file);
@@ -130,35 +94,19 @@ namespace HomeWorkHelperLibrary
 
             using (reader)
             {
-
                 reader.ReadToEnd();
 
                 using (outputFile)
                 {
-
-                    outputFile.WriteLine(student.UserName + 'c' + ',' + course.CourseName + ',' + course.CourseNumber + ',' + course.CourseTime
-                                          + ',' + course.DateOfCourse + ';');
-                  /* outputFile.WriteLine();
-                    outputFile.Write(student.UserName);
-                    outputFile.Write('c');
-                    outputFile.Write(',');
-                    outputFile.Write(course.CourseName);
-                    outputFile.Write(',');
-                    outputFile.Write(course.CourseNumber);
-                    outputFile.Write(',');
-                    outputFile.Write(course.CourseTime);
-                    outputFile.Write(',');
-                    outputFile.Write(course.DateOfCourse);
-                    outputFile.Write(';');
-                    */
+                    outputFile.WriteLine(student.UserName + 'c' + ',' + course.CourseName + ','
+                        + course.CourseNumber + ',' + course.CourseTime
+                        + ',' + course.DateOfCourse + ';');
                 }
             }
         }
 
         public void AddTaskToFile(Student student, Task_ task)
         {
-
-
             string docPath = Path.GetFullPath(fileName);
             Stream file = new FileStream(docPath, FileMode.Open, FileAccess.ReadWrite, FileShare.ReadWrite);
             reader = new StreamReader(file);
@@ -173,27 +121,10 @@ namespace HomeWorkHelperLibrary
 
                     outputFile.WriteLine(student.UserName + 't' + ',' + task.TaskName + ',' + task.Type + ','
                                          + task.ReoccuringTask + ',' + task.DueDate + ',' + task.DueDateEnd + ';');
-
-                    /* outputFile.Write('t');
-                     outputFile.Write(',');
-                     outputFile.Write(task.TaskName);
-                     outputFile.Write(',');
-                     outputFile.Write(task.Type);
-                     outputFile.Write(',');
-                     outputFile.Write(task.ReoccuringTask);
-                     outputFile.Write(',');
-                     outputFile.Write(task.DueDate);
-                     outputFile.Write(',');
-                     outputFile.Write(task.DueDate);
-                     outputFile.Write(';');
-
-      */
                 }
             }
             numOfAddFiles++;
         }
-
-
 
         public void ReadDataFromFile(ref Student student)
         {
@@ -205,7 +136,6 @@ namespace HomeWorkHelperLibrary
             Course newCourse;
             string username = "";
             string restOfLine = "";
-            int lines = 0;
 
             using (reader)
             {
@@ -217,7 +147,6 @@ namespace HomeWorkHelperLibrary
                     while ((char)reader.Peek() != ',')
                     {
                         username += (char)reader.Read();
-                        Console.WriteLine(6);
                         if (reader.EndOfStream)
                         {
                             return;
@@ -233,7 +162,6 @@ namespace HomeWorkHelperLibrary
                         string courseNumber = "";
                         string courseTime = "";
                         string courseDate = "";
-                        Console.WriteLine(7);
                         while ((char)reader.Peek() != ',')
                         {
                             courseName += (char)reader.Read();
@@ -246,7 +174,6 @@ namespace HomeWorkHelperLibrary
                             courseNumber += (char)reader.Read();
                         }
                         restOfLine += (char)reader.Read();
-                        Console.WriteLine(courseNumber);
                         while ((char)reader.Peek() != ',')
                         {
                             courseTime += (char)reader.Read();
@@ -259,7 +186,8 @@ namespace HomeWorkHelperLibrary
                         }
                         restOfLine += (char)reader.Read();
 
-                        newCourse = new Course(Convert.ToInt32(courseNumber), courseName, courseTime, Convert.ToDateTime(courseDate));
+                        newCourse = new Course(Convert.ToInt32(courseNumber), courseName,
+                            courseTime, Convert.ToDateTime(courseDate));
 
                         student.AddCourse(newCourse);
 
@@ -267,8 +195,6 @@ namespace HomeWorkHelperLibrary
                         courseNumber = "";
                         courseTime = "";
                         courseDate = "";
-
-
                     }
 
                     else if (username.Trim() == (student.UserName + 't'))
@@ -288,7 +214,6 @@ namespace HomeWorkHelperLibrary
 
                         while ((char)reader.Peek() != ',')
                         {
-                            Console.WriteLine(9);
                             taskType += (char)reader.Read();
                         }
                         restOfLine += (char)reader.Read();
@@ -311,7 +236,8 @@ namespace HomeWorkHelperLibrary
                         }
                         restOfLine += (char)reader.Read();
 
-                        newTask = new Task_(taskName, taskType, Convert.ToBoolean(TaskReocurring), Convert.ToDateTime(TaskStartDate), Convert.ToDateTime(TaskEndDate));
+                        newTask = new Task_(taskName, taskType, Convert.ToBoolean(TaskReocurring), 
+                            Convert.ToDateTime(TaskStartDate), Convert.ToDateTime(TaskEndDate));
 
                         student.AddTask(newTask);
 
@@ -326,12 +252,10 @@ namespace HomeWorkHelperLibrary
                         while ((char)reader.Peek() != ';')
                         {
                             restOfLine += (char)reader.Read();
-                            Console.WriteLine(1);
                         }
 
                         restOfLine += (char)reader.Read();
                     }
-
                     username = "";
                 }
 
@@ -392,7 +316,6 @@ namespace HomeWorkHelperLibrary
                             buffer += (char)reader.Read();
                             LineToDelete++;
                             taskName = "";
-
                         }
                     }
                     else
@@ -452,7 +375,6 @@ namespace HomeWorkHelperLibrary
                     }
                     buffer += (char)reader.Read();
 
-                    Console.WriteLine(userName);
                     if (userName.Trim() == student.UserName + 'c')
                     {
                         while ((char)reader.Peek() != ',')
@@ -536,8 +458,6 @@ namespace HomeWorkHelperLibrary
                         userName += (char)reader.Read();
                     }
                     buffer += (char)reader.Read();
-
-                    Console.WriteLine(userName);
                     if (userName.Trim() == student.UserName + 'c')
                     {
                         while ((char)reader.Peek() != ',')
@@ -584,7 +504,7 @@ namespace HomeWorkHelperLibrary
             }
 
             File.WriteAllLines(docPath, quotelist.ToArray());
-            
+
 
         }
 
@@ -667,10 +587,7 @@ namespace HomeWorkHelperLibrary
             }
 
             File.WriteAllLines(docPath, quotelist.ToArray());
-            
         }
-
-
     }
 }
 

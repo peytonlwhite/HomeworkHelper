@@ -12,14 +12,12 @@ namespace HomeWorkHelperLibrary
 {
     public class Course
     {
-        int _courseNumber;
-        string _courseName;
-        string _courseDescription;
-        string _courseTime;
-        DateTime _courseDay;
+        private int _courseNumber;
+        private string _courseName;
+        private string _courseDescription;
+        private string _courseTime;
+        private DateTime _courseDay;
        
-
-
         public int CourseNumber
         {
             get
@@ -93,8 +91,5 @@ namespace HomeWorkHelperLibrary
         {
             CourseName = name;
         }
-
-    
-
     }
 }

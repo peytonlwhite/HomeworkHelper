@@ -13,11 +13,11 @@ namespace HomeWorkHelperLibrary
     {
       
         // member variables
-        string _taskName;
-        bool _reoccuringTask;
-        DateTime _dueDate;
-        DateTime _dueDateEnd;
-        string _type;
+        private string _taskName;
+        private bool _reoccuringTask;
+        private DateTime _dueDate;
+        private DateTime _dueDateEnd;
+        private string _type;
             
 
         public string Type
@@ -79,16 +79,6 @@ namespace HomeWorkHelperLibrary
             }
         }
 
-
-
-        /// <summary>
-        /// Accepts what makes a task and defines the task
-        /// </summary>
-        /// <param name="taskName">String for the task name</param>
-        /// <param name="reTask"> Bool for if the task is a reocurring task</param>
-        /// <param name="remindTime">The user sets to remind them about the task</param>
-        /// <param name="dueDate">The user sets the date when the task is due</param>
-        /// <param name="endDueDate">The user sets the date when the last day to turn in the task</param>
         public Task_(string taskName,string type, bool reTask,DateTime dueDate, DateTime endDueDate)
         {
             TaskName = taskName;
@@ -100,8 +90,6 @@ namespace HomeWorkHelperLibrary
         public Task_(string taskName)
         {
             TaskName = taskName;
-        }
-                
-
+        }          
     }
 }
