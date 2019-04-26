@@ -11,8 +11,6 @@ namespace HomeWorkHelperLibrary
     {
 
         private string fileName;
-        private static int numofStudents = 0;
-        private static int numOfAddFiles = 0;
         private StreamReader reader;
         private StreamWriter outputFile;
 
@@ -46,7 +44,7 @@ namespace HomeWorkHelperLibrary
                 outputFile.Close();
             }
             outputFile.Close();
-            numofStudents++;
+           
         }
 
         public bool readStudentFromFile(ref Student student, string userName, string password)
@@ -123,7 +121,7 @@ namespace HomeWorkHelperLibrary
                                          + task.ReoccuringTask + ',' + task.DueDate + ',' + task.DueDateEnd + ';');
                 }
             }
-            numOfAddFiles++;
+            
         }
 
         public void ReadDataFromFile(ref Student student)
@@ -293,8 +291,7 @@ namespace HomeWorkHelperLibrary
                         userName += (char)reader.Read();
                     }
                     buffer += (char)reader.Read();
-
-                    Console.WriteLine(userName);
+                    
                     if (userName.Trim() == student.UserName + 't')
                     {
                         while ((char)reader.Peek() != ',')
@@ -332,12 +329,9 @@ namespace HomeWorkHelperLibrary
                 }
             }
 
-            Console.WriteLine("linessssssss" + LineToDelete);
-            quotelist.RemoveAt(LineToDelete - 1);
-            foreach (var line in quotelist)
-            {
-                Console.WriteLine(line);
-            }
+           
+            quotelist.RemoveAt(LineToDelete);
+           
 
             File.WriteAllLines(docPath, quotelist.ToArray());
             AddTaskToFile(student, editTask);
@@ -351,11 +345,7 @@ namespace HomeWorkHelperLibrary
             List<string> quotelist = File.ReadAllLines(docPath).ToList(); ;
             Stream file = new FileStream(docPath, FileMode.Open, FileAccess.ReadWrite, FileShare.ReadWrite);
 
-            foreach (var line in quotelist)
-            {
-                Console.WriteLine(line);
-            }
-            Console.WriteLine("count::::" + quotelist[1]);
+          
 
             reader = new StreamReader(file);
 
@@ -363,6 +353,7 @@ namespace HomeWorkHelperLibrary
             string courseName = "";
             string userName = "";
             string buffer = "";
+
             using (reader)
             {
 
@@ -413,13 +404,8 @@ namespace HomeWorkHelperLibrary
                 }
             }
 
-            Console.WriteLine("linessssssss" + LineToDelete);
-            quotelist.RemoveAt(LineToDelete - 1);
-            foreach (var line in quotelist)
-            {
-                Console.WriteLine(line);
-            }
 
+            quotelist.RemoveAt(LineToDelete);
             File.WriteAllLines(docPath, quotelist.ToArray());
             AddCourseToFile(student, newCourse);
         }
@@ -434,12 +420,7 @@ namespace HomeWorkHelperLibrary
             List<string> quotelist = File.ReadAllLines(docPath).ToList(); ;
             Stream file = new FileStream(docPath, FileMode.Open, FileAccess.ReadWrite, FileShare.ReadWrite);
 
-            foreach (var line in quotelist)
-            {
-                Console.WriteLine(line);
-            }
-            Console.WriteLine("count::::" + quotelist[1]);
-            Console.WriteLine(oldCourse.CourseName);
+          
             reader = new StreamReader(file);
 
 
@@ -496,13 +477,9 @@ namespace HomeWorkHelperLibrary
                 }
             }
 
-            Console.WriteLine("linessssssss" + LineToDelete);
-            quotelist.RemoveAt(LineToDelete - 1);
-            foreach (var line in quotelist)
-            {
-                Console.WriteLine(line);
-            }
 
+
+            quotelist.RemoveAt(LineToDelete - 1);
             File.WriteAllLines(docPath, quotelist.ToArray());
 
 
@@ -516,11 +493,7 @@ namespace HomeWorkHelperLibrary
             List<string> quotelist = File.ReadAllLines(docPath).ToList(); ;
             Stream file = new FileStream(docPath, FileMode.Open, FileAccess.ReadWrite, FileShare.ReadWrite);
             Console.WriteLine(oldTask.TaskName);
-            foreach (var line in quotelist)
-            {
-                Console.WriteLine(line);
-            }
-            Console.WriteLine("count::::" + quotelist[1]);
+          
 
             reader = new StreamReader(file);
 
@@ -540,7 +513,6 @@ namespace HomeWorkHelperLibrary
                     }
                     buffer += (char)reader.Read();
 
-                    Console.WriteLine(userName);
                     if (userName.Trim() == student.UserName + 't')
                     {
                         while ((char)reader.Peek() != ',')
@@ -579,13 +551,9 @@ namespace HomeWorkHelperLibrary
                 }
             }
 
-            Console.WriteLine("linessssssss" + LineToDelete);
-            quotelist.RemoveAt(LineToDelete - 1);
-            foreach (var line in quotelist)
-            {
-                Console.WriteLine(line);
-            }
+          
 
+            quotelist.RemoveAt(LineToDelete - 1);
             File.WriteAllLines(docPath, quotelist.ToArray());
         }
     }
