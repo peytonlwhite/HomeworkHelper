@@ -14,7 +14,6 @@ namespace HomeWorkHelperLibrary
     {
         private int _courseNumber;
         private string _courseName;
-        private string _courseDescription;
         private string _courseTime;
         private DateTime _courseDay;
        
@@ -56,18 +55,7 @@ namespace HomeWorkHelperLibrary
         }
 
 
-        public string CourseDescription
-        {
-            get
-            {
-                return _courseDescription;
-            }
-            private set
-            {
-                _courseDescription = value;
-            }
-
-        }
+    
         public DateTime DateOfCourse
         {
             get
