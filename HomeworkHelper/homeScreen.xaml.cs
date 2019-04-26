@@ -39,23 +39,18 @@ namespace HomeworkHelper
             {
                 tasks.Add(newStudent.TaskList[i]);
             }
-
             DataContext = this;
-            
-
 
         }
        
         
         private void AddCourse_Click(object sender, RoutedEventArgs e)
         {
-            
-
+           
             AddCourse addcourse = new AddCourse(student);
 
             this.Close();
             addcourse.Show();
-
         }
 
         private void View_CourseClick(object sender, RoutedEventArgs e)
@@ -98,8 +93,6 @@ namespace HomeworkHelper
                 this.Close();
                 dt.Show();
             }
-
-
         }
     }
 }

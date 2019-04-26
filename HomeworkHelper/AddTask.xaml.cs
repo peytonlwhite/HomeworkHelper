@@ -43,7 +43,6 @@ namespace HomeworkHelper
                 DateTime dueDate = (DateTime)DueDateOfTaskDP.SelectedDate;
                 DateTime endDate = (DateTime)EndDateOfTaskDP.SelectedDate;
 
-
                 if (YesRB.IsChecked == true)
                 {
                     reocurring = true;
