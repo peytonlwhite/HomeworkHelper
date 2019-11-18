@@ -90,8 +90,6 @@ namespace HomeworkHelper
                 FileReadWrite file = new FileReadWrite();
 
 
-
-
                 Task_ editTask = new Task_(taskName, type, reocurring, dueDate, endDate);
 
                 student.TaskList[index] = editTask;

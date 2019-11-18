@@ -19,22 +19,23 @@ namespace HomeworkHelper
  
     public partial class loginForm : Window
     {
-        private Student student = new Student();
+        private Student student;
 
         public loginForm()
         {
             InitializeComponent();
+            student = new Student();
            
         }
 
-        private void Button_Click(object sender, RoutedEventArgs e)
+        private void New_User_Button_Click(object sender, RoutedEventArgs e)
         {
             newUser newU = new newUser();
             this.Close();
             newU.ShowDialog();
         }
 
-        private void Button_Click_1(object sender, RoutedEventArgs e)
+        private void Login_Button_Click(object sender, RoutedEventArgs e)
         {
             FileReadWrite file = new FileReadWrite();
               if (usernameTB.Text.Trim() == "" && passwordBox.Password == "")
@@ -43,9 +44,9 @@ namespace HomeworkHelper
               }
               else
               {
-                  if (file.readStudentFromFile(ref student, usernameTB.Text.Trim(), passwordBox.Password.Trim()))
+                  if (file.readStudentFromFile(student, usernameTB.Text.Trim(), passwordBox.Password.Trim()))
                   {
-                      file.ReadDataFromFile(ref student);
+                      file.ReadDataFromFile(student);
                       homeScreen studentForm = new homeScreen(student);
                       
                       this.Close();
@@ -58,9 +59,11 @@ namespace HomeworkHelper
                   }
               }
           }
-          
-        
+
+        private void usernameTB_TextChanged(object sender, TextChangedEventArgs e)
+        {
 
         }
+    }
     }
 

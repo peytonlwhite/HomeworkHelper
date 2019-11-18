@@ -12,84 +12,24 @@ namespace HomeWorkHelperLibrary
     public class Task_
     {
       
-        // member variables
-        private string _taskName;
-        private bool _reoccuringTask;
-        private DateTime _dueDate;
-        private DateTime _dueDateEnd;
-        private string _type;
-            
+           
+        public string Type { get; private set; }
 
-        public string Type
-        {
-            get
-            {
-                return _type;
-            }
-            set
-            {
-                _type = value;
-            }
-        }
-        public bool ReoccuringTask
-        {
-            get
-            {
-                return _reoccuringTask;
-            }
-            private set
-            {
-                _reoccuringTask = value;
-            }
-        }
+        public bool ReoccuringTask { get; private set; }
       
-        public string TaskName
-        {
-            get
-            {
-                return _taskName;
-            }
-            private set
-            {
-                _taskName = value;
-            }
-        }
+        public string TaskName { get; private set; }
 
-        public DateTime DueDateEnd
-        {
-            get
-            {
-                return _dueDateEnd;
-            }
-           private set
-            {
-                _dueDateEnd = value;
-            }
-        }
+        public DateTime DueDateEnd { get; private set; }
 
-        public DateTime DueDate
-        {
-            get
-            {
-                return _dueDate;
-            }
-            private set
-            {
-                _dueDate = value;
-            }
-        }
+        public DateTime DueDate { get; private set; }
 
         public Task_(string taskName,string type, bool reTask,DateTime dueDate, DateTime endDueDate)
         {
             TaskName = taskName;
-            _reoccuringTask = reTask;
+            ReoccuringTask = reTask;
             DueDate = dueDate;
             DueDateEnd = endDueDate;
             Type = type;
-        }
-        public Task_(string taskName)
-        {
-            TaskName = taskName;
-        }          
+        }        
     }
 }

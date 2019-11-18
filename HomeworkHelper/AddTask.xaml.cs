@@ -20,12 +20,13 @@ namespace HomeworkHelper
     /// </summary>
     public partial class AddTask : Window
     {
-        Student student;
-        public AddTask(Student stu)
+        private Student student;
+        private FileReadWrite file;
+
+        public AddTask(Student student)
         {
             InitializeComponent();
-            student = stu;
-
+            this.student = student;
         }
 
         private void AddTaskButton(object sender, RoutedEventArgs e)
@@ -49,18 +50,15 @@ namespace HomeworkHelper
                 }
 
                 Task_ task = new Task_(taskName, type, reocurring, dueDate, endDate);
-
                 student.AddTask(task);
                 FileReadWrite file = new FileReadWrite();
                 file.AddTaskToFile(student, task);
                 homeScreen home = new homeScreen(student);
 
-
                 this.Close();
                 home.Show();
             }
         }
-
 
         private void button_Click(object sender, RoutedEventArgs e)
         {

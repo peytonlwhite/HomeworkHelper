@@ -9,10 +9,10 @@
         Title="loginForm" Height="300" Width="400">
     <Grid>
         <Label Content="Username" HorizontalAlignment="Left" Margin="57,68,0,0" VerticalAlignment="Top"/>
-        <TextBox x:Name="usernameTB" HorizontalAlignment="Left" Height="22" Margin="152,68,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+        <TextBox x:Name="usernameTB" HorizontalAlignment="Left" Height="22" Margin="152,68,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" TextChanged="usernameTB_TextChanged"/>
         <Label Content="Password" HorizontalAlignment="Left" Margin="61,132,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.529,1.865"/>
-        <Button Content="Login" HorizontalAlignment="Left" Margin="102,208,0,0" VerticalAlignment="Top" Width="75" Click="Button_Click_1"/>
-        <Button x:Name="newUser" Content="New User" HorizontalAlignment="Left" Margin="231,208,0,0" VerticalAlignment="Top" Width="75" Click="Button_Click" RenderTransformOrigin="1.16,0.364"/>
+        <Button x:Name="login_button" Content="Login" HorizontalAlignment="Left" Margin="102,208,0,0" VerticalAlignment="Top" Width="75" Click="Login_Button_Click"/>
+        <Button x:Name="newUser_button" Content="New User" HorizontalAlignment="Left" Margin="231,208,0,0" VerticalAlignment="Top" Width="75" Click="New_User_Button_Click" RenderTransformOrigin="1.16,0.364"/>
         <PasswordBox x:Name="passwordBox" HorizontalAlignment="Left" Height="22" Margin="152,136,0,0" VerticalAlignment="Top" Width="120"/>
         <Grid.Background>
             <ImageBrush ImageSource="pack://application:,,,/HomeworkHelper;component/Resources/apsu.png" />

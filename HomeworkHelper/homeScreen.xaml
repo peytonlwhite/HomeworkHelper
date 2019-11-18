@@ -6,7 +6,7 @@
         xmlns:local="clr-namespace:HomeworkHelper"
         mc:Ignorable="d"
         WindowStartupLocation="CenterScreen"
-        Title="{Binding TitleOf}" Height="400" Width="603">
+        Title="{Binding TitleOf}" Height="420" Width="620">
     <Grid>
 
         <Grid.ColumnDefinitions>
@@ -23,7 +23,7 @@
             <MenuItem Header="Course">
                 <MenuItem Header= "View Courses" Click = "View_CourseClick"/>
             </MenuItem>
-            <ListView ItemsSource="{Binding tasks}" Height="352" Width="585" x:Name="lVTask">
+            <ListView ItemsSource="{Binding tasks}" Height="360" Width="600" x:Name="lVTask">
                 <ListView.View>
                     <GridView>
                         <GridViewColumn DisplayMemberBinding="{Binding TaskName}" Header="Task Name"  Width="150"/>

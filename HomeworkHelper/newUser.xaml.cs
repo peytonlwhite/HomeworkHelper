@@ -21,7 +21,7 @@ namespace HomeworkHelper
     public partial class newUser : Window
     {
 
-        Student student;
+        private Student student;
         
 
         public newUser()
@@ -56,8 +56,7 @@ namespace HomeworkHelper
 
                 this.Close();
                 hs.Show();
-                
-            }       
+            }
             
         }
 

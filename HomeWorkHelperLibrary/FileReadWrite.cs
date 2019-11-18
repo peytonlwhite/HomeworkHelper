@@ -22,57 +22,29 @@ namespace HomeWorkHelperLibrary
 
         public void AddStudentToFile(Student student)
         {
-            string docPath = Path.GetFullPath(fileName);
-            outputFile = new StreamWriter(docPath, true);
+            outputFile = new StreamWriter("StudentDetails.txt", true);
 
-            // Set a variable to the Documents path.
-            if (!File.Exists(fileName))
-            {
-                File.Create(fileName);
-                outputFile.Close();
-            }
-            else
-            {
-                using (outputFile)
-                {
+            outputFile.WriteLine(student.UserName + ',' + student.Password + ',' + student.Name + ',' +
+                student.SecurityQuestionAnswers[0] + ',' + student.SecurityQuestionAnswers[1]
+                + ';');
 
-                    outputFile.WriteLine(student.UserName + ',' + 
-                        student.Password + ',' + student.Name + ',' +
-                        student.SecurityQuestionAnswers[0] + ',' + student.SecurityQuestionAnswers[1]
-                        + ';');
-                }
-                outputFile.Close();
-            }
             outputFile.Close();
-           
         }
 
-        public bool readStudentFromFile(ref Student student, string userName, string password)
+        public bool readStudentFromFile(Student student, string userName, string password)
         {
-            string docPath = Path.GetFullPath(fileName);
-            reader = new StreamReader(docPath, true);
-
+            reader = new StreamReader("StudentDetails.txt", true);
             using (reader)
             {
                 while (!reader.EndOfStream)
                 {
-                    string fileUserName = "";
-                    string filePassWord = "";
-                    string restOfLine = "";
-                    while ((char)reader.Peek() != ',')
-                    {
-                        fileUserName += (char)reader.Read();
-                    }
-                    string buffer = "";
-                    buffer += (char)reader.Read();
-                    while ((char)reader.Peek() != ',')
-                    {
-                        filePassWord += (char)reader.Read();
-                    }
-                    restOfLine = Convert.ToString(reader.ReadLine());
+                    string line = reader.ReadLine();
+                    var parts = line.Split(',');
 
+                    string fileUserName = parts[0];
+                    string filePassword = parts[1];
 
-                    if (fileUserName.Trim() == userName && filePassWord.Trim() == password)
+                    if (fileUserName.Trim() == userName && filePassword.Trim() == password)
                     {
                         student.UserName = userName;
                         student.Password = password;
@@ -85,328 +57,161 @@ namespace HomeWorkHelperLibrary
 
         public void AddCourseToFile(Student student, Course course)
         {
-            string docPath = Path.GetFullPath(fileName);
-            Stream file = new FileStream(docPath, FileMode.Open, FileAccess.ReadWrite, FileShare.ReadWrite);
-            reader = new StreamReader(file);
-            outputFile = new StreamWriter(file);
+            outputFile = new StreamWriter(fileName, true);
 
-            using (reader)
-            {
-                reader.ReadToEnd();
-
-                using (outputFile)
-                {
-                    outputFile.WriteLine(student.UserName + 'c' + ',' + course.CourseName + ','
+            outputFile.WriteLine(student.UserName + 'c' + ',' + course.CourseName + ','
                         + course.CourseNumber + ',' + course.CourseTime
                         + ',' + course.DateOfCourse + ';');
-                }
-            }
+
+            outputFile.Close();
         }
 
         public void AddTaskToFile(Student student, Task_ task)
         {
-            string docPath = Path.GetFullPath(fileName);
-            Stream file = new FileStream(docPath, FileMode.Open, FileAccess.ReadWrite, FileShare.ReadWrite);
-            reader = new StreamReader(file);
-            outputFile = new StreamWriter(file);
+            outputFile = new StreamWriter(fileName, true);
 
-            using (reader)
-            {
-                reader.ReadToEnd();
+            outputFile.WriteLine(student.UserName + 't' + ',' + task.TaskName + ',' + task.Type + ','
+                                 + task.ReoccuringTask + ',' + task.DueDate + ',' + task.DueDateEnd + ';');
 
-                using (outputFile)
-                {
+            outputFile.Close();
 
-                    outputFile.WriteLine(student.UserName + 't' + ',' + task.TaskName + ',' + task.Type + ','
-                                         + task.ReoccuringTask + ',' + task.DueDate + ',' + task.DueDateEnd + ';');
-                }
-            }
-            
         }
 
-        public void ReadDataFromFile(ref Student student)
+        public void ReadDataFromFile(Student student)
         {
-
-            string docPath = Path.GetFullPath(fileName);
-            Stream file = new FileStream(docPath, FileMode.Open, FileAccess.ReadWrite, FileShare.ReadWrite);
-            reader = new StreamReader(file);
-            Task_ newTask;
-            Course newCourse;
-            string username = "";
-            string restOfLine = "";
+            reader = new StreamReader(fileName);
 
             using (reader)
             {
                 while (!reader.EndOfStream)
                 {
+                    string line = reader.ReadLine();
+                    var parts = line.Split(',');
 
-                    Console.WriteLine(5);
+                    string userName = parts[0];
 
-                    while ((char)reader.Peek() != ',')
+                    //checks if username mathces and sees if it is a course
+                    if (userName.Trim() == (student.UserName + 'c'))
                     {
-                        username += (char)reader.Read();
-                        if (reader.EndOfStream)
-                        {
-                            return;
-                        }
-                    }
+                        string courseName = parts[1];
+                        string courseNumber = parts[2];
+                        string courseTime = parts[3];
+                        string courseDate = parts[4].TrimEnd(';');
 
-                    restOfLine += (char)reader.Read();
-
-
-                    if (username.Trim() == (student.UserName + 'c'))
-                    {
-                        string courseName = "";
-                        string courseNumber = "";
-                        string courseTime = "";
-                        string courseDate = "";
-                        while ((char)reader.Peek() != ',')
-                        {
-                            courseName += (char)reader.Read();
-                        }
-
-                        restOfLine += (char)reader.Read();
-
-                        while ((char)reader.Peek() != ',')
-                        {
-                            courseNumber += (char)reader.Read();
-                        }
-                        restOfLine += (char)reader.Read();
-                        while ((char)reader.Peek() != ',')
-                        {
-                            courseTime += (char)reader.Read();
-                        }
-                        restOfLine += (char)reader.Read();
-
-                        while ((char)reader.Peek() != ';')
-                        {
-                            courseDate += (char)reader.Read();
-                        }
-                        restOfLine += (char)reader.Read();
-
-                        newCourse = new Course(Convert.ToInt32(courseNumber), courseName,
+                        //converts each string and creates the new course
+                        Course course = new Course(Convert.ToInt32(courseNumber), courseName,
                             courseTime, Convert.ToDateTime(courseDate));
 
-                        student.AddCourse(newCourse);
-
-                        courseName = "";
-                        courseNumber = "";
-                        courseTime = "";
-                        courseDate = "";
+                        //adds the course to the list
+                        student.AddCourse(course);
                     }
 
-                    else if (username.Trim() == (student.UserName + 't'))
+                    //checks if the line is a task 
+                    else if (userName.Trim() == (student.UserName + 't'))
                     {
-                        string taskName = "";
-                        string taskType = "";
-                        string TaskReocurring = "";
-                        string TaskStartDate = "";
-                        string TaskEndDate = "";
 
+                        string taskName = parts[1];
+                        string taskType = parts[2];
+                        string TaskReocurring = parts[3];
+                        string TaskStartDate = parts[4];
+                        string TaskEndDate = parts[5].TrimEnd(';');
 
-                        while ((char)reader.Peek() != ',')
-                        {
-                            taskName += (char)reader.Read();
-                        }
-                        restOfLine += (char)reader.Read();
-
-                        while ((char)reader.Peek() != ',')
-                        {
-                            taskType += (char)reader.Read();
-                        }
-                        restOfLine += (char)reader.Read();
-
-                        while ((char)reader.Peek() != ',')
-                        {
-                            TaskReocurring += (char)reader.Read();
-                        }
-                        restOfLine += (char)reader.Read();
-
-                        while ((char)reader.Peek() != ',')
-                        {
-                            TaskStartDate += (char)reader.Read();
-                        }
-                        restOfLine += (char)reader.Read();
-
-                        while ((char)reader.Peek() != ';')
-                        {
-                            TaskEndDate += (char)reader.Read();
-                        }
-                        restOfLine += (char)reader.Read();
-
-                        newTask = new Task_(taskName, taskType, Convert.ToBoolean(TaskReocurring), 
-                            Convert.ToDateTime(TaskStartDate), Convert.ToDateTime(TaskEndDate));
+                        //creates the new task 
+                        Task_ newTask = new Task_(taskName, taskType, Convert.ToBoolean(TaskReocurring),
+                           Convert.ToDateTime(TaskStartDate), Convert.ToDateTime(TaskEndDate));
 
                         student.AddTask(newTask);
-
-                        taskName = "";
-                        taskType = "";
-                        TaskReocurring = "";
-                        TaskStartDate = "";
-                        TaskEndDate = "";
                     }
-                    else
-                    {
-                        while ((char)reader.Peek() != ';')
-                        {
-                            restOfLine += (char)reader.Read();
-                        }
-
-                        restOfLine += (char)reader.Read();
-                    }
-                    username = "";
                 }
-
                 reader.Close();
             }
-        }
+        } 
 
         public void EditTaskToFile(Student student, Task_ editTask, Task_ oldTask)
         {
-
-            string docPath = Path.GetFullPath(fileName);
-            List<string> quotelist = File.ReadAllLines(docPath).ToList(); ;
-            Stream file = new FileStream(docPath, FileMode.Open, FileAccess.ReadWrite, FileShare.ReadWrite);
-
-            foreach (var line in quotelist)
-            {
-                Console.WriteLine(line);
-            }
-            Console.WriteLine("count::::" + quotelist[1]);
-
-            reader = new StreamReader(file);
+            //path to file
+            //creates a list and reads in the file before editing
+            List<string> lines = File.ReadAllLines(fileName).ToList();
+            //allows the access to file read and write
+            reader = new StreamReader(fileName);
 
             int LineToDelete = 0;
-            string taskName = "";
-            string userName = "";
-            string buffer = "";
+
             using (reader)
             {
-
                 while (!reader.EndOfStream)
                 {
+                    //reads in the username
+                    string line = reader.ReadLine();
+                    var parts = line.Split(',');
 
-                    while ((char)reader.Peek() != ',')
-                    {
-                        userName += (char)reader.Read();
-                    }
-                    buffer += (char)reader.Read();
-                    
+                    string userName = parts[0];
+                    //checks for the t for the task
                     if (userName.Trim() == student.UserName + 't')
                     {
-                        while ((char)reader.Peek() != ',')
-                        {
-                            taskName += (char)reader.Read();
-                        }
-                        buffer += (char)reader.Read();
-
+                        string taskName = parts[1];
+                        //checks to see if the task name matches if so then get
+                        //out of function bc line found
                         if (taskName.Trim() == oldTask.TaskName)
-                        {
                             break;
-                        }
                         else
-                        {
-                            while ((char)reader.Peek() != ';')
-                            {
-                                buffer += (char)reader.Read();
-                            }
-                            buffer += (char)reader.Read();
                             LineToDelete++;
-                            taskName = "";
-                        }
                     }
                     else
-                    {
-                        while ((char)reader.Peek() != ';')
-                        {
-                            buffer += (char)reader.Read();
-                        }
-                        buffer += (char)reader.Read();
                         LineToDelete++;
-                    }
-
-                    userName = "";
                 }
             }
 
-           
-            quotelist.RemoveAt(LineToDelete);
-           
+            //removes the line to array
+            lines.RemoveAt(LineToDelete);
 
-            File.WriteAllLines(docPath, quotelist.ToArray());
+            //rewrite the new lines to file
+            File.WriteAllLines(fileName, lines.ToArray());
+            //adds the new task to file 
             AddTaskToFile(student, editTask);
+
+            reader.Close();
         }
 
 
         public void EditCourseToFile(Student student, Course oldCourse, Course newCourse)
         {
 
-            string docPath = Path.GetFullPath(fileName);
-            List<string> quotelist = File.ReadAllLines(docPath).ToList(); ;
-            Stream file = new FileStream(docPath, FileMode.Open, FileAccess.ReadWrite, FileShare.ReadWrite);
-
-          
-
-            reader = new StreamReader(file);
+            //path to file
+            //creates a list and reads in the file before editing
+            List<string> lines = File.ReadAllLines(fileName).ToList();
+            //allows the access to file read and write
+            reader = new StreamReader(fileName);
 
             int LineToDelete = 0;
-            string courseName = "";
-            string userName = "";
-            string buffer = "";
 
             using (reader)
             {
-
                 while (!reader.EndOfStream)
                 {
+                    //reads in the username
+                    string line = reader.ReadLine();
+                    var parts = line.Split(',');
 
-                    while ((char)reader.Peek() != ',')
-                    {
-                        userName += (char)reader.Read();
-                    }
-                    buffer += (char)reader.Read();
-
+                    string userName = parts[0];
+                    //checks for the t for the task
                     if (userName.Trim() == student.UserName + 'c')
                     {
-                        while ((char)reader.Peek() != ',')
-                        {
-                            courseName += (char)reader.Read();
-                        }
-                        buffer += (char)reader.Read();
-
+                        string courseName = parts[1];
+                        //checks to see if the task name matches if so then get
+                        //out of function bc line found
                         if (courseName.Trim() == oldCourse.CourseName)
-                        {
                             break;
-                        }
                         else
-                        {
-                            while ((char)reader.Peek() != ';')
-                            {
-                                buffer += (char)reader.Read();
-                            }
-                            buffer += (char)reader.Read();
                             LineToDelete++;
-                            courseName = "";
-
-                        }
                     }
                     else
-                    {
-                        while ((char)reader.Peek() != ';')
-                        {
-                            buffer += (char)reader.Read();
-                        }
-                        buffer += (char)reader.Read();
                         LineToDelete++;
-                    }
-
-                    userName = "";
                 }
             }
 
-
-            quotelist.RemoveAt(LineToDelete);
-            File.WriteAllLines(docPath, quotelist.ToArray());
+            lines.RemoveAt(LineToDelete);
+            File.WriteAllLines(fileName, lines.ToArray());
             AddCourseToFile(student, newCourse);
         }
 
@@ -415,149 +220,88 @@ namespace HomeWorkHelperLibrary
 
         public void DeleteCourseToFile(Student student, Course oldCourse)
         {
+ 
+            List<string> lines = File.ReadAllLines(fileName).ToList();
+            //access to both read and write
 
-            string docPath = Path.GetFullPath(fileName);
-            List<string> quotelist = File.ReadAllLines(docPath).ToList(); ;
-            Stream file = new FileStream(docPath, FileMode.Open, FileAccess.ReadWrite, FileShare.ReadWrite);
-
-          
-            reader = new StreamReader(file);
+            reader = new StreamReader(fileName);
 
 
             int LineToDelete = 0;
-            string courseName = "";
-            string userName = "";
-            string buffer = "";
+
             using (reader)
             {
-
                 while (!reader.EndOfStream)
                 {
+                    //reads in the username
+                    string line = reader.ReadLine();
+                    var parts = line.Split(',');
 
-                    while ((char)reader.Peek() != ',')
-                    {
-                        userName += (char)reader.Read();
-                    }
-                    buffer += (char)reader.Read();
+                    string userName = parts[0];
+                    //checks for the t for the task
                     if (userName.Trim() == student.UserName + 'c')
                     {
-                        while ((char)reader.Peek() != ',')
-                        {
-                            courseName += (char)reader.Read();
-                        }
-                        buffer += (char)reader.Read();
-
+                        string courseName = parts[1];
+                        //checks to see if the task name matches if so then get
+                        //out of function bc line found
                         if (courseName.Trim() == oldCourse.CourseName)
-                        {
                             break;
-                        }
                         else
-                        {
-                            while ((char)reader.Peek() != ';')
-                            {
-                                buffer += (char)reader.Read();
-                            }
-                            buffer += (char)reader.Read();
                             LineToDelete++;
-                            courseName = "";
-
-                        }
                     }
                     else
-                    {
-                        while ((char)reader.Peek() != ';')
-                        {
-                            buffer += (char)reader.Read();
-                        }
-                        buffer += (char)reader.Read();
                         LineToDelete++;
-                    }
-
-                    userName = "";
                 }
             }
 
 
-
-            quotelist.RemoveAt(LineToDelete - 1);
-            File.WriteAllLines(docPath, quotelist.ToArray());
-
-
+            //removes the course and writes new lines to file
+            lines.RemoveAt(LineToDelete);
+            File.WriteAllLines(fileName, lines.ToArray());
         }
-
 
         public void DeleteTaskToFile(Student student, Task_ oldTask)
         {
+            List<string> lines = File.ReadAllLines(fileName).ToList(); ;
 
-            string docPath = Path.GetFullPath(fileName);
-            List<string> quotelist = File.ReadAllLines(docPath).ToList(); ;
-            Stream file = new FileStream(docPath, FileMode.Open, FileAccess.ReadWrite, FileShare.ReadWrite);
-            Console.WriteLine(oldTask.TaskName);
-          
 
-            reader = new StreamReader(file);
+            reader = new StreamReader(fileName);
 
             int LineToDelete = 0;
-            string taskName = "";
-            string userName = "";
-            string buffer = "";
+
             using (reader)
             {
-
                 while (!reader.EndOfStream)
                 {
+                    //reads in the username
+                    string line = reader.ReadLine();
+                    var parts = line.Split(',');
 
-                    while ((char)reader.Peek() != ',')
-                    {
-                        userName += (char)reader.Read();
-                    }
-                    buffer += (char)reader.Read();
-
+                    string userName = parts[0];
+                    //checks for the t for the task
                     if (userName.Trim() == student.UserName + 't')
                     {
-                        while ((char)reader.Peek() != ',')
-                        {
-                            taskName += (char)reader.Read();
-                        }
-                        buffer += (char)reader.Read();
-
+                        string taskName = parts[1];
+                        //checks to see if the task name matches if so then get
+                        //out of function bc line found
                         if (taskName.Trim() == oldTask.TaskName)
-                        {
                             break;
-                        }
                         else
-                        {
-                            while ((char)reader.Peek() != ';')
-                            {
-                                buffer += (char)reader.Read();
-                            }
-                            buffer += (char)reader.Read();
                             LineToDelete++;
-                            taskName = "";
-
-                        }
                     }
                     else
-                    {
-                        while ((char)reader.Peek() != ';')
-                        {
-                            buffer += (char)reader.Read();
-                        }
-                        buffer += (char)reader.Read();
                         LineToDelete++;
-                    }
-
-                    userName = "";
                 }
             }
-
-          
-
-            quotelist.RemoveAt(LineToDelete - 1);
-            File.WriteAllLines(docPath, quotelist.ToArray());
+            lines.RemoveAt(LineToDelete);
+            File.WriteAllLines(fileName, lines.ToArray());
         }
     }
 }
+
+
+
+
 
 
 

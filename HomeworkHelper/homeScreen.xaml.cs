@@ -24,21 +24,22 @@ namespace HomeworkHelper
     {
 
         public List<Task_> tasks { get; set; }
-        Student student;
+        private Student student;
         
-        public homeScreen(Student newStudent)
+        public homeScreen(Student student)
         {
 
             InitializeComponent();
             
 
-            student = newStudent;
+            this.student = student;
             tasks = new List<Task_>();
 
-            for (int i = 0; i < newStudent.TaskList.Count; i++)
+            for (int i = 0; i < student.TaskList.Count; i++)
             {
-                tasks.Add(newStudent.TaskList[i]);
+                tasks.Add(student.TaskList[i]);
             }
+
             DataContext = this;
 
         }

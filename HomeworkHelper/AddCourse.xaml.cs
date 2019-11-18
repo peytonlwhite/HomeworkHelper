@@ -21,13 +21,13 @@ namespace HomeworkHelper
     /// </summary>
     public partial class AddCourse : Window
     {
-        Student newStudent;
+        private Student student;
 
 
-        public AddCourse(Student stu)
+        public AddCourse(Student student)
         {
             InitializeComponent();
-            newStudent = stu;
+            this.student = student;
         }
 
         private void Add_Course_Button(object sender, RoutedEventArgs e)
@@ -48,9 +48,9 @@ namespace HomeworkHelper
 
 
                 Course course = new Course(courseNum, courseName, meetingTime, courseDate);
-                newStudent.AddCourse(course);
-                file.AddCourseToFile(newStudent, course);
-                ViewCourses viewCourse = new ViewCourses(newStudent);
+                student.AddCourse(course);
+                file.AddCourseToFile(student, course);
+                ViewCourses viewCourse = new ViewCourses(student);
 
                 this.Close();
                 viewCourse.Show();
@@ -59,7 +59,7 @@ namespace HomeworkHelper
 
         private void button_Click(object sender, RoutedEventArgs e)
         {
-            ViewCourses vs = new ViewCourses(newStudent);
+            ViewCourses vs = new ViewCourses(student);
             this.Close();
             vs.Show();
         }
